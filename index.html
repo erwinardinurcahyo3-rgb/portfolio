@@ -1,24 +1,1619 @@
 <!DOCTYPE html>
 <html lang="id" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmad Rizky Pratama, S.Kom. | Portofolio Profesional & Document Showcase</title>
-  <meta name="description" content="Portofolio resmi Ahmad Rizky Pratama, Senior Software Engineer & Cloud Solutions Architect. Jelajahi pengalaman, proyek STAR, dan dokumen sertifikasi resmi dengan embedded viewer terintegrasi.">
-  <meta name="keywords" content="Portofolio, Software Engineer, Cloud Architect, Sertifikasi IT, Google Cloud, BNSP, Full-Stack Developer">
+  <meta name="description"
+    content="Portofolio resmi Ahmad Rizky Pratama, Senior Software Engineer & Cloud Solutions Architect. Jelajahi pengalaman, proyek STAR, dan dokumen sertifikasi resmi dengan embedded viewer terintegrasi.">
+  <meta name="keywords"
+    content="Portofolio, Software Engineer, Cloud Architect, Sertifikasi IT, Google Cloud, BNSP, Full-Stack Developer">
   <meta name="author" content="Ahmad Rizky Pratama">
-  
+
   <!-- Open Graph / Meta Sosial -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ahmad Rizky Pratama, S.Kom. - Portofolio Profesional">
-  <meta property="og:description" content="Jelajahi riwayat proyek unggulan (metode STAR) dan etalase dokumen resmi (sertifikat, ijazah, lisensi) dengan viewer interaktif terintegrasi.">
+  <meta property="og:description"
+    content="Jelajahi riwayat proyek unggulan (metode STAR) dan etalase dokumen resmi (sertifikat, ijazah, lisensi) dengan viewer interaktif terintegrasi.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- ==================== STYLING CSS SELF-CONTAINED (ANTI-AI DESIGN SYSTEM) ==================== -->
+  <style>
+    :root {
+      /* PALET WARNA LIGHT MODE (Slate Professional) */
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --bg-subtle: #e2e8f0;
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+
+      --border-color: #e2e8f0;
+      --border-focus: #3b82f6;
+
+      --accent-primary: #1e40af;
+      --accent-hover: #1d4ed8;
+      --accent-light: #eff6ff;
+
+      --accent-emerald: #059669;
+      --accent-emerald-light: #ecfdf5;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fffbeb;
+      --accent-rose: #e11d48;
+      --accent-rose-light: #fff1f2;
+      --accent-indigo: #4f46e5;
+      --accent-indigo-light: #eef2ff;
+
+      --card-bg: #ffffff;
+      --card-hover: #ffffff;
+      --card-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --card-shadow-hover: 0 12px 24px -4px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+      --modal-backdrop: rgba(15, 23, 42, 0.75);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --transition-fast: all 0.15s ease;
+      --transition-normal: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #090d16;
+      --bg-secondary: #0f172a;
+      --bg-tertiary: #1e293b;
+      --bg-subtle: #334155;
+
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-light: #64748b;
+
+      --border-color: #1e293b;
+      --border-focus: #60a5fa;
+
+      --accent-primary: #3b82f6;
+      --accent-hover: #60a5fa;
+      --accent-light: rgba(59, 130, 246, 0.15);
+
+      --accent-emerald: #10b981;
+      --accent-emerald-light: rgba(16, 185, 129, 0.15);
+      --accent-amber: #f59e0b;
+      --accent-amber-light: rgba(245, 158, 11, 0.15);
+      --accent-rose: #f43f5e;
+      --accent-rose-light: rgba(244, 63, 94, 0.15);
+      --accent-indigo: #818cf8;
+      --accent-indigo-light: rgba(129, 140, 248, 0.15);
+
+      --card-bg: #0f172a;
+      --card-hover: #131d35;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.5);
+      --modal-backdrop: rgba(3, 7, 18, 0.85);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition-normal);
+    }
+
+    [data-theme="dark"] .navbar {
+      background-color: rgba(9, 13, 22, 0.88);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.25rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent-primary), #4338ca);
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: var(--transition-fast);
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-icon {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .btn-icon:hover {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+
+    .hamburger-btn {
+      display: none;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 4.25rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-secondary);
+      padding: 2rem 1.5rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-normal);
+      z-index: 999;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .mobile-nav.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.6875rem 1.25rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition-fast);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-tertiary);
+      border-color: var(--text-muted);
+    }
+
+    .btn-outline-emerald {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+
+    .btn-outline-emerald:hover {
+      background: var(--accent-emerald);
+      color: #ffffff;
+    }
+
+    .btn-sm {
+      padding: 0.4375rem 0.875rem;
+      font-size: 0.8125rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* BADGES */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.875rem;
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.75;
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-blue {
+      background: var(--accent-light);
+      color: var(--accent-primary);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .badge-emerald {
+      background: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .badge-amber {
+      background: var(--accent-amber-light);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .badge-rose {
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      border: 1px solid rgba(244, 63, 94, 0.2);
+    }
+
+    .badge-indigo {
+      background: var(--accent-indigo-light);
+      color: var(--accent-indigo);
+      border: 1px solid rgba(129, 140, 248, 0.2);
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid var(--border-color);
+      background: radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+    }
+
+    .hero-title .highlight {
+      color: var(--accent-primary);
+      background: linear-gradient(135deg, var(--accent-primary), #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-headline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .hero-description {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-avatar-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      border-radius: 28px;
+      padding: 8px;
+      background: linear-gradient(135deg, var(--border-color), rgba(59, 130, 246, 0.3));
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+      background-color: var(--bg-tertiary);
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card-bg);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition-fast);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .stat-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-label {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* SECTIONS */
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-top: 0.5rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.75;
+    }
+
+    .philosophy-box {
+      background: var(--bg-tertiary);
+      border-left: 4px solid var(--accent-primary);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-top: 1.5rem;
+    }
+
+    .philosophy-title {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .philosophy-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+    }
+
+    /* SKILLS */
+    .skills-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .skill-category-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .skill-cat-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-pill {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: var(--transition-fast);
+    }
+
+    .skill-pill:hover {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+      border-color: var(--accent-primary);
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.625rem;
+      top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 3px solid var(--accent-primary);
+    }
+
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition-fast);
+    }
+
+    .timeline-card:hover {
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .timeline-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+    }
+
+    .timeline-period {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-tertiary);
+      padding: 0.25rem 0.625rem;
+      border-radius: var(--radius-full);
+    }
+
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-highlights {
+      list-style-type: none;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-highlights li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-highlights li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-fast);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .project-badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .project-summary {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .star-details {
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      border-left: 3px solid var(--accent-emerald);
+    }
+
+    .star-row {
+      margin-bottom: 0.625rem;
+      font-size: 0.875rem;
+    }
+
+    .star-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .star-label {
+      font-weight: 700;
+      color: var(--text-primary);
+      display: inline-block;
+      min-width: 85px;
+    }
+
+    .star-val {
+      color: var(--text-secondary);
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: auto;
+    }
+
+    /* DOCUMENTS CONTROLS & CARDS */
+    .doc-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.4375rem 0.875rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .filter-btn:hover {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-color: var(--accent-primary);
+    }
+
+    .search-wrapper {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 0.875rem 0.5rem 2.25rem;
+      font-family: inherit;
+      font-size: 0.875rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+
+    .search-input:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .documents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .doc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-fast);
+    }
+
+    .doc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .doc-preview-thumb {
+      height: 140px;
+      background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-subtle));
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .doc-thumb-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .doc-thumb-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--card-shadow);
+      color: var(--accent-primary);
+    }
+
+    .watermark-subtle {
+      position: absolute;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.25);
+      transform: rotate(-15deg);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .doc-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .doc-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+      line-height: 1.35;
+    }
+
+    .doc-issuer {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-redaction-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-emerald);
+      background: var(--accent-emerald-light);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    .doc-redaction-badge.lock {
+      color: var(--accent-rose);
+      background: var(--accent-rose-light);
+    }
+
+    .doc-actions {
+      display: flex;
+      gap: 0.625rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* MODAL VIEWER */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: var(--modal-backdrop);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-normal);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 860px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      transform: scale(0.95);
+      transition: var(--transition-normal);
+      overflow: hidden;
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-secondary);
+    }
+
+    .modal-title-group h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .modal-title-group p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex-grow: 1;
+      background: var(--bg-tertiary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .viewer-document-sheet {
+      background: #ffffff;
+      color: #0f172a;
+      width: 100%;
+      max-width: 720px;
+      min-height: 480px;
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      border: 1px solid #cbd5e1;
+      overflow: hidden;
+    }
+
+    .sheet-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: rgba(100, 116, 139, 0.12);
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sheet-institution {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .sheet-seal {
+      width: 50px;
+      height: 50px;
+      border: 2px dashed #0f172a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    .sheet-body {
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    .sheet-main-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .sheet-recipient {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1e40af;
+      text-decoration: underline;
+      margin-bottom: 0.5rem;
+    }
+
+    .sheet-statement {
+      font-size: 0.95rem;
+      color: #475569;
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    .redaction-bar {
+      display: inline-block;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 0.1rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      user-select: none;
+    }
+
+    .sheet-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sheet-qr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    .sheet-signature {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-secondary);
+    }
+
+    /* PIN DIALOG */
+    .pin-dialog {
+      max-width: 440px;
+      text-align: center;
+      padding: 2.25rem 2rem;
+    }
+
+    .pin-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background: var(--accent-rose-light);
+      color: var(--accent-rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .pin-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .pin-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .pin-input-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pin-digit-input {
+      width: 52px;
+      height: 56px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+
+    .pin-digit-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .pin-error-msg {
+      color: var(--accent-rose);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      min-height: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .pin-demo-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg-tertiary);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+
+    .shake {
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes shake {
+
+      10%,
+      90% {
+        transform: translate3d(-2px, 0, 0);
+      }
+
+      20%,
+      80% {
+        transform: translate3d(4px, 0, 0);
+      }
+
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-6px, 0, 0);
+      }
+
+      40%,
+      60% {
+        transform: translate3d(6px, 0, 0);
+      }
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-card-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-md);
+      background: var(--bg-tertiary);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .contact-item-val {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .contact-item-val:hover {
+      color: var(--accent-primary);
+    }
+
+    .contact-form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.6875rem 1rem;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-primary);
+    }
+
+    .footer-copyright {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* TOAST */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.875rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--card-shadow-hover);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      pointer-events: auto;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .hero-content {
+        align-items: center;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger-btn {
+        display: inline-flex;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .stat-card {
+        padding: 1.125rem;
+      }
+
+      .stat-value {
+        font-size: 1.75rem;
+      }
+
+      .doc-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-wrapper {
+        width: 100%;
+      }
+
+      .modal-container {
+        max-height: 95vh;
+      }
+
+      .viewer-document-sheet {
+        padding: 1.25rem;
+        min-height: auto;
+      }
+
+      .sheet-main-title {
+        font-size: 1.125rem;
+      }
+
+      .sheet-watermark {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- ==================== BILAH NAVIGASI (NAVBAR) ==================== -->
@@ -41,13 +1636,16 @@
 
       <!-- Aksi Navigasi & Sakelar Tema -->
       <div class="nav-actions">
-        <button type="button" class="btn-icon" id="theme-toggle" aria-label="Ganti Tema (Dark / Light Mode)" title="Ganti Tema">
+        <button type="button" class="btn-icon" id="theme-toggle" aria-label="Ganti Tema (Dark / Light Mode)"
+          title="Ganti Tema">
           <!-- Moon Icon (Light to Dark) -->
-          <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
           <!-- Sun Icon (Dark to Light) -->
-          <svg id="icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -65,8 +1663,10 @@
         </a>
 
         <!-- Hamburger Menu Button (Mobile) -->
-        <button type="button" class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Buka Menu" title="Menu Navigasi">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button type="button" class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Buka Menu"
+          title="Menu Navigasi">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -106,12 +1706,14 @@
             </p>
 
             <p class="hero-description" id="hero-tagline">
-              Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata dengan arsitektur modern berstandar enterprise.
+              Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata dengan
+              arsitektur modern berstandar enterprise.
             </p>
 
             <div class="hero-cta">
               <button type="button" class="btn btn-primary" id="btn-download-cv">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -120,7 +1722,8 @@
               </button>
 
               <a href="#dokumen" class="btn btn-secondary" id="btn-explore-docs">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -130,8 +1733,11 @@
               </a>
 
               <a href="#kontak" class="btn btn-outline-emerald" id="btn-hero-contact">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
                 </svg>
                 <span>Hubungi Saya Langsung</span>
               </a>
@@ -141,9 +1747,11 @@
           <!-- Avatar Card -->
           <div class="hero-avatar-card">
             <div class="avatar-wrapper">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ahmad Rizky Pratama" class="avatar-img" id="hero-avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                alt="Ahmad Rizky Pratama" class="avatar-img" id="hero-avatar">
               <div class="floating-badge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <span>Verified Cloud Architect</span>
@@ -154,7 +1762,7 @@
 
         <!-- Metrics Cards (Grid Responsif 4 Kolom) -->
         <div class="stats-grid" id="stats-container">
-          <!-- Di-render dinamis oleh app.js -->
+          <!-- Di-render dinamis oleh script -->
         </div>
       </div>
     </section>
@@ -165,20 +1773,22 @@
         <div class="section-header">
           <span class="section-tag">Profil Profesional</span>
           <h2 class="section-title">Latar Belakang & Nilai Kerja</h2>
-          <p class="section-subtitle">Ringkasan perjalanan karier rekayasa perangkat lunak dan prinsip fundamental yang memandu setiap proyek yang saya bangun.</p>
+          <p class="section-subtitle">Ringkasan perjalanan karier rekayasa perangkat lunak dan prinsip fundamental yang
+            memandu setiap proyek yang saya bangun.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-text" id="about-bio-container">
-            <!-- Diisi teks biografi dinamis dari data.js -->
             <div class="philosophy-box" id="philosophy-box">
               <h4 class="philosophy-title">Prinsip & Nilai Kerja</h4>
-              <p class="philosophy-text" id="philosophy-text">"Kode yang baik bukan sekadar berjalan tanpa galat, melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi pengguna."</p>
+              <p class="philosophy-text" id="philosophy-text">"Kode yang baik bukan sekadar berjalan tanpa galat,
+                melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi
+                pengguna."</p>
             </div>
           </div>
 
           <div class="skills-column" id="skills-container">
-            <!-- Diisi pengelompokan skill dinamis dari data.js -->
+            <!-- Diisi pengelompokan skill dinamis -->
           </div>
         </div>
       </div>
@@ -190,11 +1800,12 @@
         <div class="section-header">
           <span class="section-tag">Jejak Langkah Karier</span>
           <h2 class="section-title">Riwayat Pengalaman Kerja</h2>
-          <p class="section-subtitle">Rekam jejak kontribusi teknis pada perusahaan teknologi terkemuka dan institusi finansial.</p>
+          <p class="section-subtitle">Rekam jejak kontribusi teknis pada perusahaan teknologi terkemuka dan institusi
+            finansial.</p>
         </div>
 
         <div class="timeline" id="experience-timeline">
-          <!-- Diisi linimasa pengalaman dinamis dari data.js -->
+          <!-- Diisi linimasa pengalaman dinamis -->
         </div>
       </div>
     </section>
@@ -205,11 +1816,12 @@
         <div class="section-header">
           <span class="section-tag">Portofolio Terpilih</span>
           <h2 class="section-title">Proyek Unggulan (Metode STAR)</h2>
-          <p class="section-subtitle">Setiap proyek dianalisis secara komprehensif berdasarkan peran, situasi tantangan, tindakan solusi, serta hasil terukur.</p>
+          <p class="section-subtitle">Setiap proyek dianalisis secara komprehensif berdasarkan peran, situasi tantangan,
+            tindakan solusi, serta hasil terukur.</p>
         </div>
 
         <div class="projects-grid" id="projects-container">
-          <!-- Diisi kartu proyek STAR dinamis dari data.js -->
+          <!-- Diisi kartu proyek STAR dinamis -->
         </div>
       </div>
     </section>
@@ -220,27 +1832,31 @@
         <div class="section-header">
           <span class="section-tag">Validasi & Kredibilitas</span>
           <h2 class="section-title">Dokumen Pendukung Resmi</h2>
-          <p class="section-subtitle">Etalase sertifikasi keahlian, ijazah pendidikan, lisensi profesi, dan portofolio klien terbatas yang dilengkapi penampil dokumen terintegrasi (embedded viewer) serta penyensoran data pribadi.</p>
+          <p class="section-subtitle">Etalase sertifikasi keahlian, ijazah pendidikan, lisensi profesi, dan portofolio
+            klien terbatas yang dilengkapi penampil dokumen terintegrasi (embedded viewer) serta penyensoran data
+            pribadi.</p>
         </div>
 
         <!-- Filter & Search Controls -->
         <div class="doc-controls">
           <div class="filter-pills" id="category-filters">
-            <!-- Diisi tombol filter kategori dari data.js -->
+            <!-- Diisi tombol filter kategori -->
           </div>
 
           <div class="search-wrapper">
-            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" class="search-input" id="search-docs" placeholder="Cari sertifikat, lisensi, penerbit..." autocomplete="off">
+            <input type="text" class="search-input" id="search-docs" placeholder="Cari sertifikat, lisensi, penerbit..."
+              autocomplete="off">
           </div>
         </div>
 
         <!-- Documents Cards Grid -->
         <div class="documents-grid" id="documents-container">
-          <!-- Diisi kartu dokumen dari data.js -->
+          <!-- Diisi kartu dokumen -->
         </div>
       </div>
     </section>
@@ -251,7 +1867,8 @@
         <div class="section-header">
           <span class="section-tag">Koneksi & Kolaborasi</span>
           <h2 class="section-title">Hubungi Saya</h2>
-          <p class="section-subtitle">Mari diskusikan peluang kerja sama, rekrutmen profesional, atau konsultasi arsitektur sistem.</p>
+          <p class="section-subtitle">Mari diskusikan peluang kerja sama, rekrutmen profesional, atau konsultasi
+            arsitektur sistem.</p>
         </div>
 
         <div class="contact-grid">
@@ -262,32 +1879,39 @@
 
               <div class="contact-item">
                 <div class="contact-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
                 </div>
                 <div>
                   <div class="contact-item-label">Alamat Email Profesional</div>
-                  <a href="mailto:ahmad.rizky.tech@gmail.com" class="contact-item-val" id="contact-email">ahmad.rizky.tech@gmail.com</a>
+                  <a href="mailto:ahmad.rizky.tech@gmail.com" class="contact-item-val"
+                    id="contact-email">ahmad.rizky.tech@gmail.com</a>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-item-icon" style="color: var(--accent-emerald);">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                    </path>
                   </svg>
                 </div>
                 <div>
                   <div class="contact-item-label">WhatsApp Langsung</div>
-                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-wa">+62 812-3456-7890 (Chat Aktif)</a>
+                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+                    class="contact-item-val" id="contact-wa">+62 812-3456-7890 (Chat Aktif)</a>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-item-icon" style="color: var(--accent-indigo);">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect x="2" y="9" width="4" height="12"></rect>
                     <circle cx="4" cy="4" r="2"></circle>
@@ -295,26 +1919,32 @@
                 </div>
                 <div>
                   <div class="contact-item-label">LinkedIn Profil</div>
-                  <a href="https://linkedin.com/in/ahmad-rizky-dev" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-linkedin">linkedin.com/in/ahmad-rizky-dev</a>
+                  <a href="https://linkedin.com/in/ahmad-rizky-dev" target="_blank" rel="noopener noreferrer"
+                    class="contact-item-val" id="contact-linkedin">linkedin.com/in/ahmad-rizky-dev</a>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
                   </svg>
                 </div>
                 <div>
                   <div class="contact-item-label">GitHub Repository</div>
-                  <a href="https://github.com/ahmadrizky-id" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-github">github.com/ahmadrizky-id</a>
+                  <a href="https://github.com/ahmadrizky-id" target="_blank" rel="noopener noreferrer"
+                    class="contact-item-val" id="contact-github">github.com/ahmadrizky-id</a>
                 </div>
               </div>
 
               <!-- Tombol Cepat Unduh vCard -->
               <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
                 <button type="button" class="btn btn-secondary btn-sm" id="btn-download-vcard" style="width: 100%;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                     <polyline points="17 21 17 13 7 13 7 21"></polyline>
                     <polyline points="7 3 7 8 15 8"></polyline>
@@ -328,12 +1958,14 @@
           <!-- Formulir Kirim Pesan -->
           <div class="contact-form-card">
             <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Kirim Pesan Instan</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Pesan Anda akan langsung diteruskan ke email profesional saya.</p>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Pesan Anda akan langsung
+              diteruskan ke email profesional saya.</p>
 
             <form id="contact-form">
               <div class="form-group">
                 <label for="form-name" class="form-label">Nama Lengkap / Instansi *</label>
-                <input type="text" id="form-name" class="form-input" placeholder="Contoh: HRD PT Teknologi Prima" required>
+                <input type="text" id="form-name" class="form-input" placeholder="Contoh: HRD PT Teknologi Prima"
+                  required>
               </div>
 
               <div class="form-group">
@@ -343,16 +1975,19 @@
 
               <div class="form-group">
                 <label for="form-subject" class="form-label">Perihal Diskusi</label>
-                <input type="text" id="form-subject" class="form-input" placeholder="Contoh: Tawaran Pekerjaan / Konsultasi Sistem">
+                <input type="text" id="form-subject" class="form-input"
+                  placeholder="Contoh: Tawaran Pekerjaan / Konsultasi Sistem">
               </div>
 
               <div class="form-group">
                 <label for="form-message" class="form-label">Pesan Lengkap *</label>
-                <textarea id="form-message" class="form-textarea" placeholder="Tuliskan detail tawaran atau kebutuhan proyek Anda di sini..." required></textarea>
+                <textarea id="form-message" class="form-textarea"
+                  placeholder="Tuliskan detail tawaran atau kebutuhan proyek Anda di sini..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" id="btn-submit-message" style="width: 100%;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
@@ -383,7 +2018,8 @@
       </ul>
 
       <p class="footer-copyright">
-        &copy; 2026 Ahmad Rizky Pratama. Hak Cipta Dilindungi. Seluruh dokumen resmi terlindungi enkripsi dan sensor privasi.
+        &copy; 2026 Ahmad Rizky Pratama. Hak Cipta Dilindungi. Seluruh dokumen resmi terlindungi enkripsi dan sensor
+        privasi.
       </p>
     </div>
   </footer>
@@ -398,7 +2034,8 @@
         </div>
         <div style="display: flex; align-items: center; gap: 0.5rem;">
           <button type="button" class="btn-icon" id="btn-modal-close" aria-label="Tutup Pratinjau" title="Tutup">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -407,7 +2044,6 @@
       </div>
 
       <div class="modal-body" id="modal-doc-body">
-        <!-- Sheet Pratinjau Dokumen Resolusi Tinggi yang Dirender Dinamis -->
         <div class="viewer-document-sheet" id="viewer-sheet">
           <div class="sheet-watermark" id="sheet-watermark-text">
             SALINAN RESMI PORTOFOLIO<br>PRIVASI TERVERIFIKASI & TERLINDUNGI
@@ -429,13 +2065,17 @@
             <div class="sheet-recipient" id="sheet-recipient-name">Ahmad Rizky Pratama, S.Kom.</div>
 
             <div class="sheet-statement" id="sheet-statement-desc">
-              Telah berhasil menyelesaikan kualifikasi kompetensi profesional berstandar industri dengan pengakuan penuh.
+              Telah berhasil menyelesaikan kualifikasi kompetensi profesional berstandar industri dengan pengakuan
+              penuh.
             </div>
 
-            <!-- Tanda Sensor Privasi (Redaction Strip) -->
-            <div style="margin: 1.25rem 0; padding: 0.75rem; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px;">
-              <span style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 0.35rem;">Informasi Perlindungan Privasi (UU Perlindungan Data Pribadi):</span>
-              <span class="redaction-bar" id="sheet-redaction-preview">██████ INFORMASI PRIBADI DISENSOR DEMI KEAMANAN ██████</span>
+            <!-- Tanda Sensor Privasi -->
+            <div
+              style="margin: 1.25rem 0; padding: 0.75rem; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px;">
+              <span style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 0.35rem;">Informasi
+                Perlindungan Privasi (UU Perlindungan Data Pribadi):</span>
+              <span class="redaction-bar" id="sheet-redaction-preview">██████ INFORMASI PRIBADI DISENSOR DEMI KEAMANAN
+                ██████</span>
             </div>
           </div>
 
@@ -445,8 +2085,10 @@
               <div>HASH: SHA256-AUTHENTICATED-DOCUMENT</div>
             </div>
             <div class="sheet-signature">
-              <div style="font-style: italic; font-family: cursive; font-size: 1.25rem; color: #1e40af;">Official Registrar</div>
-              <div style="border-top: 1px solid #0f172a; margin-top: 4px; padding-top: 4px;">Tanda Tangan Elektronik Sah</div>
+              <div style="font-style: italic; font-family: cursive; font-size: 1.25rem; color: #1e40af;">Official
+                Registrar</div>
+              <div style="border-top: 1px solid #0f172a; margin-top: 4px; padding-top: 4px;">Tanda Tangan Elektronik Sah
+              </div>
             </div>
           </div>
         </div>
@@ -455,11 +2097,13 @@
       <div class="modal-footer">
         <div style="display: flex; align-items: center; gap: 0.5rem;">
           <span class="badge badge-emerald" id="modal-badge-redacted">Data Pribadi Disensor</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted);" id="modal-file-format">Format: Dokumen Resmi Terverifikasi</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted);" id="modal-file-format">Format: Dokumen Resmi
+            Terverifikasi</span>
         </div>
 
         <button type="button" class="btn btn-primary btn-sm" id="btn-modal-download">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -474,7 +2118,8 @@
   <div class="modal-overlay" id="pin-modal" role="dialog" aria-modal="true" aria-labelledby="pin-modal-title">
     <div class="modal-container pin-dialog" id="pin-dialog-card">
       <div class="pin-icon-wrapper">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
@@ -482,7 +2127,8 @@
 
       <h3 class="pin-title" id="pin-modal-title">Dokumen Rahasia Terproteksi</h3>
       <p class="pin-desc" id="pin-modal-desc">
-        Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Silakan masukkan 4-digit PIN akses untuk membuka pratinjau.
+        Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Silakan masukkan 4-digit PIN akses untuk membuka
+        pratinjau.
       </p>
 
       <div class="pin-demo-hint">
@@ -491,10 +2137,14 @@
 
       <!-- PIN Input Digits -->
       <div class="pin-input-group" id="pin-input-group">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="0" inputmode="numeric" autocomplete="off" autofocus>
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="1" inputmode="numeric" autocomplete="off">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="2" inputmode="numeric" autocomplete="off">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="3" inputmode="numeric" autocomplete="off">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="0" inputmode="numeric"
+          autocomplete="off" autofocus>
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="1" inputmode="numeric"
+          autocomplete="off">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="2" inputmode="numeric"
+          autocomplete="off">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="3" inputmode="numeric"
+          autocomplete="off">
       </div>
 
       <div class="pin-error-msg" id="pin-error-msg"></div>
@@ -505,24 +2155,873 @@
         </button>
 
         <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-request-pin-wa">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+            </path>
           </svg>
           <span>Belum Punya PIN? Minta Akses via WhatsApp</span>
         </a>
 
-        <button type="button" class="btn btn-sm" id="btn-cancel-pin" style="background: transparent; color: var(--text-muted); border: none;">
+        <button type="button" class="btn btn-sm" id="btn-cancel-pin"
+          style="background: transparent; color: var(--text-muted); border: none;">
           Batalkan & Kembali
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <!-- ==================== TOAST CONTAINER ==================== -->
   <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-  <!-- Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <!-- ==================== DATA CONFIGURATION INLINE ==================== -->
+  <script>
+    const PORTFOLIO_DATA = {
+      profile: {
+        name: "Ahmad Rizky Pratama, S.Kom.",
+        title: "Senior Software Engineer & Cloud Solutions Architect",
+        tagline: "Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata.",
+        location: "Jakarta, Indonesia (Tersedia untuk Kerja Jarak Jauh / On-Site)",
+        status: {
+          available: true,
+          text: "Terbuka untuk Peluang Kerja & Konsultasi Proyek"
+        },
+        bio: [
+          "Seorang insinyur perangkat lunak berpengalaman lebih dari 5 tahun dalam merancang dan mengembangkan arsitektur aplikasi berbasis web, microservices, serta integrasi komputasi awan (Cloud Architecture).",
+          "Berfokus pada kode yang bersih (clean code), keandalan sistem berskala besar, serta keamanan data tingkat enterprise. Terbiasa memimpin tim teknis dari tahap perumusan arsitektur awal (PRD) hingga implementasi produksi siap pakai."
+        ],
+        workPhilosophy: "Kode yang baik bukan sekadar berjalan tanpa galat, melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi pengguna.",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+        cvUrl: "docs/CV_Ahmad_Rizky_Pratama_2026.pdf",
+        cvFilename: "CV_Ahmad_Rizky_Pratama_2026.pdf",
+        contact: {
+          email: "ahmad.rizky.tech@gmail.com",
+          phone: "+6281234567890",
+          whatsapp: "6281234567890",
+          linkedin: "https://linkedin.com/in/ahmad-rizky-dev",
+          github: "https://github.com/ahmadrizky-id"
+        }
+      },
+      stats: [
+        { label: "Tahun Pengalaman", value: "5+", description: "Pengembangan web & arsitektur sistem" },
+        { label: "Proyek Selesai", value: "34+", description: "Aplikasi skala enterprise & komersial" },
+        { label: "Sertifikasi Resmi", value: "12", description: "Lembaga nasional & internasional" },
+        { label: "Kepuasan Klien", value: "99.8%", description: "Kualitas kode & ketepatan SLA" }
+      ],
+      skills: [
+        {
+          category: "Frontend & UI Engineering",
+          items: ["HTML5 / Semantic Web", "Modern CSS / Design Systems", "JavaScript (ES6+)", "React.js / Next.js", "Vue.js", "Responsive & Accessible UX"]
+        },
+        {
+          category: "Backend & System Architecture",
+          items: ["Node.js / Express", "Python / FastAPI", "RESTful API & GraphQL", "Microservices Design", "Google Apps Script Engine", "Redis Caching"]
+        },
+        {
+          category: "Database & Cloud Infrastructure",
+          items: ["PostgreSQL", "MySQL", "MongoDB", "Google Cloud Platform (GCP)", "AWS Cloud", "Docker & CI/CD Pipelines"]
+        },
+        {
+          category: "Keamanan & Praktik Rekayasa",
+          items: ["Data Redaction & Privacy", "OAuth 2.0 / JWT Authentication", "Clean Architecture", "Code Review & Mentoring", "Unit & Integration Testing"]
+        }
+      ],
+      experience: [
+        {
+          role: "Lead Software Architect",
+          company: "PT Solusi Teknologi Nusantara",
+          period: "2023 - Sekarang",
+          location: "Jakarta, Indonesia",
+          description: "Memimpin perancangan arsitektur platform SaaS perbankan digital, mengelola tim 8 insinyur perangkat lunak, serta meningkatkan ketahanan sistem hingga mencapai uptime 99.99%.",
+          highlights: [
+            "Memangkas latensi respon backend hingga 42% melalui implementasi in-memory caching cerdas.",
+            "Menerapkan standarisasi PRD & protokol code review yang mengurangi tingkat regresi bug sebesar 35%."
+          ],
+          technologies: ["Node.js", "GCP", "Docker", "PostgreSQL", "Redis", "System Architecture"]
+        },
+        {
+          role: "Senior Full-Stack Developer",
+          company: "Mega Inovasi Digital",
+          period: "2021 - 2023",
+          location: "Bandung, Indonesia",
+          description: "Mengembangkan modul inti sistem ERP manufaktur dan dashboard logistik terintegrasi untuk klien skala nasional.",
+          highlights: [
+            "Membangun modul pelaporan real-time dengan kemampuan ekspor data berkapasitas 500.000 baris.",
+            "Merancang antarmuka ramah perangkat mobile yang digunakan oleh lebih dari 1.200 staf lapangan."
+          ],
+          technologies: ["JavaScript", "Python", "MySQL", "REST API", "Tailored CSS", "AWS"]
+        },
+        {
+          role: "Software Engineer",
+          company: "Nusantara FinTek Solusindo",
+          period: "2019 - 2021",
+          location: "Jakarta, Indonesia",
+          description: "Bertanggung jawab atas integrasi payment gateway, verifikasi dokumen KYC aman, serta enkripsi data pengguna sensitif.",
+          highlights: [
+            "Mengembangkan viewer dokumen KYC terisolasi dengan proteksi watermarking otomatis.",
+            "Mengurangi waktu verifikasi calon nasabah dari 2 jam menjadi 15 menit."
+          ],
+          technologies: ["JavaScript", "HTML5/CSS3", "PHP", "Security & Encryption", "Git"]
+        }
+      ],
+      projects: [
+        {
+          id: "PRJ-01",
+          title: "FinSafe: Platform Manajemen Dokumen Finansial & Redaction Engine",
+          role: "Lead Architect & Developer",
+          period: "2024",
+          summary: "Sistem repositori dokumen terenkripsi dengan kemampuan otomatisasi penyensoran data sensitif (NIK, rekening) dan embedded multi-format viewer.",
+          starMethod: {
+            situation: "Klien institusi keuangan menghadapi audit kepatuhan privasi (UU PDP) dan membutuhkan saluran peninjauan portofolio nasabah yang aman tanpa kebocoran identitas pribadi.",
+            task: "Merancang web portal dengan sistem autentikasi bertingkat, penampil dokumen tanpa perlu unduh paksa, serta sensor data otomatis.",
+            action: "Membangun arsitektur web responsif dengan enkripsi client-side, embedded viewer dengan watermark dinamis, serta mekanisme otorisasi PIN per dokumen sensitif.",
+            result: "Berhasil lolos audit ISO 27001 dengan 0 insiden kebocoran data dan memangkas waktu review berkas klien sebesar 60%."
+          },
+          tags: ["Security", "Data Privacy", "PDF Viewer", "Cloud Storage", "Vanilla JS"],
+          isFeatured: true,
+          demoUrl: "#",
+          repoUrl: "#"
+        },
+        {
+          id: "PRJ-02",
+          title: "OmniLog: Sistem Pelacakan Logistik & Dashboard Real-Time Multi-Gudang",
+          role: "Full-Stack Engineer",
+          period: "2023",
+          summary: "Aplikasi pelacakan distribusi barang skala besar dengan visualisasi data interaktif, filter multi-kriteria, dan caching memori instan.",
+          starMethod: {
+            situation: "Staf logistik mengeluhkan lamanya waktu pemuatan data pergerakan barang saat berpindah tab menu di koneksi seluler.",
+            task: "Mengoptimalkan performa web app agar dapat berpindah menu dalam 0 detik dan menyediakan pencarian instan.",
+            action: "Menerapkan client-side in-memory state caching dan server-side chunked pagination dengan desain antarmuka ramah jempol (mobile-friendly).",
+            result: "Waktu loading saat perpindahan menu turun dari 4.8 detik menjadi instan (0 detik), efisiensi kerja lapangan meningkat 28%."
+          },
+          tags: ["Performance", "In-Memory Cache", "Dashboard", "Mobile-First", "PostgreSQL"],
+          isFeatured: true,
+          demoUrl: "#",
+          repoUrl: "#"
+        },
+        {
+          id: "PRJ-03",
+          title: "CloudMatrix: Portal Manajemen Aset Infrastruktur Multi-Cloud",
+          role: "Cloud Engineer",
+          period: "2022",
+          summary: "Antarmuka terpusat untuk memantau penggunaan server GCP & AWS, estimasi tagihan bulanan, serta penguncian izin akses berbasis peran.",
+          starMethod: {
+            situation: "Pengeluaran cloud membengkak akibat sumber daya yang tidak termonitor dan minimnya visibilitas alokasi biaya antar departemen.",
+            task: "Membangun dasbor monitoring pengeluaran cloud real-time dengan peringatan dini (anomaly alert).",
+            action: "Mengintegrasikan Cloud Billing API dengan visualisasi grafik interaktif dan otomasi rekomendasi rightsizing mesin.",
+            result: "Menghemat pengeluaran tagihan infrastruktur cloud sebesar 24% pada kuartal pertama implementasi."
+          },
+          tags: ["Cloud Architecture", "GCP", "AWS", "Cost Optimization", "Analytics"],
+          isFeatured: false,
+          demoUrl: "#",
+          repoUrl: "#"
+        }
+      ],
+      documents: [
+        {
+          id: "DOC-2026-001",
+          title: "Sertifikasi Profesional Google Cloud: Professional Cloud Architect",
+          category: "Sertifikasi",
+          issuer: "Google Cloud Inc.",
+          issueYear: "2025 - Berlaku s/d 2028",
+          credentialId: "GCP-PCA-983271",
+          fileUrl: "docs/Sertifikat_Google_Cloud_Architect_Ahmad_2026.pdf",
+          downloadName: "Sertifikat_Google_Cloud_Architect_Ahmad_2026.pdf",
+          previewType: "certificate",
+          badgeColor: "blue",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Nomor registrasi unik publik terverifikasi. Informasi identitas sensitif terlindungi.",
+          description: "Membuktikan kompetensi profesional dalam merancang arsitektur cloud enterprise yang tangguh, aman, scalable, dan hemat biaya."
+        },
+        {
+          id: "DOC-2026-002",
+          title: "Ijazah Sarjana Komputer (S.Kom) - Ilmu Komputer",
+          category: "Ijazah",
+          issuer: "Fakultas Ilmu Komputer, Universitas Indonesia",
+          issueYear: "2021",
+          credentialId: "IJZ-UI-FASILKOM-2021",
+          fileUrl: "docs/Ijazah_S1_Ilmu_Komputer_Ahmad_Rizky.pdf",
+          downloadName: "Ijazah_S1_Ilmu_Komputer_Ahmad_Rizky.pdf",
+          previewType: "diploma",
+          badgeColor: "emerald",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Nomor Induk Kependudukan (NIK) dan Tanggal Lahir Lengkap telah disensor (redacted) demi keamanan privasi.",
+          description: "Gelar Sarjana Ilmu Komputer dengan fokus pada Rekayasa Perangkat Lunak, Algoritma, dan Keamanan Sistem Informasi (IPK: 3.86/4.00, Cum Laude)."
+        },
+        {
+          id: "DOC-2026-003",
+          title: "Lisensi Profesi BNSP: Lead Software Architect",
+          category: "Lisensi",
+          issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+          issueYear: "2024 - 2027",
+          credentialId: "BNSP-LSP-TIK-2024-0819",
+          fileUrl: "docs/Lisensi_BNSP_Software_Architect_Ahmad_2026.pdf",
+          downloadName: "Lisensi_BNSP_Software_Architect_Ahmad_2026.pdf",
+          previewType: "license",
+          badgeColor: "indigo",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Tanda tangan digital dan kode register kompetensi nasional tervalidasi.",
+          description: "Sertifikasi kompetensi kerja standar nasional Indonesia (SKKNI) untuk kualifikasi perancangan sistem dan rekayasa perangkat lunak."
+        },
+        {
+          id: "DOC-2026-004",
+          title: "Penghargaan Juara 1 Nasional: National GovTech Hackathon 2025",
+          category: "Penghargaan",
+          issuer: "Kementerian Komunikasi dan Informatika RI",
+          issueYear: "2025",
+          credentialId: "AWD-KOMINFO-2025-01",
+          fileUrl: "docs/Penghargaan_GovTech_Hackathon_Ahmad_2025.pdf",
+          downloadName: "Penghargaan_GovTech_Hackathon_Ahmad_2025.pdf",
+          previewType: "award",
+          badgeColor: "amber",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Salinan digital autentik dengan nomor SK Dewan Juri Kominfo.",
+          description: "Pengakuan inovasi terbaik untuk perancangan arsitektur sistem layanan publik mandiri berbasis keamanan data tinggi."
+        },
+        {
+          id: "DOC-2026-005",
+          title: "Dokumen Blueprint Arsitektur Sistem Klien FinTech (NDA Protected)",
+          category: "Portofolio Klien",
+          issuer: "PT Finansial Mitra Solusi (Klien Korporat)",
+          issueYear: "2026",
+          credentialId: "CONFIDENTIAL-ARCH-2026",
+          fileUrl: "docs/Dokumen_Arsitektur_Fintech_NDA_Ahmad_2026.pdf",
+          downloadName: "Dokumen_Arsitektur_Fintech_NDA_Ahmad_2026.pdf",
+          previewType: "confidential",
+          badgeColor: "rose",
+          isProtected: true,
+          accessPin: "1234",
+          redactionStatus: "High Privacy Protection (NDA Active)",
+          redactionDetails: "Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Seluruh data keuangan, rekening, dan diagram rahasia memerlukan izin khusus.",
+          description: "Spesifikasi arsitektur teknis microservices dan alur transaksi high-concurrency (10.000 TPS). Hanya dapat diakses oleh recruiter/klien terverifikasi."
+        },
+        {
+          id: "DOC-2026-006",
+          title: "Sertifikat Auditor Keamanan Informasi ISO/IEC 27001",
+          category: "Sertifikasi",
+          issuer: "BSI (British Standards Institution)",
+          issueYear: "2024 - 2027",
+          credentialId: "BSI-ISMS-27001-A29",
+          fileUrl: "docs/Sertifikat_ISO27001_Auditor_Ahmad_2026.pdf",
+          downloadName: "Sertifikat_ISO27001_Auditor_Ahmad_2026.pdf",
+          previewType: "certificate",
+          badgeColor: "teal",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Akreditasi internasional resmi terdaftar di direktori profesional BSI.",
+          description: "Kompetensi dalam menerapkan manajemen keamanan informasi, manajemen risiko celah siber, serta audit kepatuhan perlindungan privasi."
+        }
+      ],
+      categories: ["Semua", "Sertifikasi", "Ijazah", "Lisensi", "Penghargaan", "Portofolio Klien"]
+    };
+    window.PORTFOLIO_DATA = PORTFOLIO_DATA;
+  </script>
+
+  <!-- ==================== APPLICATION LOGIC ENGINE INLINE ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DATA = window.PORTFOLIO_DATA;
+      if (!DATA) return;
+
+      let activeCategory = 'Semua';
+      let searchQuery = '';
+      let unlockedDocs = new Set();
+      let currentTargetDoc = null;
+
+      // 1. TEMA DARK / LIGHT
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const iconMoon = document.getElementById('icon-moon');
+      const iconSun = document.getElementById('icon-sun');
+      const htmlEl = document.documentElement;
+
+      const savedTheme = localStorage.getItem('theme') ||
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      function applyTheme(theme) {
+        htmlEl.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+          iconMoon.style.display = 'none';
+          iconSun.style.display = 'block';
+        } else {
+          iconMoon.style.display = 'block';
+          iconSun.style.display = 'none';
+        }
+      }
+      applyTheme(savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const nextTheme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        showToast(nextTheme === 'dark' ? 'Mode Gelap diaktifkan' : 'Mode Terang diaktifkan');
+      });
+
+      // 2. NAVIGASI MOBILE
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('open');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => mobileNav.classList.remove('open'));
+        });
+      }
+
+      // 3. RENDER HERO & STATS
+      const heroNameEl = document.getElementById('hero-name');
+      const heroTitleEl = document.getElementById('hero-title');
+      const heroTaglineEl = document.getElementById('hero-tagline');
+      const heroStatusText = document.getElementById('hero-status-text');
+      const heroAvatar = document.getElementById('hero-avatar');
+      const statsContainer = document.getElementById('stats-container');
+
+      if (heroNameEl) heroNameEl.innerHTML = `Halo, Saya <span class="highlight">${escapeHTML(DATA.profile.name)}</span>`;
+      if (heroTitleEl) heroTitleEl.textContent = DATA.profile.title;
+      if (heroTaglineEl) heroTaglineEl.textContent = DATA.profile.tagline;
+      if (heroStatusText && DATA.profile.status) heroStatusText.textContent = DATA.profile.status.text;
+      if (heroAvatar && DATA.profile.avatar) {
+        heroAvatar.src = DATA.profile.avatar;
+        heroAvatar.alt = DATA.profile.name;
+      }
+
+      if (statsContainer && DATA.stats) {
+        statsContainer.innerHTML = DATA.stats.map(stat => `
+          <div class="stat-card">
+            <div class="stat-value">${escapeHTML(stat.value)}</div>
+            <div class="stat-label">${escapeHTML(stat.label)}</div>
+            <div class="stat-desc">${escapeHTML(stat.description)}</div>
+          </div>
+        `).join('');
+      }
+
+      // 4. RENDER ABOUT & SKILLS
+      const aboutBioContainer = document.getElementById('about-bio-container');
+      const philosophyText = document.getElementById('philosophy-text');
+      const skillsContainer = document.getElementById('skills-container');
+
+      if (aboutBioContainer && DATA.profile.bio) {
+        const bioHtml = DATA.profile.bio.map(p => `<p>${escapeHTML(p)}</p>`).join('');
+        const philosophyBox = document.getElementById('philosophy-box');
+        aboutBioContainer.innerHTML = bioHtml;
+        if (philosophyBox) aboutBioContainer.appendChild(philosophyBox);
+      }
+      if (philosophyText && DATA.profile.workPhilosophy) {
+        philosophyText.textContent = `"${DATA.profile.workPhilosophy}"`;
+      }
+
+      if (skillsContainer && DATA.skills) {
+        skillsContainer.innerHTML = DATA.skills.map(cat => `
+          <div class="skill-category-card">
+            <h4 class="skill-cat-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>${escapeHTML(cat.category)}</span>
+            </h4>
+            <div class="skill-pills">
+              ${cat.items.map(item => `<span class="skill-pill">${escapeHTML(item)}</span>`).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 5. RENDER PENGALAMAN
+      const experienceTimeline = document.getElementById('experience-timeline');
+      if (experienceTimeline && DATA.experience) {
+        experienceTimeline.innerHTML = DATA.experience.map(exp => `
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">${escapeHTML(exp.role)}</h3>
+                  <div class="timeline-company">${escapeHTML(exp.company)} • ${escapeHTML(exp.location)}</div>
+                </div>
+                <span class="timeline-period">${escapeHTML(exp.period)}</span>
+              </div>
+              <p class="timeline-desc">${escapeHTML(exp.description)}</p>
+              <ul class="timeline-highlights">
+                ${exp.highlights.map(h => `<li>${escapeHTML(h)}</li>`).join('')}
+              </ul>
+              <div class="timeline-tags">
+                ${exp.technologies.map(t => `<span class="badge badge-blue">${escapeHTML(t)}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 6. RENDER PROYEK UNGGULAN
+      const projectsContainer = document.getElementById('projects-container');
+      if (projectsContainer && DATA.projects) {
+        projectsContainer.innerHTML = DATA.projects.map(prj => `
+          <div class="project-card">
+            <div>
+              <div class="project-badge-bar">
+                <span class="badge badge-emerald">${escapeHTML(prj.period)}</span>
+                <span class="badge badge-blue">${escapeHTML(prj.role)}</span>
+              </div>
+              <h3 class="project-title">${escapeHTML(prj.title)}</h3>
+              <p class="project-summary">${escapeHTML(prj.summary)}</p>
+
+              <div class="star-details">
+                <div class="star-row">
+                  <span class="star-label">Tantangan:</span>
+                  <span class="star-val">${escapeHTML(prj.starMethod.situation)}</span>
+                </div>
+                <div class="star-row">
+                  <span class="star-label">Tindakan:</span>
+                  <span class="star-val">${escapeHTML(prj.starMethod.action)}</span>
+                </div>
+                <div class="star-row">
+                  <span class="star-label">Hasil Nyata:</span>
+                  <span class="star-val" style="color: var(--accent-emerald); font-weight: 600;">${escapeHTML(prj.starMethod.result)}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                ${prj.tags.slice(0, 3).map(tag => `<span class="skill-pill" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">${escapeHTML(tag)}</span>`).join('')}
+              </div>
+              <a href="#dokumen" class="btn btn-secondary btn-sm" onclick="filterDocsByProject('${escapeHTML(prj.title)}');">
+                <span>Bukti Dokumen</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 7. RENDER DOKUMEN & FILTER
+      const categoryFilters = document.getElementById('category-filters');
+      const documentsContainer = document.getElementById('documents-container');
+      const searchInput = document.getElementById('search-docs');
+
+      if (categoryFilters && DATA.categories) {
+        categoryFilters.innerHTML = DATA.categories.map(cat => `
+          <button type="button" class="filter-btn ${cat === activeCategory ? 'active' : ''}" data-category="${escapeHTML(cat)}">
+            ${escapeHTML(cat)}
+          </button>
+        `).join('');
+
+        categoryFilters.addEventListener('click', (e) => {
+          const btn = e.target.closest('.filter-btn');
+          if (!btn) return;
+          activeCategory = btn.dataset.category;
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderDocumentsList();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          renderDocumentsList();
+        });
+      }
+
+      function renderDocumentsList() {
+        if (!documentsContainer || !DATA.documents) return;
+        const filtered = DATA.documents.filter(doc => {
+          const matchCat = activeCategory === 'Semua' || doc.category === activeCategory;
+          const matchSearch = searchQuery === '' ||
+            doc.title.toLowerCase().includes(searchQuery) ||
+            doc.issuer.toLowerCase().includes(searchQuery) ||
+            doc.category.toLowerCase().includes(searchQuery) ||
+            doc.description.toLowerCase().includes(searchQuery);
+          return matchCat && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          documentsContainer.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; background: var(--card-bg); border: 1px dashed var(--border-color); border-radius: var(--radius-lg);">
+              <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Tidak Ada Dokumen Ditemukan</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted);">Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+            </div>
+          `;
+          return;
+        }
+
+        documentsContainer.innerHTML = filtered.map(doc => {
+          const isLocked = doc.isProtected && !unlockedDocs.has(doc.id);
+          const badgeStyle = doc.badgeColor ? `badge-${doc.badgeColor}` : 'badge-blue';
+
+          return `
+            <div class="doc-card" id="card-${doc.id}">
+              <div class="doc-preview-thumb">
+                <span class="watermark-subtle">SALINAN RESMI • PRIVACY VERIFIED</span>
+                <div class="doc-thumb-content">
+                  <div class="doc-thumb-icon" style="${isLocked ? 'color: var(--accent-rose);' : ''}">
+                    ${isLocked ? `
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                    ` : `
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                      </svg>
+                    `}
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary);">${escapeHTML(doc.category)}</span>
+                </div>
+              </div>
+
+              <div class="doc-body">
+                <div class="doc-meta-top">
+                  <span class="badge ${badgeStyle}">${escapeHTML(doc.category)}</span>
+                  <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${escapeHTML(doc.issueYear)}</span>
+                </div>
+
+                <h3 class="doc-title">${escapeHTML(doc.title)}</h3>
+                <div class="doc-issuer">Penerbit: <strong>${escapeHTML(doc.issuer)}</strong></div>
+
+                <div class="doc-redaction-badge ${isLocked ? 'lock' : ''}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>${isLocked ? 'Dilindungi PIN / Izin Khusus' : escapeHTML(doc.redactionStatus)}</span>
+                </div>
+
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
+                  ${escapeHTML(doc.description)}
+                </p>
+
+                <div class="doc-actions">
+                  <button type="button" class="btn btn-primary btn-sm btn-open-doc" style="flex: 1;" data-doc-id="${doc.id}">
+                    ${isLocked ? `
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                      <span>Buka PIN</span>
+                    ` : `
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      <span>Lihat Dokumen</span>
+                    `}
+                  </button>
+
+                  <button type="button" class="btn btn-secondary btn-sm btn-download-single" data-doc-id="${doc.id}" title="Unduh Versi Resmi">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        document.querySelectorAll('.btn-open-doc').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetDoc = DATA.documents.find(d => d.id === btn.dataset.docId);
+            if (targetDoc) handleDocumentClick(targetDoc);
+          });
+        });
+
+        document.querySelectorAll('.btn-download-single').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const targetDoc = DATA.documents.find(d => d.id === btn.dataset.docId);
+            if (targetDoc) handleDocumentDownload(targetDoc);
+          });
+        });
+      }
+
+      renderDocumentsList();
+
+      window.filterDocsByProject = function (projectTitle) {
+        activeCategory = 'Semua';
+        searchQuery = 'sertifikasi';
+        if (searchInput) searchInput.value = searchQuery;
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.category === 'Semua');
+        });
+        renderDocumentsList();
+        const docSection = document.getElementById('dokumen');
+        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      // 8. VIEWER MODAL & PIN
+      const docViewerModal = document.getElementById('doc-viewer-modal');
+      const btnModalClose = document.getElementById('btn-modal-close');
+      const btnModalDownload = document.getElementById('btn-modal-download');
+      const modalDocTitle = document.getElementById('modal-doc-title');
+      const modalDocMeta = document.getElementById('modal-doc-meta');
+      const sheetInstitution = document.getElementById('sheet-institution-name');
+      const sheetCredentialId = document.getElementById('sheet-credential-id');
+      const sheetDocumentTitle = document.getElementById('sheet-document-title');
+      const sheetRecipient = document.getElementById('sheet-recipient-name');
+      const sheetStatement = document.getElementById('sheet-statement-desc');
+      const sheetRedaction = document.getElementById('sheet-redaction-preview');
+
+      const pinModal = document.getElementById('pin-modal');
+      const pinDialogCard = document.getElementById('pin-dialog-card');
+      const pinInputs = document.querySelectorAll('.pin-digit-input');
+      const pinErrorMsg = document.getElementById('pin-error-msg');
+      const btnVerifyPin = document.getElementById('btn-verify-pin');
+      const btnCancelPin = document.getElementById('btn-cancel-pin');
+      const btnRequestPinWa = document.getElementById('btn-request-pin-wa');
+
+      function handleDocumentClick(doc) {
+        currentTargetDoc = doc;
+        if (doc.isProtected && !unlockedDocs.has(doc.id)) {
+          openPinModal(doc);
+        } else {
+          openDocViewer(doc);
+        }
+      }
+
+      function handleDocumentDownload(doc) {
+        if (doc.isProtected && !unlockedDocs.has(doc.id)) {
+          currentTargetDoc = doc;
+          openPinModal(doc);
+          return;
+        }
+        triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title);
+      }
+
+      function openDocViewer(doc) {
+        currentTargetDoc = doc;
+        if (modalDocTitle) modalDocTitle.textContent = doc.title;
+        if (modalDocMeta) modalDocMeta.textContent = `Penerbit: ${doc.issuer} | Periode: ${doc.issueYear}`;
+        if (sheetInstitution) sheetInstitution.textContent = doc.issuer.toUpperCase();
+        if (sheetCredentialId) sheetCredentialId.textContent = `NOMOR KREDENSIAL: ${doc.credentialId || 'TERVERIFIKASI'}`;
+        if (sheetDocumentTitle) sheetDocumentTitle.textContent = doc.title.toUpperCase();
+        if (sheetRecipient) sheetRecipient.textContent = DATA.profile.name;
+        if (sheetStatement) sheetStatement.textContent = doc.description;
+        if (sheetRedaction) {
+          sheetRedaction.textContent = doc.redactionDetails
+            ? `██ [SENSOR PRIVASI: ${doc.redactionDetails}] ██`
+            : '██ DATA PRIBADI & NIK TELAH DISENSOR SESUAI STANDAR PRIVASI ██';
+        }
+
+        if (btnModalDownload) {
+          btnModalDownload.onclick = () => {
+            triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title);
+          };
+        }
+
+        docViewerModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDocViewer() {
+        docViewerModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnModalClose) btnModalClose.addEventListener('click', closeDocViewer);
+      if (docViewerModal) {
+        docViewerModal.addEventListener('click', (e) => {
+          if (e.target === docViewerModal) closeDocViewer();
+        });
+      }
+
+      function openPinModal(doc) {
+        currentTargetDoc = doc;
+        pinErrorMsg.textContent = '';
+        pinInputs.forEach(input => input.value = '');
+
+        if (btnRequestPinWa) {
+          const waNumber = DATA.profile.contact.whatsapp;
+          const waMsg = encodeURIComponent(`Halo Mas ${DATA.profile.name.split(' ')[0]}, saya tertarik meninjau dokumen portofolio "${doc.title}". Boleh minta 4-digit PIN aksesnya? Terima kasih.`);
+          btnRequestPinWa.href = `https://wa.me/${waNumber}?text=${waMsg}`;
+        }
+
+        pinModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          if (pinInputs[0]) pinInputs[0].focus();
+        }, 150);
+      }
+
+      function closePinModal() {
+        pinModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnCancelPin) btnCancelPin.addEventListener('click', closePinModal);
+      if (pinModal) {
+        pinModal.addEventListener('click', (e) => {
+          if (e.target === pinModal) closePinModal();
+        });
+      }
+
+      pinInputs.forEach((input, idx) => {
+        input.addEventListener('input', (e) => {
+          if (e.target.value.length === 1 && idx < pinInputs.length - 1) {
+            pinInputs[idx + 1].focus();
+          }
+        });
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+            pinInputs[idx - 1].focus();
+          }
+          if (e.key === 'Enter') verifyPinInput();
+        });
+      });
+
+      if (btnVerifyPin) btnVerifyPin.addEventListener('click', verifyPinInput);
+
+      function verifyPinInput() {
+        if (!currentTargetDoc) return;
+        const enteredPin = Array.from(pinInputs).map(i => i.value).join('');
+
+        if (enteredPin.length < 4) {
+          pinErrorMsg.textContent = 'Silakan masukkan 4 angka PIN lengkap.';
+          triggerShake();
+          return;
+        }
+
+        const correctPin = currentTargetDoc.accessPin || '1234';
+        if (enteredPin === correctPin) {
+          unlockedDocs.add(currentTargetDoc.id);
+          closePinModal();
+          showToast('Kunci berhasil dibuka! Membuka dokumen...', 'success');
+          renderDocumentsList();
+          setTimeout(() => openDocViewer(currentTargetDoc), 250);
+        } else {
+          pinErrorMsg.textContent = 'Kode PIN salah. Silakan coba kembali atau minta akses.';
+          triggerShake();
+          pinInputs.forEach(i => i.value = '');
+          if (pinInputs[0]) pinInputs[0].focus();
+        }
+      }
+
+      function triggerShake() {
+        pinDialogCard.classList.remove('shake');
+        void pinDialogCard.offsetWidth;
+        pinDialogCard.classList.add('shake');
+      }
+
+      // 9. DOWNLOADS
+      function triggerFileDownload(filename, docTitle) {
+        const pdfBlobContent = `%PDF-1.4\n%âãÏÓ\n1 0 obj\n<< /Title (${docTitle}) /Author (${DATA.profile.name}) /Subject (Portofolio Resmi 2026) >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF`;
+        const blob = new Blob([pdfBlobContent], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast(`Mengunduh berkas resmi: ${filename}`, 'success');
+      }
+
+      const btnDownloadCv = document.getElementById('btn-download-cv');
+      if (btnDownloadCv) {
+        btnDownloadCv.addEventListener('click', () => {
+          triggerFileDownload(DATA.profile.cvFilename || 'CV_Ahmad_Rizky_Pratama_2026.pdf', 'Curriculum Vitae Resmi');
+        });
+      }
+
+      // 10. VCARD
+      const btnDownloadVcard = document.getElementById('btn-download-vcard');
+      if (btnDownloadVcard) {
+        btnDownloadVcard.addEventListener('click', () => {
+          const p = DATA.profile;
+          const vcardData = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            `FN:${p.name}`,
+            `TITLE:${p.title}`,
+            `EMAIL;TYPE=INTERNET,WORK:${p.contact.email}`,
+            `TEL;TYPE=CELL,VOICE:${p.contact.phone}`,
+            `URL:${window.location.href}`,
+            `NOTE:${p.tagline}`,
+            'END:VCARD'
+          ].join('\r\n');
+
+          const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `Kontak_${p.name.replace(/[^a-zA-Z0-9]/g, '_')}.vcf`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast('Kartu kontak digital (vCard) siap disimpan ke ponsel!', 'success');
+        });
+      }
+
+      // 11. FORM KONTAK
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('form-name').value;
+          const email = document.getElementById('form-email').value;
+          const subject = document.getElementById('form-subject').value || 'Pesan Portofolio';
+          const message = document.getElementById('form-message').value;
+
+          showToast(`Pesan terkirim! Terima kasih, ${name}.`, 'success');
+          const mailtoLink = `mailto:${DATA.profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+          contactForm.reset();
+          setTimeout(() => { window.location.href = mailtoLink; }, 1000);
+        });
+      }
+
+      // 12. TOAST
+      function showToast(message, type = 'info') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        const iconSvg = type === 'success'
+          ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-emerald)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`
+          : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
+
+        toast.innerHTML = `${iconSvg}<span>${escapeHTML(message)}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => toast.classList.add('show'), 10);
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+        }, 3500);
+      }
+
+      function escapeHTML(str) {
+        if (typeof str !== 'string') return str;
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeDocViewer();
+          closePinModal();
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
