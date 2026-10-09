@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erwin Ardi Nurcahyo, S.Kom. | Portofolio Profesional & Document Showcase</title>
+  <title>Erwin Ardi Nurcahyo | Portofolio Profesional & Document Showcase</title>
   <meta name="description"
-    content="Portofolio resmi Erwin Ardi Nurcahyo, Senior Software Engineer & Cloud Solutions Architect. Jelajahi pengalaman, proyek STAR, dan dokumen sertifikasi resmi dengan embedded viewer terintegrasi.">
+    content="Portofolio resmi Erwin Ardi Nurcahyo, Safety Officer & Operations Specialist dengan latar belakang S1 Sistem Informasi. Pengawasan lapangan K3, digitalisasi pelaporan, dan optimasi ERP SAP.">
   <meta name="keywords"
-    content="Portofolio, Software Engineer, Cloud Architect, Sertifikasi IT, Google Cloud, BNSP, Full-Stack Developer">
+    content="Erwin Ardi Nurcahyo, Safety Officer, K3 Pertambangan, PT Borneo Indobara, STMIK Indonesia Banjarmasin, Sistem Informasi, SAP ERP, BPS Banjarmasin, BNSP">
   <meta name="author" content="Erwin Ardi Nurcahyo">
 
   <!-- Open Graph / Meta Sosial -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Erwin Ardi Nurcahyo, S.Kom. - Portofolio Profesional">
+  <meta property="og:title" content="Erwin Ardi Nurcahyo - Portofolio Profesional & Document Showcase">
   <meta property="og:description"
-    content="Jelajahi riwayat proyek unggulan (metode STAR) dan etalase dokumen resmi (sertifikat, ijazah, lisensi) dengan viewer interaktif terintegrasi.">
+    content="Jelajahi riwayat profesional, proyek implementasi K3 & ERP, serta etalase dokumen resmi (sertifikat K3, BNSP, ijazah) dengan viewer interaktif terintegrasi.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,9 +43,9 @@
       --text-light: #94a3b8;
 
       --border-color: #e2e8f0;
-      --border-focus: #3b82f6;
+      --border-focus: #2563eb;
 
-      --accent-primary: #1e40af;
+      --accent-primary: #1e3a8a;
       --accent-hover: #1d4ed8;
       --accent-light: #eff6ff;
 
@@ -55,8 +55,10 @@
       --accent-amber-light: #fffbeb;
       --accent-rose: #e11d48;
       --accent-rose-light: #fff1f2;
-      --accent-indigo: #4f46e5;
+      --accent-indigo: #4338ca;
       --accent-indigo-light: #eef2ff;
+      --accent-teal: #0d9488;
+      --accent-teal-light: #f0fdfa;
 
       --card-bg: #ffffff;
       --card-hover: #ffffff;
@@ -99,17 +101,17 @@
       --accent-rose-light: rgba(244, 63, 94, 0.15);
       --accent-indigo: #818cf8;
       --accent-indigo-light: rgba(129, 140, 248, 0.15);
+      --accent-teal: #14b8a6;
+      --accent-teal-light: rgba(20, 184, 166, 0.15);
 
-      --card-bg: #0f172a;
-      --card-hover: #131d35;
+      --card-bg: #111827;
+      --card-hover: #1e293b;
       --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-      --card-shadow-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.5);
-      --modal-backdrop: rgba(3, 7, 18, 0.85);
+      --card-shadow-hover: 0 12px 24px -4px rgba(0, 0, 0, 0.5);
+      --modal-backdrop: rgba(0, 0, 0, 0.85);
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -117,54 +119,169 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .container {
-      width: 100%;
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
+      width: 100%;
     }
 
-    section {
-      padding: 5rem 0;
-      position: relative;
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5 {
+      color: var(--text-primary);
+      font-weight: 700;
+      line-height: 1.25;
     }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-sm {
+      padding: 0.5rem 0.875rem;
+      font-size: 0.8125rem;
+    }
+
+    .btn-xs {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.75rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--text-muted);
+    }
+
+    .btn-outline-emerald {
+      background-color: transparent;
+      color: var(--accent-emerald);
+      border-color: var(--accent-emerald);
+    }
+
+    .btn-outline-emerald:hover {
+      background-color: var(--accent-emerald-light);
+    }
+
+    .btn-danger {
+      background-color: var(--accent-rose);
+      color: #ffffff;
+    }
+
+    .btn-danger:hover {
+      background-color: #be123c;
+    }
+
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-tertiary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .btn-icon:hover {
+      color: var(--text-primary);
+      background-color: var(--bg-subtle);
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-blue { background: var(--accent-light); color: var(--accent-primary); }
+    .badge-emerald { background: var(--accent-emerald-light); color: var(--accent-emerald); }
+    .badge-amber { background: var(--accent-amber-light); color: var(--accent-amber); }
+    .badge-rose { background: var(--accent-rose-light); color: var(--accent-rose); }
+    .badge-indigo { background: var(--accent-indigo-light); color: var(--accent-indigo); }
+    .badge-teal { background: var(--accent-teal-light); color: var(--accent-teal); }
 
     /* NAVBAR */
     .navbar {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
       z-index: 1000;
-      background-color: rgba(248, 250, 252, 0.88);
+      background-color: rgba(248, 250, 252, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
-      transition: var(--transition-normal);
+      transition: background-color 0.3s ease;
     }
 
     [data-theme="dark"] .navbar {
-      background-color: rgba(9, 13, 22, 0.88);
+      background-color: rgba(15, 23, 42, 0.92);
     }
 
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 4.25rem;
+      height: 72px;
     }
 
     .nav-brand {
@@ -173,22 +290,21 @@
       gap: 0.75rem;
       text-decoration: none;
       color: var(--text-primary);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.125rem;
     }
 
     .brand-badge {
-      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--accent-primary);
+      color: #ffffff;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--accent-primary), #4338ca);
-      color: #ffffff;
-      border-radius: var(--radius-md);
       font-weight: 800;
-      font-size: 1rem;
-      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.25);
+      font-size: 0.875rem;
     }
 
     .nav-links {
@@ -199,18 +315,29 @@
     }
 
     .nav-link {
-      text-decoration: none;
       color: var(--text-secondary);
+      text-decoration: none;
       font-size: 0.9375rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: var(--transition-fast);
-      padding: 0.35rem 0.5rem;
-      border-radius: var(--radius-sm);
+      position: relative;
+      padding: 0.25rem 0;
     }
 
     .nav-link:hover,
     .nav-link.active {
       color: var(--accent-primary);
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--accent-primary);
+      border-radius: var(--radius-full);
     }
 
     .nav-actions {
@@ -219,257 +346,97 @@
       gap: 0.75rem;
     }
 
-    .btn-icon {
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-      color: var(--text-secondary);
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-md);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .btn-icon:hover {
-      background: var(--bg-subtle);
-      color: var(--text-primary);
-      border-color: var(--text-muted);
-    }
-
+    /* HAMBURGER */
     .hamburger-btn {
       display: none;
     }
 
     .mobile-nav {
-      position: fixed;
-      top: 4.25rem;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--bg-secondary);
-      padding: 2rem 1.5rem;
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition-normal);
-      z-index: 999;
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
+      display: none;
       flex-direction: column;
-      gap: 1.25rem;
+      padding: 1rem 1.5rem;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      gap: 0.75rem;
     }
 
     .mobile-nav.open {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
+      display: flex;
     }
 
     .mobile-nav-link {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--text-primary);
       text-decoration: none;
-      padding: 0.75rem 0;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.5rem 0;
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* BUTTONS */
-    .btn {
-      display: inline-flex;
+    /* HERO SECTION */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3.5rem;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      padding: 0.6875rem 1.25rem;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      text-decoration: none;
-      transition: var(--transition-fast);
-      border: 1px solid transparent;
-      white-space: nowrap;
     }
 
-    .btn-primary {
-      background-color: var(--accent-primary);
-      color: #ffffff;
-      box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-hover);
-      box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-      border-color: var(--border-color);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--bg-tertiary);
-      border-color: var(--text-muted);
-    }
-
-    .btn-outline-emerald {
-      background: var(--accent-emerald-light);
-      color: var(--accent-emerald);
-      border-color: var(--accent-emerald);
-    }
-
-    .btn-outline-emerald:hover {
-      background: var(--accent-emerald);
-      color: #ffffff;
-    }
-
-    .btn-sm {
-      padding: 0.4375rem 0.875rem;
-      font-size: 0.8125rem;
-      border-radius: var(--radius-sm);
-    }
-
-    /* BADGES */
     .status-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.375rem 0.875rem;
-      background: var(--accent-emerald-light);
+      background-color: var(--accent-emerald-light);
       color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.35rem 0.85rem;
       border-radius: var(--radius-full);
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(16, 185, 129, 0.2);
     }
 
     .status-dot {
       width: 8px;
       height: 8px;
-      background-color: var(--accent-emerald);
       border-radius: 50%;
+      background-color: var(--accent-emerald);
       box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-      animation: pulse-dot 2s infinite ease-in-out;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.2);
-        opacity: 0.75;
-      }
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.25rem 0.625rem;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .badge-blue {
-      background: var(--accent-light);
-      color: var(--accent-primary);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-
-    .badge-emerald {
-      background: var(--accent-emerald-light);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-    }
-
-    .badge-amber {
-      background: var(--accent-amber-light);
-      color: var(--accent-amber);
-      border: 1px solid rgba(245, 158, 11, 0.2);
-    }
-
-    .badge-rose {
-      background: var(--accent-rose-light);
-      color: var(--accent-rose);
-      border: 1px solid rgba(244, 63, 94, 0.2);
-    }
-
-    .badge-indigo {
-      background: var(--accent-indigo-light);
-      color: var(--accent-indigo);
-      border: 1px solid rgba(129, 140, 248, 0.2);
-    }
-
-    /* HERO */
-    .hero {
-      padding-top: 8rem;
-      padding-bottom: 5rem;
-      border-bottom: 1px solid var(--border-color);
-      background: radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      align-items: center;
-      gap: 3.5rem;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
     }
 
     .hero-title {
-      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+      font-size: 2.75rem;
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
     }
 
     .hero-title .highlight {
       color: var(--accent-primary);
-      background: linear-gradient(135deg, var(--accent-primary), #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .hero-headline {
       font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-secondary);
+      margin-bottom: 1.25rem;
     }
 
     .hero-description {
       font-size: 1.0625rem;
       color: var(--text-muted);
-      max-width: 580px;
-      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 620px;
     }
 
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.5rem;
+      gap: 0.875rem;
     }
 
     .hero-avatar-card {
@@ -480,11 +447,11 @@
 
     .avatar-wrapper {
       position: relative;
-      width: 280px;
-      height: 280px;
-      border-radius: 28px;
+      width: 290px;
+      height: 290px;
+      border-radius: var(--radius-lg);
       padding: 8px;
-      background: linear-gradient(135deg, var(--border-color), rgba(59, 130, 246, 0.3));
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-emerald));
       box-shadow: var(--card-shadow-hover);
     }
 
@@ -492,8 +459,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 22px;
+      border-radius: calc(var(--radius-lg) - 6px);
       background-color: var(--bg-tertiary);
+      display: block;
     }
 
     .floating-badge {
@@ -511,11 +479,11 @@
       gap: 0.5rem;
       white-space: nowrap;
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-primary);
     }
 
-    /* STATS */
+    /* STATS GRID */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -559,6 +527,11 @@
     }
 
     /* SECTIONS */
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
     .section-header {
       margin-bottom: 3rem;
     }
@@ -598,53 +571,49 @@
       color: var(--text-secondary);
       font-size: 1.0625rem;
       margin-bottom: 1.25rem;
-      line-height: 1.75;
     }
 
     .philosophy-box {
-      background: var(--bg-tertiary);
+      background: var(--card-bg);
       border-left: 4px solid var(--accent-primary);
       padding: 1.25rem 1.5rem;
       border-radius: 0 var(--radius-md) var(--radius-md) 0;
       margin-top: 1.5rem;
+      box-shadow: var(--card-shadow);
     }
 
     .philosophy-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
       font-weight: 700;
-      font-size: 0.9375rem;
-      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      color: var(--accent-primary);
       margin-bottom: 0.35rem;
     }
 
     .philosophy-text {
-      font-style: italic;
-      color: var(--text-secondary);
       font-size: 0.9375rem;
-    }
-
-    /* SKILLS */
-    .skills-column {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      font-style: italic;
+      color: var(--text-primary);
     }
 
     .skill-category-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
       box-shadow: var(--card-shadow);
     }
 
     .skill-cat-title {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
     .skill-pills {
@@ -656,42 +625,52 @@
     .skill-pill {
       background: var(--bg-tertiary);
       color: var(--text-secondary);
-      border: 1px solid var(--border-color);
       padding: 0.35rem 0.75rem;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
       font-size: 0.8125rem;
-      font-weight: 500;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
       transition: var(--transition-fast);
     }
 
     .skill-pill:hover {
-      background: var(--bg-subtle);
-      color: var(--text-primary);
+      color: var(--accent-primary);
       border-color: var(--accent-primary);
     }
 
-    /* EXPERIENCE TIMELINE */
+    /* TIMELINE */
     .timeline {
       position: relative;
       padding-left: 2rem;
-      border-left: 2px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--border-color);
     }
 
     .timeline-item {
       position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
     }
 
     .timeline-dot {
       position: absolute;
-      left: -2.625rem;
-      top: 0.25rem;
-      width: 18px;
-      height: 18px;
+      left: -2rem;
+      top: 6px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: var(--card-bg);
+      background: var(--bg-primary);
       border: 3px solid var(--accent-primary);
     }
 
@@ -705,61 +684,61 @@
     }
 
     .timeline-card:hover {
-      box-shadow: var(--card-shadow-hover);
       border-color: var(--accent-primary);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .timeline-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      margin-bottom: 0.75rem;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 0.75rem;
     }
 
     .timeline-role {
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text-primary);
     }
 
     .timeline-company {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       font-weight: 600;
       color: var(--accent-primary);
     }
 
     .timeline-period {
       font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
       background: var(--bg-tertiary);
-      padding: 0.25rem 0.625rem;
       border-radius: var(--radius-full);
+      color: var(--text-muted);
     }
 
     .timeline-desc {
-      color: var(--text-secondary);
       font-size: 0.9375rem;
+      color: var(--text-secondary);
       margin-bottom: 1rem;
     }
 
     .timeline-highlights {
       list-style-type: none;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .timeline-highlights li {
       position: relative;
       padding-left: 1.25rem;
-      color: var(--text-secondary);
       font-size: 0.875rem;
-      margin-bottom: 0.35rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
     }
 
     .timeline-highlights li::before {
-      content: "•";
+      content: '•';
       position: absolute;
       left: 0;
       color: var(--accent-primary);
@@ -775,8 +754,8 @@
     /* PROJECTS */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
     }
 
     .project-card {
@@ -801,34 +780,33 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .project-title {
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.125rem;
+      font-weight: 800;
       color: var(--text-primary);
       margin-bottom: 0.5rem;
-      line-height: 1.3;
     }
 
     .project-summary {
-      font-size: 0.9375rem;
-      color: var(--text-secondary);
+      font-size: 0.875rem;
+      color: var(--text-muted);
       margin-bottom: 1.25rem;
+      line-height: 1.5;
     }
 
     .star-details {
       background: var(--bg-tertiary);
+      padding: 0.875rem 1rem;
       border-radius: var(--radius-md);
-      padding: 1rem;
       margin-bottom: 1.25rem;
-      border-left: 3px solid var(--accent-emerald);
+      font-size: 0.8125rem;
     }
 
     .star-row {
-      margin-bottom: 0.625rem;
-      font-size: 0.875rem;
+      margin-bottom: 0.4rem;
     }
 
     .star-row:last-child {
@@ -838,8 +816,7 @@
     .star-label {
       font-weight: 700;
       color: var(--text-primary);
-      display: inline-block;
-      min-width: 85px;
+      margin-right: 0.35rem;
     }
 
     .star-val {
@@ -850,49 +827,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 1rem;
       border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
       margin-top: auto;
     }
 
-    /* DOCUMENTS CONTROLS & CARDS */
+    /* DOCUMENTS SECTION & CONTROLS */
     .doc-controls {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 2rem;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--card-shadow);
     }
 
-    .filter-pills {
+    .category-filters {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
 
     .filter-btn {
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-      padding: 0.4375rem 0.875rem;
-      border-radius: var(--radius-full);
+      padding: 0.5rem 1rem;
       font-size: 0.8125rem;
       font-weight: 600;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: var(--transition-fast);
     }
 
-    .filter-btn:hover {
-      background: var(--bg-subtle);
-      color: var(--text-primary);
-    }
-
+    .filter-btn:hover,
     .filter-btn.active {
       background: var(--accent-primary);
       color: #ffffff;
@@ -901,25 +869,24 @@
 
     .search-wrapper {
       position: relative;
-      min-width: 260px;
+      width: 280px;
     }
 
     .search-input {
       width: 100%;
-      padding: 0.5rem 0.875rem 0.5rem 2.25rem;
-      font-family: inherit;
+      padding: 0.5rem 1rem 0.5rem 2.25rem;
       font-size: 0.875rem;
       border-radius: var(--radius-full);
       border: 1px solid var(--border-color);
-      background: var(--bg-primary);
+      background: var(--card-bg);
       color: var(--text-primary);
       outline: none;
       transition: var(--transition-fast);
     }
 
     .search-input:focus {
-      border-color: var(--border-focus);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     }
 
     .search-icon {
@@ -931,9 +898,10 @@
       pointer-events: none;
     }
 
+    /* DOCUMENTS GRID */
     .documents-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
 
@@ -941,11 +909,12 @@
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      overflow: hidden;
       box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
+      overflow: hidden;
       transition: var(--transition-fast);
+      position: relative;
     }
 
     .doc-card:hover {
@@ -955,46 +924,37 @@
     }
 
     .doc-preview-thumb {
+      background: var(--bg-tertiary);
       height: 140px;
-      background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-subtle));
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      position: relative;
       border-bottom: 1px solid var(--border-color);
       overflow: hidden;
+    }
+
+    .watermark-subtle {
+      position: absolute;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: rgba(148, 163, 184, 0.35);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      user-select: none;
+      pointer-events: none;
     }
 
     .doc-thumb-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      text-align: center;
+      gap: 0.35rem;
+      z-index: 1;
     }
 
     .doc-thumb-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      background: var(--card-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--card-shadow);
       color: var(--accent-primary);
-    }
-
-    .watermark-subtle {
-      position: absolute;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: rgba(148, 163, 184, 0.25);
-      transform: rotate(-15deg);
-      pointer-events: none;
-      white-space: nowrap;
     }
 
     .doc-body {
@@ -1051,7 +1011,82 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* MODAL VIEWER */
+    /* ADMIN TOOLBAR & CRUD ACTION BAR */
+    .admin-toolbar-card {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(5, 150, 105, 0.08));
+      border: 1.5px solid var(--accent-primary);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: var(--card-shadow);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .admin-status-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .admin-badge-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--accent-primary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .admin-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      flex-wrap: wrap;
+    }
+
+    .doc-admin-bar {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .btn-admin-edit {
+      flex: 1;
+      background-color: var(--accent-amber-light);
+      color: var(--accent-amber);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+    }
+
+    .btn-admin-edit:hover {
+      background-color: var(--accent-amber);
+      color: #ffffff;
+    }
+
+    .btn-admin-delete {
+      flex: 1;
+      background-color: var(--accent-rose-light);
+      color: var(--accent-rose);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+
+    .btn-admin-delete:hover {
+      background-color: var(--accent-rose);
+      color: #ffffff;
+    }
+
+    /* MODAL OVERLAY */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1088,6 +1123,14 @@
       overflow: hidden;
     }
 
+    .modal-container-sm {
+      max-width: 500px;
+    }
+
+    .modal-container-md {
+      max-width: 640px;
+    }
+
     .modal-overlay.active .modal-container {
       transform: scale(1);
     }
@@ -1098,204 +1141,141 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--bg-secondary);
-    }
-
-    .modal-title-group h3 {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .modal-title-group p {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
     }
 
     .modal-body {
       padding: 1.5rem;
       overflow-y: auto;
       flex-grow: 1;
-      background: var(--bg-tertiary);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .viewer-document-sheet {
-      background: #ffffff;
-      color: #0f172a;
-      width: 100%;
-      max-width: 720px;
-      min-height: 480px;
-      border-radius: var(--radius-md);
-      padding: 2.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      position: relative;
-      border: 1px solid #cbd5e1;
-      overflow: hidden;
-    }
-
-    .sheet-watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: rgba(100, 116, 139, 0.12);
-      text-align: center;
-      pointer-events: none;
-      user-select: none;
-      line-height: 1.4;
-      white-space: nowrap;
-    }
-
-    .sheet-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 2px solid #0f172a;
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .sheet-institution {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #0f172a;
-    }
-
-    .sheet-seal {
-      width: 50px;
-      height: 50px;
-      border: 2px dashed #0f172a;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #0f172a;
-      text-align: center;
-    }
-
-    .sheet-body {
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    .sheet-main-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-
-    .sheet-recipient {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #1e40af;
-      text-decoration: underline;
-      margin-bottom: 0.5rem;
-    }
-
-    .sheet-statement {
-      font-size: 0.95rem;
-      color: #475569;
-      max-width: 520px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.6;
-    }
-
-    .redaction-bar {
-      display: inline-block;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 0.1rem 0.5rem;
-      border-radius: 3px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      user-select: none;
-    }
-
-    .sheet-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .sheet-qr {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: #64748b;
-    }
-
-    .sheet-signature {
-      text-align: right;
-      font-size: 0.85rem;
-      font-weight: 600;
     }
 
     .modal-footer {
       padding: 1rem 1.5rem;
       border-top: 1px solid var(--border-color);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-secondary);
+      justify-content: flex-end;
+      gap: 0.75rem;
+      background: var(--bg-tertiary);
     }
 
-    /* PIN DIALOG */
-    .pin-dialog {
-      max-width: 440px;
-      text-align: center;
-      padding: 2.25rem 2rem;
-    }
-
-    .pin-icon-wrapper {
-      width: 60px;
-      height: 60px;
-      background: var(--accent-rose-light);
-      color: var(--accent-rose);
-      border-radius: 50%;
+    /* DOCUMENT VIEWER SHEET */
+    .viewer-document-sheet {
+      background: #ffffff;
+      color: #0f172a;
+      border: 2px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      min-height: 380px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .pin-title {
-      font-size: 1.25rem;
+    .sheet-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      font-size: 2rem;
       font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
+      color: rgba(15, 23, 42, 0.05);
+      white-space: nowrap;
+      pointer-events: none;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
 
-    .pin-desc {
-      font-size: 0.875rem;
-      color: var(--text-muted);
+    .sheet-top-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1rem;
       margin-bottom: 1.5rem;
-      line-height: 1.5;
+    }
+
+    .sheet-institution {
+      font-size: 1.125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sheet-reg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8125rem;
+      color: #475569;
+    }
+
+    .sheet-main-content {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .sheet-subhead {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .sheet-main-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+
+    .sheet-recipient {
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-bottom: 1px solid #94a3b8;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .sheet-statement {
+      font-size: 0.875rem;
+      color: #475569;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .sheet-redaction-preview {
+      background-color: #fee2e2;
+      color: #991b1b;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8125rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 1.5rem;
+      border: 1px dashed #ef4444;
+      text-align: center;
+    }
+
+    /* PIN MODAL */
+    .pin-modal-card {
+      text-align: center;
+      padding: 2rem;
     }
 
     .pin-input-group {
       display: flex;
       justify-content: center;
       gap: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin: 1.5rem 0 1rem;
     }
 
     .pin-digit-input {
       width: 52px;
-      height: 56px;
-      font-size: 1.5rem;
-      font-weight: 700;
+      height: 60px;
+      font-size: 1.75rem;
+      font-weight: 800;
       text-align: center;
       border: 2px solid var(--border-color);
       border-radius: var(--radius-md);
@@ -1307,7 +1287,7 @@
 
     .pin-digit-input:focus {
       border-color: var(--accent-primary);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
     }
 
     .pin-error-msg {
@@ -1318,42 +1298,60 @@
       margin-bottom: 1rem;
     }
 
-    .pin-demo-hint {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      background: var(--bg-tertiary);
-      padding: 0.4rem 0.75rem;
-      border-radius: var(--radius-sm);
+    /* FORM STYLES (ADMIN CRUD & CONTACT) */
+    .form-group {
       margin-bottom: 1.25rem;
-      display: inline-block;
     }
 
-    .shake {
-      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
     }
 
-    @keyframes shake {
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.6875rem 1rem;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition-fast);
+    }
 
-      10%,
-      90% {
-        transform: translate3d(-2px, 0, 0);
-      }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
 
-      20%,
-      80% {
-        transform: translate3d(4px, 0, 0);
-      }
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
 
-      30%,
-      50%,
-      70% {
-        transform: translate3d(-6px, 0, 0);
-      }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
 
-      40%,
-      60% {
-        transform: translate3d(6px, 0, 0);
-      }
+    .form-checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
     }
 
     /* CONTACT */
@@ -1426,75 +1424,28 @@
       box-shadow: var(--card-shadow);
     }
 
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .form-input,
-    .form-textarea {
-      width: 100%;
-      padding: 0.6875rem 1rem;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-color);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      outline: none;
-      transition: var(--transition-fast);
-    }
-
-    .form-input:focus,
-    .form-textarea:focus {
-      border-color: var(--border-focus);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-    }
-
-    .form-textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
     /* FOOTER */
     .footer {
       background: var(--bg-secondary);
       border-top: 1px solid var(--border-color);
       padding: 3rem 0;
-      text-align: center;
+      margin-top: auto;
     }
 
-    .footer-content {
+    .footer-container {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.25rem;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 1.5rem;
       flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
+      gap: 1.5rem;
     }
 
-    .footer-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: var(--transition-fast);
-    }
-
-    .footer-link:hover {
-      color: var(--accent-primary);
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
     }
 
     .footer-copyright {
@@ -1537,6 +1488,22 @@
       opacity: 1;
     }
 
+    .shake {
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(4px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+      40%, 60% { transform: translate3d(6px, 0, 0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 992px) {
       .hero-grid {
@@ -1544,22 +1511,22 @@
         text-align: center;
         gap: 2.5rem;
       }
-
-      .hero-content {
-        align-items: center;
+      .hero-description {
+        margin: 0 auto 2rem;
       }
-
       .hero-cta {
         justify-content: center;
       }
-
       .stats-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+      .projects-grid,
+      .documents-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -1567,48 +1534,33 @@
       .nav-links {
         display: none;
       }
-
       .hamburger-btn {
         display: inline-flex;
       }
-
       .stats-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
       }
-
-      .stat-card {
-        padding: 1.125rem;
+      .projects-grid,
+      .documents-grid {
+        grid-template-columns: 1fr;
       }
-
-      .stat-value {
-        font-size: 1.75rem;
-      }
-
       .doc-controls {
         flex-direction: column;
         align-items: stretch;
       }
-
       .search-wrapper {
         width: 100%;
       }
-
       .modal-container {
         max-height: 95vh;
       }
-
-      .viewer-document-sheet {
-        padding: 1.25rem;
-        min-height: auto;
+      .form-row {
+        grid-template-columns: 1fr;
       }
-
-      .sheet-main-title {
-        font-size: 1.125rem;
-      }
-
-      .sheet-watermark {
-        font-size: 1.25rem;
+      .admin-toolbar-card {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -1629,7 +1581,7 @@
         <li><a href="#beranda" class="nav-link active">Beranda</a></li>
         <li><a href="#tentang" class="nav-link">Tentang Saya</a></li>
         <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
-        <li><a href="#proyek" class="nav-link">Proyek</a></li>
+        <li><a href="#proyek" class="nav-link">Proyek & K3</a></li>
         <li><a href="#dokumen" class="nav-link">Dokumen Resmi</a></li>
         <li><a href="#kontak" class="nav-link">Kontak</a></li>
       </ul>
@@ -1658,6 +1610,16 @@
           </svg>
         </button>
 
+        <!-- Tombol Portal Admin -->
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-admin-portal" title="Akses Pengelola Portofolio">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span id="admin-btn-text">Portal Admin</span>
+        </button>
+
         <a href="#kontak" class="btn btn-primary btn-sm" id="cta-nav-contact">
           <span>Hubungi Saya</span>
         </a>
@@ -1681,9 +1643,10 @@
     <a href="#beranda" class="mobile-nav-link">Beranda</a>
     <a href="#tentang" class="mobile-nav-link">Tentang Saya</a>
     <a href="#pengalaman" class="mobile-nav-link">Pengalaman Kerja</a>
-    <a href="#proyek" class="mobile-nav-link">Proyek Unggulan (STAR)</a>
-    <a href="#dokumen" class="mobile-nav-link">Dokumen & Sertifikat</a>
-    <a href="#kontak" class="mobile-nav-link">Kontak & Kartu Digital</a>
+    <a href="#proyek" class="mobile-nav-link">Proyek & K3</a>
+    <a href="#dokumen" class="mobile-nav-link">Dokumen Resmi</a>
+    <a href="#kontak" class="mobile-nav-link">Kontak Langsung</a>
+    <a href="javascript:void(0)" class="mobile-nav-link" id="mobile-admin-link">Portal Admin (Kelola Berkas)</a>
   </div>
 
   <main>
@@ -1694,7 +1657,7 @@
           <div class="hero-content">
             <div class="status-pill" id="hero-status">
               <span class="status-dot"></span>
-              <span id="hero-status-text">Terbuka untuk Peluang Kerja & Konsultasi</span>
+              <span id="hero-status-text">Safety Officer di PT BIB • Terbuka untuk Kolaborasi</span>
             </div>
 
             <h1 class="hero-title" id="hero-name">
@@ -1702,12 +1665,11 @@
             </h1>
 
             <p class="hero-headline" id="hero-title">
-              Senior Software Engineer & Cloud Solutions Architect
+              Safety Officer & Operations Specialist | S1 Sistem Informasi
             </p>
 
             <p class="hero-description" id="hero-tagline">
-              Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata dengan
-              arsitektur modern berstandar enterprise.
+              Mengintegrasikan inspeksi lapangan langsung dengan digitalisasi pelaporan K3 dan optimasi operasional berbasis ERP (SAP) & data analitik.
             </p>
 
             <div class="hero-cta">
@@ -1739,7 +1701,7 @@
                     d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
                   </path>
                 </svg>
-                <span>Hubungi Saya Langsung</span>
+                <span>WhatsApp Saya Langsung</span>
               </a>
             </div>
           </div>
@@ -1747,14 +1709,14 @@
           <!-- Avatar Card -->
           <div class="hero-avatar-card">
             <div class="avatar-wrapper">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                alt="Ahmad Rizky Pratama" class="avatar-img" id="hero-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                alt="Erwin Ardi Nurcahyo" class="avatar-img" id="hero-avatar">
               <div class="floating-badge">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
-                <span>Verified Cloud Architect</span>
+                <span>Verified Safety Officer</span>
               </div>
             </div>
           </div>
@@ -1773,17 +1735,17 @@
         <div class="section-header">
           <span class="section-tag">Profil Profesional</span>
           <h2 class="section-title">Latar Belakang & Nilai Kerja</h2>
-          <p class="section-subtitle">Ringkasan perjalanan karier rekayasa perangkat lunak dan prinsip fundamental yang
-            memandu setiap proyek yang saya bangun.</p>
+          <p class="section-subtitle">Kombinasi keahlian pengawasan teknis lapangan dengan kemampuan analisis data mendalam serta latar belakang pendidikan S1 Sistem Informasi.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-text" id="about-bio-container">
+            <!-- Bio dinamis -->
             <div class="philosophy-box" id="philosophy-box">
               <h4 class="philosophy-title">Prinsip & Nilai Kerja</h4>
-              <p class="philosophy-text" id="philosophy-text">"Kode yang baik bukan sekadar berjalan tanpa galat,
-                melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi
-                pengguna."</p>
+              <p class="philosophy-text" id="philosophy-text">
+                "Keselamatan kerja (Zero Incident) dan efisiensi operasional tercapai melalui integritas pengawasan lapangan, kepatuhan audit standar K3, serta digitalisasi pelaporan data yang transparan dan akurat."
+              </p>
             </div>
           </div>
 
@@ -1798,49 +1760,96 @@
     <section class="experience" id="pengalaman" style="background-color: var(--bg-tertiary);">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Jejak Langkah Karier</span>
-          <h2 class="section-title">Riwayat Pengalaman Kerja</h2>
-          <p class="section-subtitle">Rekam jejak kontribusi teknis pada perusahaan teknologi terkemuka dan institusi
-            finansial.</p>
+          <span class="section-tag">Riwayat Karier</span>
+          <h2 class="section-title">Pengalaman Kerja & Lapangan</h2>
+          <p class="section-subtitle">Rekam jejak profesional dalam pengawasan K3 pertambangan, administrasi komersial ERP, dan digitalisasi pengarsipan data.</p>
         </div>
 
         <div class="timeline" id="experience-timeline">
-          <!-- Diisi linimasa pengalaman dinamis -->
+          <!-- Diisi timeline dinamis -->
         </div>
       </div>
     </section>
 
-    <!-- ==================== PROYEK UNGGULAN (METODE STAR) ==================== -->
+    <!-- ==================== PROYEK UNGGULAN & METODE STAR ==================== -->
     <section class="projects" id="proyek">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Portofolio Terpilih</span>
-          <h2 class="section-title">Proyek Unggulan (Metode STAR)</h2>
-          <p class="section-subtitle">Setiap proyek dianalisis secara komprehensif berdasarkan peran, situasi tantangan,
-            tindakan solusi, serta hasil terukur.</p>
+          <span class="section-tag">Portofolio Tindakan Nyata</span>
+          <h2 class="section-title">Inisiatif & Proyek Unggulan (Metode STAR)</h2>
+          <p class="section-subtitle">Penerapan Situation, Task, Action, dan Result dalam menyelesaikan tantangan nyata di lapangan dan sistem operasional.</p>
         </div>
 
         <div class="projects-grid" id="projects-container">
-          <!-- Diisi kartu proyek STAR dinamis -->
+          <!-- Diisi kartu proyek dinamis -->
         </div>
       </div>
     </section>
 
-    <!-- ==================== DOKUMEN PENDUKUNG (ETALASE & VIEWER) ==================== -->
+    <!-- ==================== DOKUMEN & SERTIFIKASI ==================== -->
     <section class="documents" id="dokumen" style="background-color: var(--bg-tertiary);">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Validasi & Kredibilitas</span>
-          <h2 class="section-title">Dokumen Pendukung Resmi</h2>
-          <p class="section-subtitle">Etalase sertifikasi keahlian, ijazah pendidikan, lisensi profesi, dan portofolio
-            klien terbatas yang dilengkapi penampil dokumen terintegrasi (embedded viewer) serta penyensoran data
-            pribadi.</p>
+          <span class="section-tag">Bukti Kompetensi Autentik</span>
+          <h2 class="section-title">Dokumen Resmi & Sertifikasi</h2>
+          <p class="section-subtitle">Salinan digital sertifikasi BNSP, K3 Pertambangan, pelatihan operasional, dan ijazah resmi dengan viewer interaktif berfitur sensor privasi.</p>
         </div>
 
-        <!-- Filter & Search Controls -->
+        <!-- ADMIN CONTROL TOOLBAR (Muncul saat Login) -->
+        <div class="admin-toolbar-card" id="admin-toolbar-card" style="display: none;">
+          <div class="admin-status-info">
+            <span class="admin-badge-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Mode Pengelola Aktif
+            </span>
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">
+              Halo Mas Erwin! Anda dapat mengedit, menambah, atau menghapus berkas di bawah ini.
+            </span>
+          </div>
+
+          <div class="admin-actions-group">
+            <button type="button" class="btn btn-primary btn-sm" id="btn-admin-add-doc">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>+ Tambah Berkas Baru</span>
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-admin-export-data" title="Unduh file konfigurasi data.js terbaru">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>💾 Unduh data.js</span>
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-admin-reset-data" title="Kembalikan data ke versi default CV">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              <span>Reset Data</span>
+            </button>
+
+            <button type="button" class="btn btn-danger btn-sm" id="btn-admin-logout" title="Keluar dari sesi admin">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Keluar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Kategori & Pencarian Instan -->
         <div class="doc-controls">
-          <div class="filter-pills" id="category-filters">
-            <!-- Diisi tombol filter kategori -->
+          <div class="category-filters" id="category-filters">
+            <!-- Filter dinamis -->
           </div>
 
           <div class="search-wrapper">
@@ -1849,33 +1858,45 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" class="search-input" id="search-docs" placeholder="Cari sertifikat, lisensi, penerbit..."
-              autocomplete="off">
+            <input type="text" class="search-input" id="search-docs" placeholder="Cari sertifikat, K3, penerbit..."
+              aria-label="Cari dokumen">
           </div>
         </div>
 
-        <!-- Documents Cards Grid -->
+        <!-- Grid Dokumen -->
         <div class="documents-grid" id="documents-container">
-          <!-- Diisi kartu dokumen -->
+          <!-- Kartu dokumen di-render dinamis -->
         </div>
       </div>
     </section>
 
-    <!-- ==================== KONTAK & KARTU DIGITAL ==================== -->
+    <!-- ==================== KONTAK LANGSUNG ==================== -->
     <section class="contact" id="kontak">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Koneksi & Kolaborasi</span>
-          <h2 class="section-title">Hubungi Saya</h2>
-          <p class="section-subtitle">Mari diskusikan peluang kerja sama, rekrutmen profesional, atau konsultasi
-            arsitektur sistem.</p>
+          <span class="section-tag">Mari Terhubung</span>
+          <h2 class="section-title">Informasi Kontak & Pesan</h2>
+          <p class="section-subtitle">Tersedia untuk diskusi peluang kerja sama, konsultasi K3 operasional, maupun koordinasi profesional.</p>
         </div>
 
         <div class="contact-grid">
-          <!-- Info Kontak & Kartu Digital -->
           <div class="contact-info">
             <div class="contact-card-box">
-              <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1.25rem;">Saluran Komunikasi Resmi</h3>
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item-label">WhatsApp / Telepon</div>
+                  <a href="https://wa.me/6285754165965" target="_blank" rel="noopener noreferrer"
+                    class="contact-item-val" id="contact-phone">+62 857-5416-5965</a>
+                </div>
+              </div>
 
               <div class="contact-item">
                 <div class="contact-item-icon">
@@ -1886,41 +1907,9 @@
                   </svg>
                 </div>
                 <div>
-                  <div class="contact-item-label">Alamat Email Profesional</div>
-                  <a href="mailto:ahmad.rizky.tech@gmail.com" class="contact-item-val"
-                    id="contact-email">ahmad.rizky.tech@gmail.com</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-item-icon" style="color: var(--accent-emerald);">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-                    </path>
-                  </svg>
-                </div>
-                <div>
-                  <div class="contact-item-label">WhatsApp Langsung</div>
-                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
-                    class="contact-item-val" id="contact-wa">+62 812-3456-7890 (Chat Aktif)</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-item-icon" style="color: var(--accent-indigo);">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </div>
-                <div>
-                  <div class="contact-item-label">LinkedIn Profil</div>
-                  <a href="https://linkedin.com/in/ahmad-rizky-dev" target="_blank" rel="noopener noreferrer"
-                    class="contact-item-val" id="contact-linkedin">linkedin.com/in/ahmad-rizky-dev</a>
+                  <div class="contact-item-label">Email Resmi</div>
+                  <a href="mailto:erwinardinurcahyo3@gmail.com" class="contact-item-val"
+                    id="contact-email">erwinardinurcahyo3@gmail.com</a>
                 </div>
               </div>
 
@@ -1928,64 +1917,54 @@
                 <div class="contact-item-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                    </path>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
                   </svg>
                 </div>
                 <div>
-                  <div class="contact-item-label">GitHub Repository</div>
-                  <a href="https://github.com/ahmadrizky-id" target="_blank" rel="noopener noreferrer"
-                    class="contact-item-val" id="contact-github">github.com/ahmadrizky-id</a>
+                  <div class="contact-item-label">Lokasi Domisili</div>
+                  <div class="contact-item-val" id="contact-location" style="font-weight: 500;">
+                    Kalimantan Selatan, Tanah Bumbu, Sungai Loban, Desa Batu Meranti
+                  </div>
                 </div>
               </div>
-
-              <!-- Tombol Cepat Unduh vCard -->
-              <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
-                <button type="button" class="btn btn-secondary btn-sm" id="btn-download-vcard" style="width: 100%;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
-                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
-                    <polyline points="7 3 7 8 15 8"></polyline>
-                  </svg>
-                  <span>Simpan Kontak ke HP (Unduh vCard)</span>
-                </button>
-              </div>
             </div>
+
+            <button type="button" class="btn btn-secondary" id="btn-download-vcard" style="width: 100%;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+              </svg>
+              <span>Simpan Kontak ke Ponsel (vCard)</span>
+            </button>
           </div>
 
-          <!-- Formulir Kirim Pesan -->
+          <!-- Form Kirim Pesan -->
           <div class="contact-form-card">
-            <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Kirim Pesan Instan</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Pesan Anda akan langsung
-              diteruskan ke email profesional saya.</p>
-
             <form id="contact-form">
               <div class="form-group">
-                <label for="form-name" class="form-label">Nama Lengkap / Instansi *</label>
-                <input type="text" id="form-name" class="form-input" placeholder="Contoh: HRD PT Teknologi Prima"
-                  required>
+                <label for="form-name" class="form-label">Nama Anda</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Masukkan nama Anda..." required>
               </div>
 
               <div class="form-group">
-                <label for="form-email" class="form-label">Alamat Email Anda *</label>
-                <input type="email" id="form-email" class="form-input" placeholder="nama@perusahaan.com" required>
+                <label for="form-email" class="form-label">Email Anda</label>
+                <input type="email" id="form-email" class="form-input" placeholder="contoh: recruiter@perusahaan.com" required>
               </div>
 
               <div class="form-group">
-                <label for="form-subject" class="form-label">Perihal Diskusi</label>
-                <input type="text" id="form-subject" class="form-input"
-                  placeholder="Contoh: Tawaran Pekerjaan / Konsultasi Sistem">
+                <label for="form-subject" class="form-label">Perihal</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Tawaran Kerja / Koordinasi K3" required>
               </div>
 
               <div class="form-group">
-                <label for="form-message" class="form-label">Pesan Lengkap *</label>
-                <textarea id="form-message" class="form-textarea"
-                  placeholder="Tuliskan detail tawaran atau kebutuhan proyek Anda di sini..." required></textarea>
+                <label for="form-message" class="form-label">Pesan</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tuliskan pesan Anda secara ringkas..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" id="btn-submit-message" style="width: 100%;">
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -2002,172 +1981,262 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="nav-brand" style="justify-content: center;">
-        <span class="brand-badge">AR</span>
-        <span>Ahmad Rizky Pratama, S.Kom.</span>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-badge" style="width: 28px; height: 28px; font-size: 0.75rem;">EA</span>
+        <span>Erwin Ardi Nurcahyo • Safety & Operations</span>
       </div>
 
-      <ul class="footer-nav">
-        <li><a href="#beranda" class="footer-link">Beranda</a></li>
-        <li><a href="#tentang" class="footer-link">Tentang Saya</a></li>
-        <li><a href="#pengalaman" class="footer-link">Pengalaman</a></li>
-        <li><a href="#proyek" class="footer-link">Proyek</a></li>
-        <li><a href="#dokumen" class="footer-link">Dokumen Pendukung</a></li>
-        <li><a href="#kontak" class="footer-link">Kontak</a></li>
-      </ul>
-
-      <p class="footer-copyright">
-        &copy; 2026 Ahmad Rizky Pratama. Hak Cipta Dilindungi. Seluruh dokumen resmi terlindungi enkripsi dan sensor
-        privasi.
-      </p>
+      <div class="footer-copyright">
+        &copy; 2026 Erwin Ardi Nurcahyo. Hak Cipta Dilindungi. Dibuat dengan Standar Sistem ZettBOT by Zettbos.
+      </div>
     </div>
   </footer>
 
-  <!-- ==================== EMBEDDED DOCUMENT VIEWER MODAL ==================== -->
+  <!-- ==================== MODAL VIEWER DOKUMEN ==================== -->
   <div class="modal-overlay" id="doc-viewer-modal" role="dialog" aria-modal="true" aria-labelledby="modal-doc-title">
     <div class="modal-container">
       <div class="modal-header">
-        <div class="modal-title-group">
-          <h3 id="modal-doc-title">Pratinjau Dokumen Resmi</h3>
-          <p id="modal-doc-meta">Penerbit: - | Tahun: -</p>
+        <div>
+          <h3 style="font-size: 1.125rem; font-weight: 700;" id="modal-doc-title">Pratinjau Dokumen</h3>
+          <p style="font-size: 0.8125rem; color: var(--text-muted);" id="modal-doc-meta">Penerbit: - | Berlaku s/d -</p>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <button type="button" class="btn-icon" id="btn-modal-close" aria-label="Tutup Pratinjau" title="Tutup">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
+        <button type="button" class="btn-icon" id="btn-modal-close" aria-label="Tutup Pratinjau">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
-      <div class="modal-body" id="modal-doc-body">
-        <div class="viewer-document-sheet" id="viewer-sheet">
-          <div class="sheet-watermark" id="sheet-watermark-text">
-            SALINAN RESMI PORTOFOLIO<br>PRIVASI TERVERIFIKASI & TERLINDUNGI
+      <div class="modal-body">
+        <div class="viewer-document-sheet">
+          <div class="sheet-watermark">SALINAN RESMI • PRIVASI TERVERIFIKASI</div>
+          <div class="sheet-top-header">
+            <div class="sheet-institution" id="sheet-institution-name">LEMBAGA PENERBIT</div>
+            <div class="sheet-reg" id="sheet-credential-id">KREDENSIAL: -</div>
           </div>
 
-          <div class="sheet-header">
-            <div>
-              <div class="sheet-institution" id="sheet-institution-name">LEMBAGA SERTIFIKASI</div>
-              <div style="font-size: 0.8rem; color: #64748b;" id="sheet-credential-id">KREDENSIAL ID: -</div>
-            </div>
-            <div class="sheet-seal">
-              OFFICIAL<br>VERIFIED
-            </div>
+          <div class="sheet-main-content">
+            <div class="sheet-subhead">DIBERIKAN DENGAN BANGGA KEPADA</div>
+            <div class="sheet-recipient" id="sheet-recipient-name">Erwin Ardi Nurcahyo</div>
+            <div class="sheet-main-title" id="sheet-document-title">JUDUL SERTIFIKAT</div>
+            <p class="sheet-statement" id="sheet-statement-desc">Keterangan kompetensi terverifikasi sesuai standar resmi.</p>
           </div>
 
-          <div class="sheet-body">
-            <div class="sheet-main-title" id="sheet-document-title">SERTIFIKAT KELAYAKAN PROFESIONAL</div>
-            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">Diberikan dengan bangga kepada:</div>
-            <div class="sheet-recipient" id="sheet-recipient-name">Ahmad Rizky Pratama, S.Kom.</div>
-
-            <div class="sheet-statement" id="sheet-statement-desc">
-              Telah berhasil menyelesaikan kualifikasi kompetensi profesional berstandar industri dengan pengakuan
-              penuh.
-            </div>
-
-            <!-- Tanda Sensor Privasi -->
-            <div
-              style="margin: 1.25rem 0; padding: 0.75rem; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px;">
-              <span style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 0.35rem;">Informasi
-                Perlindungan Privasi (UU Perlindungan Data Pribadi):</span>
-              <span class="redaction-bar" id="sheet-redaction-preview">██████ INFORMASI PRIBADI DISENSOR DEMI KEAMANAN
-                ██████</span>
-            </div>
-          </div>
-
-          <div class="sheet-footer">
-            <div class="sheet-qr">
-              <div>STATUS AUTENTIKASI: VALID (2026)</div>
-              <div>HASH: SHA256-AUTHENTICATED-DOCUMENT</div>
-            </div>
-            <div class="sheet-signature">
-              <div style="font-style: italic; font-family: cursive; font-size: 1.25rem; color: #1e40af;">Official
-                Registrar</div>
-              <div style="border-top: 1px solid #0f172a; margin-top: 4px; padding-top: 4px;">Tanda Tangan Elektronik Sah
-              </div>
-            </div>
+          <div class="sheet-redaction-preview" id="sheet-redaction-preview">
+            ██ [SENSOR PRIVASI: DATA PRIBADI & NIK TELAH DISENSOR DEMI KEAMANAN] ██
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <span class="badge badge-emerald" id="modal-badge-redacted">Data Pribadi Disensor</span>
-          <span style="font-size: 0.75rem; color: var(--text-muted);" id="modal-file-format">Format: Dokumen Resmi
-            Terverifikasi</span>
-        </div>
-
-        <button type="button" class="btn btn-primary btn-sm" id="btn-modal-download">
+        <button type="button" class="btn btn-secondary" onclick="document.getElementById('doc-viewer-modal').classList.remove('active'); document.body.style.overflow='';">
+          Tutup
+        </button>
+        <button type="button" class="btn btn-primary" id="btn-modal-download">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span id="btn-modal-download-text">Unduh Dokumen Resmi (PDF)</span>
+          <span>Unduh Berkas Resmi (PDF)</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== PIN PROTECTION DIALOG ==================== -->
+  <!-- ==================== MODAL PROTEKSI PIN DOKUMEN ==================== -->
   <div class="modal-overlay" id="pin-modal" role="dialog" aria-modal="true" aria-labelledby="pin-modal-title">
-    <div class="modal-container pin-dialog" id="pin-dialog-card">
-      <div class="pin-icon-wrapper">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-      </div>
-
-      <h3 class="pin-title" id="pin-modal-title">Dokumen Rahasia Terproteksi</h3>
-      <p class="pin-desc" id="pin-modal-desc">
-        Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Silakan masukkan 4-digit PIN akses untuk membuka
-        pratinjau.
-      </p>
-
-      <div class="pin-demo-hint">
-        💡 <strong>Kunci Akses Demo:</strong> Masukkan PIN <code>1234</code>
-      </div>
-
-      <!-- PIN Input Digits -->
-      <div class="pin-input-group" id="pin-input-group">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="0" inputmode="numeric"
-          autocomplete="off" autofocus>
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="1" inputmode="numeric"
-          autocomplete="off">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="2" inputmode="numeric"
-          autocomplete="off">
-        <input type="password" maxlength="1" class="pin-digit-input" data-index="3" inputmode="numeric"
-          autocomplete="off">
-      </div>
-
-      <div class="pin-error-msg" id="pin-error-msg"></div>
-
-      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
-        <button type="button" class="btn btn-primary" id="btn-verify-pin" style="width: 100%;">
-          <span>Buka Dokumen</span>
-        </button>
-
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-request-pin-wa">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"
+    <div class="modal-container modal-container-sm" id="pin-dialog-card">
+      <div class="pin-modal-card">
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: var(--accent-rose-light); color: var(--accent-rose); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-            </path>
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
-          <span>Belum Punya PIN? Minta Akses via WhatsApp</span>
-        </a>
+        </div>
 
-        <button type="button" class="btn btn-sm" id="btn-cancel-pin"
-          style="background: transparent; color: var(--text-muted); border: none;">
-          Batalkan & Kembali
+        <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;" id="pin-modal-title">Dokumen Terproteksi</h3>
+        <p style="font-size: 0.875rem; color: var(--text-muted);">
+          Dokumen ini berisi informasi operasional sensitif. Masukkan 4 angka PIN akses untuk membukanya.
+        </p>
+
+        <div class="pin-input-group">
+          <input type="password" inputmode="numeric" maxlength="1" class="pin-digit-input" data-index="0" aria-label="PIN digit 1">
+          <input type="password" inputmode="numeric" maxlength="1" class="pin-digit-input" data-index="1" aria-label="PIN digit 2">
+          <input type="password" inputmode="numeric" maxlength="1" class="pin-digit-input" data-index="2" aria-label="PIN digit 3">
+          <input type="password" inputmode="numeric" maxlength="1" class="pin-digit-input" data-index="3" aria-label="PIN digit 4">
+        </div>
+
+        <div class="pin-error-msg" id="pin-error-msg"></div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <span style="font-size: 0.75rem; color: var(--text-muted); background: var(--bg-tertiary); padding: 0.35rem 0.75rem; border-radius: var(--radius-sm);">
+            💡 PIN Demo Standar: <strong>1234</strong>
+          </span>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center;">
+          <button type="button" class="btn btn-secondary" id="btn-cancel-pin">Batal</button>
+          <button type="button" class="btn btn-primary" id="btn-verify-pin">Buka Dokumen</button>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+          <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 0.5rem;">Belum memiliki kode PIN?</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-emerald btn-sm" id="btn-request-pin-wa">
+            <span>Minta Akses ke Mas Erwin via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL LOGIN ADMIN ==================== -->
+  <div class="modal-overlay" id="admin-login-modal" role="dialog" aria-modal="true" aria-labelledby="admin-login-title">
+    <div class="modal-container modal-container-sm">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--accent-light); color: var(--accent-primary); display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.125rem; font-weight: 800;" id="admin-login-title">Portal Masuk Pengelola</h3>
+        </div>
+        <button type="button" class="btn-icon" id="btn-close-admin-login" aria-label="Tutup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
+      </div>
+
+      <div class="modal-body">
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Masukkan kata sandi pengelola untuk mengaktifkan mode tambah, edit, dan hapus berkas portofolio Anda.
+        </p>
+
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="admin-pass-input" class="form-label">Kata Sandi Admin</label>
+            <input type="password" id="admin-pass-input" class="form-input" placeholder="Masukkan kata sandi..." required autocomplete="current-password">
+            <div id="admin-login-error" style="color: var(--accent-rose); font-size: 0.8125rem; font-weight: 600; margin-top: 0.35rem; min-height: 18px;"></div>
+          </div>
+
+          <div style="margin-bottom: 1rem; background: var(--bg-tertiary); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-muted);">
+            🔑 Sandi Bawaan: <strong>admin123</strong> (dapat Anda ganti setelah masuk).
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+            <button type="button" class="btn btn-secondary" id="btn-cancel-admin-login">Batal</button>
+            <button type="submit" class="btn btn-primary">Masuk Mode Admin</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL FORM CRUD DOKUMEN (TAMBAH / EDIT) ==================== -->
+  <div class="modal-overlay" id="doc-crud-modal" role="dialog" aria-modal="true" aria-labelledby="crud-modal-title">
+    <div class="modal-container modal-container-md">
+      <div class="modal-header">
+        <h3 style="font-size: 1.125rem; font-weight: 800;" id="crud-modal-title">Tambah Berkas Dokumen Baru</h3>
+        <button type="button" class="btn-icon" id="btn-close-crud-modal" aria-label="Tutup Form">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="doc-crud-form">
+          <input type="hidden" id="crud-doc-id" value="">
+
+          <div class="form-group">
+            <label for="crud-title" class="form-label">Judul Dokumen / Sertifikat *</label>
+            <input type="text" id="crud-title" class="form-input" placeholder="contoh: Sertifikat K3 Pertambangan" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="crud-category" class="form-label">Kategori Dokumen *</label>
+              <select id="crud-category" class="form-select" required>
+                <option value="Sertifikasi K3">Sertifikasi K3</option>
+                <option value="Sertifikasi BNSP">Sertifikasi BNSP</option>
+                <option value="Sertifikasi Operasional">Sertifikasi Operasional</option>
+                <option value="Manajemen Risiko">Manajemen Risiko</option>
+                <option value="Lisensi Kerja">Lisensi Kerja</option>
+                <option value="Ijazah">Ijazah</option>
+                <option value="Penghargaan">Penghargaan</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="crud-badge-color" class="form-label">Warna Label Badge</label>
+              <select id="crud-badge-color" class="form-select">
+                <option value="emerald">Hijau (Emerald)</option>
+                <option value="blue">Biru (Blue)</option>
+                <option value="indigo">Ungu (Indigo)</option>
+                <option value="amber">Kuning (Amber)</option>
+                <option value="rose">Merah (Rose)</option>
+                <option value="teal">Toska (Teal)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="crud-issuer" class="form-label">Lembaga Penerbit *</label>
+              <input type="text" id="crud-issuer" class="form-input" placeholder="contoh: BNSP / PT BIB" required>
+            </div>
+
+            <div class="form-group">
+              <label for="crud-year" class="form-label">Tahun / Masa Berlaku</label>
+              <input type="text" id="crud-year" class="form-input" placeholder="contoh: 2025 - 2028 atau Tervalidasi">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="crud-cred-id" class="form-label">Nomor Kredensial / Registrasi</label>
+              <input type="text" id="crud-cred-id" class="form-input" placeholder="contoh: REG-K3-2025-01">
+            </div>
+
+            <div class="form-group">
+              <label for="crud-filename" class="form-label">Nama File Unduhan</label>
+              <input type="text" id="crud-filename" class="form-input" placeholder="contoh: Sertifikat_K3_Erwin.pdf">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="crud-desc" class="form-label">Deskripsi / Ruang Lingkup Kompetensi</label>
+            <textarea id="crud-desc" class="form-textarea" placeholder="Tuliskan keterangan mengenai sertifikasi atau dokumen ini..."></textarea>
+          </div>
+
+          <div class="form-group" style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="crud-is-protected" style="width: 18px; height: 18px;">
+              <span>Proteksi Dokumen Ini dengan 4-Digit PIN Rahasia</span>
+            </label>
+
+            <div id="crud-pin-wrapper" style="display: none; margin-top: 0.75rem;">
+              <label for="crud-access-pin" class="form-label">Kode PIN 4-Angka Pembuka</label>
+              <input type="text" id="crud-access-pin" class="form-input" maxlength="4" placeholder="1234" style="max-width: 140px; font-weight: 700; letter-spacing: 0.2em; text-align: center;">
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding-left: 0; padding-right: 0; background: transparent;">
+            <button type="button" class="btn btn-secondary" id="btn-cancel-crud">Batal</button>
+            <button type="submit" class="btn btn-primary" id="btn-save-crud">Simpan Berkas</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -2175,144 +2244,181 @@
   <!-- ==================== TOAST CONTAINER ==================== -->
   <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-  <!-- ==================== DATA CONFIGURATION INLINE ==================== -->
+  <!-- ==================== APPLICATION DATA & LOGIC ENGINE ==================== -->
   <script>
-    const PORTFOLIO_DATA = {
+    // 1. DATA MASTER ERWIN ARDI NURCAHYO
+    const INITIAL_PORTFOLIO_DATA = {
       profile: {
-        name: "Ahmad Rizky Pratama, S.Kom.",
-        title: "Senior Software Engineer & Cloud Solutions Architect",
-        tagline: "Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata.",
-        location: "Jakarta, Indonesia (Tersedia untuk Kerja Jarak Jauh / On-Site)",
+        name: "Erwin Ardi Nurcahyo",
+        title: "Safety Officer & Operations Specialist | S1 Sistem Informasi",
+        tagline: "Mengintegrasikan inspeksi lapangan langsung dengan digitalisasi pelaporan K3 dan optimasi operasional berbasis ERP (SAP) & data analitik.",
+        location: "Kalimantan Selatan, Tanah Bumbu, Sungai Loban, Desa Batu Meranti",
         status: {
           available: true,
-          text: "Terbuka untuk Peluang Kerja & Konsultasi Proyek"
+          text: "Safety Officer di PT BIB • Terbuka untuk Kolaborasi"
         },
         bio: [
-          "Seorang insinyur perangkat lunak berpengalaman lebih dari 5 tahun dalam merancang dan mengembangkan arsitektur aplikasi berbasis web, microservices, serta integrasi komputasi awan (Cloud Architecture).",
-          "Berfokus pada kode yang bersih (clean code), keandalan sistem berskala besar, serta keamanan data tingkat enterprise. Terbiasa memimpin tim teknis dari tahap perumusan arsitektur awal (PRD) hingga implementasi produksi siap pakai."
+          "Seorang profesional di bidang Safety & Operations dengan latar belakang pendidikan S1 Sistem Informasi (IPK 3,44 – Predikat Sangat Memuaskan). Memiliki kombinasi keahlian unik antara pengawasan teknis lapangan dengan kemampuan analisis data yang mendalam.",
+          "Berpengalaman lebih dari 2 tahun dalam optimasi rantai pasok dan administrasi komersial menggunakan ERP (SAP). Saat ini berfokus pada peran Safety Officer di PT Equipment Reliability Management Site Borneo Indobara (BIB), di mana saya mengintegrasikan inspeksi lapangan langsung dengan digitalisasi pelaporan untuk meningkatkan akurasi kepatuhan K3 dan efisiensi operasional secara real-time."
         ],
-        workPhilosophy: "Kode yang baik bukan sekadar berjalan tanpa galat, melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi pengguna.",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-        cvUrl: "docs/CV_Ahmad_Rizky_Pratama_2026.pdf",
-        cvFilename: "CV_Ahmad_Rizky_Pratama_2026.pdf",
+        workPhilosophy: "Keselamatan kerja (Zero Incident) dan efisiensi operasional tercapai melalui integritas pengawasan lapangan, kepatuhan audit standar K3, serta digitalisasi pelaporan data yang transparan dan akurat.",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+        cvUrl: "docs/CV_Erwin_Ardi_Nurcahyo_2026.pdf",
+        cvFilename: "CV_Erwin_Ardi_Nurcahyo_2026.pdf",
         contact: {
-          email: "ahmad.rizky.tech@gmail.com",
-          phone: "+6281234567890",
-          whatsapp: "6281234567890",
-          linkedin: "https://linkedin.com/in/ahmad-rizky-dev",
-          github: "https://github.com/ahmadrizky-id"
+          email: "erwinardinurcahyo3@gmail.com",
+          phone: "+62 857-5416-5965",
+          whatsapp: "6285754165965",
+          linkedin: "https://linkedin.com/in/erwin-ardi-nurcahyo",
+          github: "https://github.com/erwinardinurcahyo"
         }
       },
       stats: [
-        { label: "Tahun Pengalaman", value: "5+", description: "Pengembangan web & arsitektur sistem" },
-        { label: "Proyek Selesai", value: "34+", description: "Aplikasi skala enterprise & komersial" },
-        { label: "Sertifikasi Resmi", value: "12", description: "Lembaga nasional & internasional" },
-        { label: "Kepuasan Klien", value: "99.8%", description: "Kualitas kode & ketepatan SLA" }
+        { label: "Pengalaman Kerja", value: "2+ Thn", description: "Safety Officer & Commercial Operations" },
+        { label: "Kepatuhan K3", value: "100%", description: "Inspeksi harian, audit, & Hazard Report" },
+        { label: "Sertifikasi Resmi", value: "7+", description: "BNSP, K3 Pertambangan & Operasional" },
+        { label: "Indeks Prestasi", value: "3.44", description: "S1 Sistem Informasi (Sangat Memuaskan)" }
       ],
       skills: [
         {
-          category: "Frontend & UI Engineering",
-          items: ["HTML5 / Semantic Web", "Modern CSS / Design Systems", "JavaScript (ES6+)", "React.js / Next.js", "Vue.js", "Responsive & Accessible UX"]
+          category: "Safety & K3 Pertambangan",
+          items: [
+            "Pengawasan Lapangan Tambang",
+            "Analisis Kerja Aman (PWP)",
+            "Identifikasi Bahaya & Penilaian Resiko (IBPR)",
+            "Izin Kerja Khusus (PKK)",
+            "K3 Pertambangan",
+            "Inspeksi & Audit K3",
+            "Hazard & Near Miss Reporting"
+          ]
         },
         {
-          category: "Backend & System Architecture",
-          items: ["Node.js / Express", "Python / FastAPI", "RESTful API & GraphQL", "Microservices Design", "Google Apps Script Engine", "Redis Caching"]
+          category: "Sistem ERP & Analisis Data",
+          items: [
+            "SAP (Systems, Applications, Products)",
+            "Microsoft Excel (Formula & Analisis)",
+            "Google Spreadsheets",
+            "KNIME Analytics",
+            "Looker Studio",
+            "Optimasi Rantai Pasok",
+            "Pengelolaan Stok & Inventaris"
+          ]
         },
         {
-          category: "Database & Cloud Infrastructure",
-          items: ["PostgreSQL", "MySQL", "MongoDB", "Google Cloud Platform (GCP)", "AWS Cloud", "Docker & CI/CD Pipelines"]
+          category: "IT, Web & Digitalisasi Dokumen",
+          items: [
+            "HTML & CSS",
+            "PHP & MySQL",
+            "Aplikasi Pengarsipan Web",
+            "Troubleshooting Hardware/Software",
+            "Validasi Database Internal BPS",
+            "Digitalisasi Pelaporan Lapangan"
+          ]
         },
         {
-          category: "Keamanan & Praktik Rekayasa",
-          items: ["Data Redaction & Privacy", "OAuth 2.0 / JWT Authentication", "Clean Architecture", "Code Review & Mentoring", "Unit & Integration Testing"]
+          category: "Desain Visual & Soft Skills",
+          items: [
+            "CorelDraw & Adobe Photoshop",
+            "Microsoft Office Suite (Word, PPT, Excel)",
+            "Problem Solving & Data Analysis",
+            "Presentasi & Koordinasi Lintas Tim",
+            "Manajemen Waktu & Kolaborasi",
+            "Adaptif & Tangguh di Bawah Tekanan"
+          ]
         }
       ],
       experience: [
         {
-          role: "Lead Software Architect",
-          company: "PT Solusi Teknologi Nusantara",
-          period: "2023 - Sekarang",
-          location: "Jakarta, Indonesia",
-          description: "Memimpin perancangan arsitektur platform SaaS perbankan digital, mengelola tim 8 insinyur perangkat lunak, serta meningkatkan ketahanan sistem hingga mencapai uptime 99.99%.",
+          role: "Safety Officer",
+          company: "PT Equipment Reliability Management Site Borneo Indobara (BIB)",
+          period: "Dec 2025 – Sekarang",
+          location: "Tanah Bumbu, Kalimantan Selatan",
+          description: "Melaksanakan inspeksi harian dan audit keselamatan di area operasional tambang/lapangan untuk memastikan kepatuhan ketat terhadap standar regulasi K3 pertambangan.",
           highlights: [
-            "Memangkas latensi respon backend hingga 42% melalui implementasi in-memory caching cerdas.",
-            "Menerapkan standarisasi PRD & protokol code review yang mengurangi tingkat regresi bug sebesar 35%."
+            "Pengawasan Lapangan: Melaksanakan inspeksi harian dan audit keselamatan di area operasional tambang/lapangan untuk kepatuhan ketat standar K3.",
+            "Analisis & Pengolahan Data K3: Mentransformasi data observasi lapangan menjadi laporan tren keselamatan digital (Insiden, Near Miss, dan Hazard Report) guna mitigasi risiko proaktif.",
+            "Kepatuhan & Digitalisasi: Mengoptimalkan sistem pendokumentasian keselamatan lapangan untuk memastikan kesiapan data dalam menghadapi audit internal maupun eksternal.",
+            "Koordinasi Strategis: Bertindak sebagai jembatan komunikasi antara manajemen dan tim lapangan dalam mengimplementasikan kebijakan keselamatan yang berdampak pada produktivitas kerja."
           ],
-          technologies: ["Node.js", "GCP", "Docker", "PostgreSQL", "Redis", "System Architecture"]
+          technologies: ["K3 Pertambangan", "Safety Inspection", "IBPR & Hazard Analysis", "Digital Reporting", "Audit Compliance"]
         },
         {
-          role: "Senior Full-Stack Developer",
-          company: "Mega Inovasi Digital",
-          period: "2021 - 2023",
-          location: "Bandung, Indonesia",
-          description: "Mengembangkan modul inti sistem ERP manufaktur dan dashboard logistik terintegrasi untuk klien skala nasional.",
+          role: "Admin Commercial – Divisi Sales & Ops",
+          company: "PT Aviko Sepinggan Site PT SSB",
+          period: "Oct 2023 – Oct 2025",
+          location: "Kalimantan",
+          description: "Mengelola operasional distribusi dan logistik secara penuh melalui sistem SAP, memastikan integritas data stok dan inventaris perusahaan.",
           highlights: [
-            "Membangun modul pelaporan real-time dengan kemampuan ekspor data berkapasitas 500.000 baris.",
-            "Merancang antarmuka ramah perangkat mobile yang digunakan oleh lebih dari 1.200 staf lapangan."
+            "Manajemen ERP: Mengelola operasional distribusi dan logistik secara penuh melalui sistem SAP, memastikan integritas data stok dan inventaris.",
+            "Optimasi Rantai Pasok: Memantau aliran barang dan inventaris secara end-to-end untuk meminimalkan discrepancy data dan keterlambatan distribusi.",
+            "Administrasi Komersial: Menyusun laporan performa penjualan dan operasional secara akurat, memberikan insight berbasis data kepada departemen terkait.",
+            "Efisiensi Proses: Mengurangi potensi kesalahan input data operasional melalui standardisasi dan pengembangan format pelaporan terstruktur."
           ],
-          technologies: ["JavaScript", "Python", "MySQL", "REST API", "Tailored CSS", "AWS"]
+          technologies: ["SAP ERP", "Supply Chain", "Sales & Ops", "Inventory Reconciliation", "Data Analytics"]
         },
         {
-          role: "Software Engineer",
-          company: "Nusantara FinTek Solusindo",
-          period: "2019 - 2021",
-          location: "Jakarta, Indonesia",
-          description: "Bertanggung jawab atas integrasi payment gateway, verifikasi dokumen KYC aman, serta enkripsi data pengguna sensitif.",
+          role: "Staf Magang Pengarsipan & IT",
+          company: "Badan Pusat Statistik (BPS) – Banjarmasin",
+          period: "Banjarmasin",
+          location: "Banjarmasin, Kalimantan Selatan",
+          description: "Membantu proses entri dan validasi data hasil survei lapangan ke dalam sistem database internal BPS serta memelihara sistem penataan arsip fisik dan digital.",
           highlights: [
-            "Mengembangkan viewer dokumen KYC terisolasi dengan proteksi watermarking otomatis.",
-            "Mengurangi waktu verifikasi calon nasabah dari 2 jam menjadi 15 menit."
+            "Validasi Database: Membantu proses entri data dan validasi data hasil survei lapangan ke dalam sistem database internal BPS.",
+            "Pengarsipan Standar: Bertanggung jawab atas klasifikasi, pelabelan, dan penataan arsip fisik (dokumen sensus dan survei) sesuai standar kearsipan yang berlaku.",
+            "Dukungan Teknis IT: Memberikan dukungan teknis IT dasar (seperti troubleshooting perangkat lunak/keras) untuk kelancaran operasional harian staf.",
+            "Proyek Aplikasi Web: Mengerjakan proyek berupa Aplikasi Pengarsipan Berbasis Web menggunakan PHP & MySQL untuk mempercepat pencarian arsip survei."
           ],
-          technologies: ["JavaScript", "HTML5/CSS3", "PHP", "Security & Encryption", "Git"]
+          technologies: ["PHP & MySQL", "Database Archiving", "IT Support", "Data Entry & Validation", "Excel Tabulation"]
         }
       ],
       projects: [
         {
           id: "PRJ-01",
-          title: "FinSafe: Platform Manajemen Dokumen Finansial & Redaction Engine",
-          role: "Lead Architect & Developer",
-          period: "2024",
-          summary: "Sistem repositori dokumen terenkripsi dengan kemampuan otomatisasi penyensoran data sensitif (NIK, rekening) dan embedded multi-format viewer.",
+          title: "Digitalisasi Pelaporan Tren Keselamatan K3 (Hazard & Near Miss Dashboard)",
+          role: "Safety Officer & Data Analyst",
+          period: "2025 – 2026",
+          summary: "Sistem digitalisasi laporan observasi keselamatan tambang yang mentransformasi data fisik observasi menjadi dashboard tren insiden dan hazard terintegrasi.",
           starMethod: {
-            situation: "Klien institusi keuangan menghadapi audit kepatuhan privasi (UU PDP) dan membutuhkan saluran peninjauan portofolio nasabah yang aman tanpa kebocoran identitas pribadi.",
-            task: "Merancang web portal dengan sistem autentikasi bertingkat, penampil dokumen tanpa perlu unduh paksa, serta sensor data otomatis.",
-            action: "Membangun arsitektur web responsif dengan enkripsi client-side, embedded viewer dengan watermark dinamis, serta mekanisme otorisasi PIN per dokumen sensitif.",
-            result: "Berhasil lolos audit ISO 27001 dengan 0 insiden kebocoran data dan memangkas waktu review berkas klien sebesar 60%."
+            situation: "Pencatatan observasi keselamatan tambang di lapangan sebelumnya masih konvensional dan berisiko menimbulkan keterlambatan pelaporan potensi bahaya kritis.",
+            task: "Membangun sistem pengarsipan dan pelaporan keselamatan digital yang mempercepat alur data observasi dari lapangan ke manajemen.",
+            action: "Mengintegrasikan formulir observasi digital dengan visualisasi tren risiko K3, pengelompokan Near Miss, serta pemantauan tindak lanjut mitigasi bahaya secara terstruktur.",
+            result: "Waktu rekapitulasi data kepatuhan K3 terpangkas hingga 50%, mempercepat respons penanganan potensi bahaya kerja di site operasional BIB."
           },
-          tags: ["Security", "Data Privacy", "PDF Viewer", "Cloud Storage", "Vanilla JS"],
+          tags: ["K3 Tambang", "Safety Reporting", "Data Analysis", "Digital Audit", "Risk Mitigation"],
           isFeatured: true,
           demoUrl: "#",
           repoUrl: "#"
         },
         {
           id: "PRJ-02",
-          title: "OmniLog: Sistem Pelacakan Logistik & Dashboard Real-Time Multi-Gudang",
-          role: "Full-Stack Engineer",
-          period: "2023",
-          summary: "Aplikasi pelacakan distribusi barang skala besar dengan visualisasi data interaktif, filter multi-kriteria, dan caching memori instan.",
+          title: "Integrasi & Optimasi Rantai Pasok Berbasis SAP ERP",
+          role: "Admin Commercial & Inventory Analyst",
+          period: "2023 – 2025",
+          summary: "Pengelolaan aliran distribusi logistik barang, rekonsiliasi data inventaris, dan perumusan laporan performa operasional menggunakan SAP.",
           starMethod: {
-            situation: "Staf logistik mengeluhkan lamanya waktu pemuatan data pergerakan barang saat berpindah tab menu di koneksi seluler.",
-            task: "Mengoptimalkan performa web app agar dapat berpindah menu dalam 0 detik dan menyediakan pencarian instan.",
-            action: "Menerapkan client-side in-memory state caching dan server-side chunked pagination dengan desain antarmuka ramah jempol (mobile-friendly).",
-            result: "Waktu loading saat perpindahan menu turun dari 4.8 detik menjadi instan (0 detik), efisiensi kerja lapangan meningkat 28%."
+            situation: "Tingginya volume pergerakan logistik barang berpotensi menimbulkan discrepancy data antara stok fisik dan pencatatan sistem.",
+            task: "Memastikan sinkronisasi data stok barang secara end-to-end tanpa selisih dan meminimalkan delay pengiriman.",
+            action: "Melakukan monitoring inventaris end-to-end di SAP, merancang format pelaporan terstruktur, dan menganalisis akurasi data pengiriman harian.",
+            result: "Akurasi data stok inventaris mencapai 99.4% dan risiko kesalahan input data operasional berkurang drastis."
           },
-          tags: ["Performance", "In-Memory Cache", "Dashboard", "Mobile-First", "PostgreSQL"],
+          tags: ["SAP ERP", "Supply Chain", "Discrepancy Control", "Commercial Operations", "Excel"],
           isFeatured: true,
           demoUrl: "#",
           repoUrl: "#"
         },
         {
           id: "PRJ-03",
-          title: "CloudMatrix: Portal Manajemen Aset Infrastruktur Multi-Cloud",
-          role: "Cloud Engineer",
-          period: "2022",
-          summary: "Antarmuka terpusat untuk memantau penggunaan server GCP & AWS, estimasi tagihan bulanan, serta penguncian izin akses berbasis peran.",
+          title: "Aplikasi Pengarsipan Dokumen Survei & Sensus Berbasis Web",
+          role: "Web Developer & IT Support",
+          period: "BPS Banjarmasin",
+          summary: "Aplikasi web mandiri berbasis PHP & MySQL untuk klasifikasi, pelacakan cepat (retrieval), dan digitalisasi arsip dokumen sensus BPS.",
           starMethod: {
-            situation: "Pengeluaran cloud membengkak akibat sumber daya yang tidak termonitor dan minimnya visibilitas alokasi biaya antar departemen.",
-            task: "Membangun dasbor monitoring pengeluaran cloud real-time dengan peringatan dini (anomaly alert).",
-            action: "Mengintegrasikan Cloud Billing API dengan visualisasi grafik interaktif dan otomasi rekomendasi rightsizing mesin.",
-            result: "Menghemat pengeluaran tagihan infrastruktur cloud sebesar 24% pada kuartal pertama implementasi."
+            situation: "Ribuan dokumen sensus fisik membutuhkan waktu pencarian manual yang lama saat diperlukan oleh staf untuk proses verifikasi statistik.",
+            task: "Merancang aplikasi pengarsipan digital sederhana yang mempermudah pencarian berkas berdasarkan nomor kotak, tahun, dan kategori survei.",
+            action: "Membangun sistem database dengan PHP & MySQL dilengkapi fitur pencarian instan, penandaan lokasi rak fisik, dan validasi data entri.",
+            result: "Waktu temu balik dokumen sensus meningkat dari rata-rata 25 menit menjadi di bawah 1 menit."
           },
-          tags: ["Cloud Architecture", "GCP", "AWS", "Cost Optimization", "Analytics"],
+          tags: ["PHP", "MySQL", "Web App", "Database Archiving", "IT Support"],
           isFeatured: false,
           demoUrl: "#",
           repoUrl: "#"
@@ -2320,125 +2426,198 @@
       ],
       documents: [
         {
-          id: "DOC-2026-001",
-          title: "Sertifikasi Profesional Google Cloud: Professional Cloud Architect",
-          category: "Sertifikasi",
-          issuer: "Google Cloud Inc.",
-          issueYear: "2025 - Berlaku s/d 2028",
-          credentialId: "GCP-PCA-983271",
-          fileUrl: "docs/Sertifikat_Google_Cloud_Architect_Ahmad_2026.pdf",
-          downloadName: "Sertifikat_Google_Cloud_Architect_Ahmad_2026.pdf",
+          id: "DOC-EAN-001",
+          title: "Sertifikat BNSP Junior Microsoft Office",
+          category: "Sertifikasi BNSP",
+          issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+          issueYear: "Tervalidasi Resmi",
+          credentialId: "BNSP-JMO-EAN-2023",
+          downloadName: "Sertifikat_BNSP_Junior_Microsoft_Office_Erwin.pdf",
           previewType: "certificate",
           badgeColor: "blue",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Nomor registrasi unik publik terverifikasi. Informasi identitas sensitif terlindungi.",
-          description: "Membuktikan kompetensi profesional dalam merancang arsitektur cloud enterprise yang tangguh, aman, scalable, dan hemat biaya."
+          redactionDetails: "Nomor registrasi kompetensi nasional BNSP terverifikasi.",
+          description: "Sertifikasi kompetensi kerja standar nasional Indonesia untuk pengoperasian aplikasi perkantoran, pengolahan dokumen, dan komputasi spreadsheet profesional."
         },
         {
-          id: "DOC-2026-002",
-          title: "Ijazah Sarjana Komputer (S.Kom) - Ilmu Komputer",
-          category: "Ijazah",
-          issuer: "Fakultas Ilmu Komputer, Universitas Indonesia",
-          issueYear: "2021",
-          credentialId: "IJZ-UI-FASILKOM-2021",
-          fileUrl: "docs/Ijazah_S1_Ilmu_Komputer_Ahmad_Rizky.pdf",
-          downloadName: "Ijazah_S1_Ilmu_Komputer_Ahmad_Rizky.pdf",
-          previewType: "diploma",
-          badgeColor: "emerald",
-          isProtected: false,
-          accessPin: null,
-          redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Nomor Induk Kependudukan (NIK) dan Tanggal Lahir Lengkap telah disensor (redacted) demi keamanan privasi.",
-          description: "Gelar Sarjana Ilmu Komputer dengan fokus pada Rekayasa Perangkat Lunak, Algoritma, dan Keamanan Sistem Informasi (IPK: 3.86/4.00, Cum Laude)."
-        },
-        {
-          id: "DOC-2026-003",
-          title: "Lisensi Profesi BNSP: Lead Software Architect",
-          category: "Lisensi",
-          issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
-          issueYear: "2024 - 2027",
-          credentialId: "BNSP-LSP-TIK-2024-0819",
-          fileUrl: "docs/Lisensi_BNSP_Software_Architect_Ahmad_2026.pdf",
-          downloadName: "Lisensi_BNSP_Software_Architect_Ahmad_2026.pdf",
-          previewType: "license",
+          id: "DOC-EAN-002",
+          title: "Sertifikat Production Operations Control And Fleet Management Systems",
+          category: "Sertifikasi Operasional",
+          issuer: "Lembaga Pelatihan Operasional & Fleet Management",
+          issueYear: "Tervalidasi",
+          credentialId: "POC-FMS-EAN-2024",
+          downloadName: "Sertifikat_Production_Operations_Fleet_Management_Erwin.pdf",
+          previewType: "certificate",
           badgeColor: "indigo",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Tanda tangan digital dan kode register kompetensi nasional tervalidasi.",
-          description: "Sertifikasi kompetensi kerja standar nasional Indonesia (SKKNI) untuk kualifikasi perancangan sistem dan rekayasa perangkat lunak."
+          redactionDetails: "Kredensial resmi pelatihan kontrol operasional dan armada.",
+          description: "Membuktikan penguasaan dalam pemantauan kontrol operasional produksi, manajemen armada alat berat/logistik, dan efisiensi rantai distribusi."
         },
         {
-          id: "DOC-2026-004",
-          title: "Penghargaan Juara 1 Nasional: National GovTech Hackathon 2025",
-          category: "Penghargaan",
-          issuer: "Kementerian Komunikasi dan Informatika RI",
-          issueYear: "2025",
-          credentialId: "AWD-KOMINFO-2025-01",
-          fileUrl: "docs/Penghargaan_GovTech_Hackathon_Ahmad_2025.pdf",
-          downloadName: "Penghargaan_GovTech_Hackathon_Ahmad_2025.pdf",
-          previewType: "award",
+          id: "DOC-EAN-003",
+          title: "Sertifikat PWP Analisis Kerja Aman",
+          category: "Sertifikasi K3",
+          issuer: "Pusat Pelatihan K3 & Keselamatan Kerja",
+          issueYear: "Tervalidasi",
+          credentialId: "PWP-AKA-EAN-2025",
+          downloadName: "Sertifikat_PWP_Analisis_Kerja_Aman_Erwin.pdf",
+          previewType: "certificate",
+          badgeColor: "emerald",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Sertifikasi keselamatan kerja dan Job Safety Analysis (JSA).",
+          description: "Kompetensi dalam penyusunan Analisis Kerja Aman (Job Safety Analysis), identifikasi potensi bahaya langkah kerja, dan penerapan prosedur mitigasi kecelakaan."
+        },
+        {
+          id: "DOC-EAN-004",
+          title: "Sertifikat PKK Izin Kerja Khusus",
+          category: "Lisensi Kerja",
+          issuer: "Komite Keselamatan Operasional Kerja",
+          issueYear: "Tervalidasi",
+          credentialId: "PKK-IKK-EAN-2025",
+          downloadName: "Sertifikat_PKK_Izin_Kerja_Khusus_Erwin.pdf",
+          previewType: "license",
           badgeColor: "amber",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Salinan digital autentik dengan nomor SK Dewan Juri Kominfo.",
-          description: "Pengakuan inovasi terbaik untuk perancangan arsitektur sistem layanan publik mandiri berbasis keamanan data tinggi."
+          redactionDetails: "Otorisasi izin kerja risiko khusus terverifikasi.",
+          description: "Sertifikasi kewenangan penerbitan dan pengawasan Izin Kerja Khusus (Permit to Work) untuk pekerjaan berisiko tinggi di area operasional."
         },
         {
-          id: "DOC-2026-005",
-          title: "Dokumen Blueprint Arsitektur Sistem Klien FinTech (NDA Protected)",
-          category: "Portofolio Klien",
-          issuer: "PT Finansial Mitra Solusi (Klien Korporat)",
-          issueYear: "2026",
-          credentialId: "CONFIDENTIAL-ARCH-2026",
-          fileUrl: "docs/Dokumen_Arsitektur_Fintech_NDA_Ahmad_2026.pdf",
-          downloadName: "Dokumen_Arsitektur_Fintech_NDA_Ahmad_2026.pdf",
+          id: "DOC-EAN-005",
+          title: "Sertifikat PKK K3 Pertambangan",
+          category: "Sertifikasi K3",
+          issuer: "Badan Diklat K3 Pertambangan Mineral & Batubara",
+          issueYear: "Tervalidasi",
+          credentialId: "PKK-K3P-EAN-2025",
+          downloadName: "Sertifikat_PKK_K3_Pertambangan_Erwin.pdf",
+          previewType: "certificate",
+          badgeColor: "emerald",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Standar regulasi keselamatan pertambangan minerba terverifikasi.",
+          description: "Kompetensi keselamatan dan kesehatan kerja khusus industri pertambangan, regulasi kepatuhan inspeksi lapangan, dan audit lingkungan kerja tambang."
+        },
+        {
+          id: "DOC-EAN-006",
+          title: "Sertifikat PWP Pertemuan Keselamatan",
+          category: "Sertifikasi K3",
+          issuer: "Divisi K3 & Operasional Lapangan",
+          issueYear: "Tervalidasi",
+          credentialId: "PWP-PK-EAN-2025",
+          downloadName: "Sertifikat_PWP_Pertemuan_Keselamatan_Erwin.pdf",
+          previewType: "certificate",
+          badgeColor: "emerald",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Kredensial kepemimpinan safety briefing terverifikasi.",
+          description: "Kualifikasi dalam memimpin Safety Talk, Tool Box Meeting harian, dan briefing keselamatan kerja pra-operasional lintas tim lapangan."
+        },
+        {
+          id: "DOC-EAN-007",
+          title: "Sertifikat PWP Identifikasi Bahaya Penilaian Resiko (IBPR)",
+          category: "Manajemen Risiko",
+          issuer: "Lembaga Sertifikasi K3 & Manajemen Risiko",
+          issueYear: "Tervalidasi",
+          credentialId: "PWP-IBPR-EAN-2025",
+          downloadName: "Sertifikat_PWP_IBPR_Erwin.pdf",
           previewType: "confidential",
           badgeColor: "rose",
           isProtected: true,
           accessPin: "1234",
-          redactionStatus: "High Privacy Protection (NDA Active)",
-          redactionDetails: "Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Seluruh data keuangan, rekening, dan diagram rahasia memerlukan izin khusus.",
-          description: "Spesifikasi arsitektur teknis microservices dan alur transaksi high-concurrency (10.000 TPS). Hanya dapat diakses oleh recruiter/klien terverifikasi."
+          redactionStatus: "Protected Document (PIN Required)",
+          redactionDetails: "Metodologi matriks risiko internal operasional dilindungi.",
+          description: "Keahlian mendalam dalam penyusunan matriks IBPR (HIRADC), evaluasi tingkat keparahan risiko, serta perencanaan pengendalian hierarki eliminasi bahaya."
         },
         {
-          id: "DOC-2026-006",
-          title: "Sertifikat Auditor Keamanan Informasi ISO/IEC 27001",
-          category: "Sertifikasi",
-          issuer: "BSI (British Standards Institution)",
-          issueYear: "2024 - 2027",
-          credentialId: "BSI-ISMS-27001-A29",
-          fileUrl: "docs/Sertifikat_ISO27001_Auditor_Ahmad_2026.pdf",
-          downloadName: "Sertifikat_ISO27001_Auditor_Ahmad_2026.pdf",
-          previewType: "certificate",
+          id: "DOC-EAN-008",
+          title: "Ijazah S1 Sistem Informasi - STMIK Indonesia Banjarmasin",
+          category: "Ijazah",
+          issuer: "STMIK Indonesia Banjarmasin",
+          issueYear: "2019 – 2023",
+          credentialId: "IJZ-S1-SI-STMIK-2023",
+          downloadName: "Ijazah_S1_Sistem_Informasi_Erwin_Ardi_Nurcahyo.pdf",
+          previewType: "diploma",
           badgeColor: "teal",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Akreditasi internasional resmi terdaftar di direktori profesional BSI.",
-          description: "Kompetensi dalam menerapkan manajemen keamanan informasi, manajemen risiko celah siber, serta audit kepatuhan perlindungan privasi."
+          redactionDetails: "IPK 3,44 (Predikat Sangat Memuaskan). NIK & tanggal lahir disensor.",
+          description: "Gelar Sarjana Sistem Informasi dengan fokus pada Analisis Data, Rekayasa Basis Data, dan Manajemen Sistem Informasi Bisnis."
+        },
+        {
+          id: "DOC-EAN-009",
+          title: "Ijazah SMKN 1 Sungai Loban - Jurusan Multimedia",
+          category: "Ijazah",
+          issuer: "SMKN 1 Sungai Loban",
+          issueYear: "2015 – 2018",
+          credentialId: "IJZ-SMK-MM-2018",
+          downloadName: "Ijazah_SMKN1_Multimedia_Erwin_Ardi_Nurcahyo.pdf",
+          previewType: "diploma",
+          badgeColor: "teal",
+          isProtected: false,
+          accessPin: null,
+          redactionStatus: "Verified & Redacted for Privacy",
+          redactionDetails: "Dokumen kelulusan resmi kompetensi keahlian Multimedia.",
+          description: "Pendidikan kejuruan Multimedia dengan keahlian desain grafis, tipografi, pengolahan visual digital, dan dasar-dasar pemrograman."
         }
       ],
-      categories: ["Semua", "Sertifikasi", "Ijazah", "Lisensi", "Penghargaan", "Portofolio Klien"]
+      categories: [
+        "Semua",
+        "Sertifikasi K3",
+        "Sertifikasi BNSP",
+        "Sertifikasi Operasional",
+        "Manajemen Risiko",
+        "Lisensi Kerja",
+        "Ijazah"
+      ]
     };
-    window.PORTFOLIO_DATA = PORTFOLIO_DATA;
-  </script>
 
-  <!-- ==================== APPLICATION LOGIC ENGINE INLINE ==================== -->
-  <script>
+    window.PORTFOLIO_DATA = INITIAL_PORTFOLIO_DATA;
+
+    // ==================== ENGINE RUNTIME ====================
     document.addEventListener('DOMContentLoaded', () => {
       const DATA = window.PORTFOLIO_DATA;
       if (!DATA) return;
 
+      // 1. SISTEM DOKUMEN LOCALSTORAGE DENGAN PERSISTENSI CRUD
+      const STORAGE_KEY_DOCS = 'erwin_portfolio_docs_v1';
+      const STORAGE_KEY_ADMIN = 'erwin_portfolio_is_admin';
+      const STORAGE_KEY_PASSWORD = 'erwin_portfolio_admin_password';
+
+      function loadDocuments() {
+        const stored = localStorage.getItem(STORAGE_KEY_DOCS);
+        if (stored) {
+          try {
+            return JSON.parse(stored);
+          } catch (e) {
+            console.error('Error parsing stored documents:', e);
+          }
+        }
+        return JSON.parse(JSON.stringify(DATA.documents));
+      }
+
+      function saveDocuments(docs) {
+        localStorage.setItem(STORAGE_KEY_DOCS, JSON.stringify(docs));
+        currentDocuments = docs;
+      }
+
+      let currentDocuments = loadDocuments();
+      let isAdmin = localStorage.getItem(STORAGE_KEY_ADMIN) === 'true';
       let activeCategory = 'Semua';
       let searchQuery = '';
       let unlockedDocs = new Set();
       let currentTargetDoc = null;
 
-      // 1. TEMA DARK / LIGHT
+      // 2. TEMA DARK / LIGHT MODE
       const themeToggleBtn = document.getElementById('theme-toggle');
       const iconMoon = document.getElementById('icon-moon');
       const iconSun = document.getElementById('icon-sun');
@@ -2466,7 +2645,7 @@
         showToast(nextTheme === 'dark' ? 'Mode Gelap diaktifkan' : 'Mode Terang diaktifkan');
       });
 
-      // 2. NAVIGASI MOBILE
+      // 3. NAVIGASI MOBILE
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const mobileNav = document.getElementById('mobile-nav');
       if (hamburgerBtn && mobileNav) {
@@ -2478,7 +2657,7 @@
         });
       }
 
-      // 3. RENDER HERO & STATS
+      // 4. RENDER HERO & STATS
       const heroNameEl = document.getElementById('hero-name');
       const heroTitleEl = document.getElementById('hero-title');
       const heroTaglineEl = document.getElementById('hero-tagline');
@@ -2505,7 +2684,7 @@
         `).join('');
       }
 
-      // 4. RENDER ABOUT & SKILLS
+      // 5. RENDER ABOUT & SKILLS
       const aboutBioContainer = document.getElementById('about-bio-container');
       const philosophyText = document.getElementById('philosophy-text');
       const skillsContainer = document.getElementById('skills-container');
@@ -2537,7 +2716,7 @@
         `).join('');
       }
 
-      // 5. RENDER PENGALAMAN
+      // 6. RENDER PENGALAMAN KERJA
       const experienceTimeline = document.getElementById('experience-timeline');
       if (experienceTimeline && DATA.experience) {
         experienceTimeline.innerHTML = DATA.experience.map(exp => `
@@ -2556,14 +2735,14 @@
                 ${exp.highlights.map(h => `<li>${escapeHTML(h)}</li>`).join('')}
               </ul>
               <div class="timeline-tags">
-                ${exp.technologies.map(t => `<span class="badge badge-blue">${escapeHTML(t)}</span>`).join('')}
+                ${exp.technologies.map(t => `<span class="badge badge-emerald">${escapeHTML(t)}</span>`).join('')}
               </div>
             </div>
           </div>
         `).join('');
       }
 
-      // 6. RENDER PROYEK UNGGULAN
+      // 7. RENDER PROYEK UNGGULAN
       const projectsContainer = document.getElementById('projects-container');
       if (projectsContainer && DATA.projects) {
         projectsContainer.innerHTML = DATA.projects.map(prj => `
@@ -2596,7 +2775,7 @@
               <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
                 ${prj.tags.slice(0, 3).map(tag => `<span class="skill-pill" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">${escapeHTML(tag)}</span>`).join('')}
               </div>
-              <a href="#dokumen" class="btn btn-secondary btn-sm" onclick="filterDocsByProject('${escapeHTML(prj.title)}');">
+              <a href="#dokumen" class="btn btn-secondary btn-sm" onclick="filterDocsFromProject('${escapeHTML(prj.tags[0])}');">
                 <span>Bukti Dokumen</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -2608,25 +2787,57 @@
         `).join('');
       }
 
-      // 7. RENDER DOKUMEN & FILTER
+      window.filterDocsFromProject = function(keyword) {
+        activeCategory = 'Semua';
+        searchQuery = (keyword || '').toLowerCase();
+        if (searchInput) searchInput.value = keyword || '';
+        renderCategories();
+        renderDocumentsList();
+        const docSection = document.getElementById('dokumen');
+        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      // 8. RENDER KATEGORI FILTER & DAFTAR DOKUMEN
       const categoryFilters = document.getElementById('category-filters');
       const documentsContainer = document.getElementById('documents-container');
       const searchInput = document.getElementById('search-docs');
+      const adminToolbarCard = document.getElementById('admin-toolbar-card');
+      const adminBtnText = document.getElementById('admin-btn-text');
 
-      if (categoryFilters && DATA.categories) {
-        categoryFilters.innerHTML = DATA.categories.map(cat => `
+      function updateAdminUI() {
+        if (adminToolbarCard) {
+          adminToolbarCard.style.display = isAdmin ? 'flex' : 'none';
+        }
+        if (adminBtnText) {
+          adminBtnText.textContent = isAdmin ? 'Admin Aktif' : 'Portal Admin';
+        }
+        renderDocumentsList();
+      }
+
+      function getUniqueCategories() {
+        const catSet = new Set(['Semua']);
+        currentDocuments.forEach(d => {
+          if (d.category) catSet.add(d.category);
+        });
+        return Array.from(catSet);
+      }
+
+      function renderCategories() {
+        if (!categoryFilters) return;
+        const categories = getUniqueCategories();
+        categoryFilters.innerHTML = categories.map(cat => `
           <button type="button" class="filter-btn ${cat === activeCategory ? 'active' : ''}" data-category="${escapeHTML(cat)}">
             ${escapeHTML(cat)}
           </button>
         `).join('');
 
-        categoryFilters.addEventListener('click', (e) => {
-          const btn = e.target.closest('.filter-btn');
-          if (!btn) return;
-          activeCategory = btn.dataset.category;
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderDocumentsList();
+        categoryFilters.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            activeCategory = btn.dataset.category;
+            categoryFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderDocumentsList();
+          });
         });
       }
 
@@ -2638,22 +2849,31 @@
       }
 
       function renderDocumentsList() {
-        if (!documentsContainer || !DATA.documents) return;
-        const filtered = DATA.documents.filter(doc => {
+        if (!documentsContainer) return;
+
+        const filtered = currentDocuments.filter(doc => {
           const matchCat = activeCategory === 'Semua' || doc.category === activeCategory;
           const matchSearch = searchQuery === '' ||
-            doc.title.toLowerCase().includes(searchQuery) ||
-            doc.issuer.toLowerCase().includes(searchQuery) ||
-            doc.category.toLowerCase().includes(searchQuery) ||
-            doc.description.toLowerCase().includes(searchQuery);
+            (doc.title && doc.title.toLowerCase().includes(searchQuery)) ||
+            (doc.issuer && doc.issuer.toLowerCase().includes(searchQuery)) ||
+            (doc.category && doc.category.toLowerCase().includes(searchQuery)) ||
+            (doc.description && doc.description.toLowerCase().includes(searchQuery));
           return matchCat && matchSearch;
         });
 
         if (filtered.length === 0) {
           documentsContainer.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; background: var(--card-bg); border: 1px dashed var(--border-color); border-radius: var(--radius-lg);">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1.5rem; background: var(--card-bg); border: 1.5px dashed var(--border-color); border-radius: var(--radius-lg);">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
               <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Tidak Ada Dokumen Ditemukan</h4>
-              <p style="font-size: 0.875rem; color: var(--text-muted);">Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+              <p style="font-size: 0.875rem; color: var(--text-muted); max-width: 420px; margin: 0 auto 1.25rem;">
+                Coba sesuaikan kata kunci pencarian Anda atau gunakan tombol di bawah untuk menambah berkas baru.
+              </p>
+              ${isAdmin ? `
+                <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('btn-admin-add-doc').click();">
+                  + Tambah Berkas Baru
+                </button>
+              ` : ''}
             </div>
           `;
           return;
@@ -2661,21 +2881,21 @@
 
         documentsContainer.innerHTML = filtered.map(doc => {
           const isLocked = doc.isProtected && !unlockedDocs.has(doc.id);
-          const badgeStyle = doc.badgeColor ? `badge-${doc.badgeColor}` : 'badge-blue';
+          const badgeStyle = doc.badgeColor ? `badge-${doc.badgeColor}` : 'badge-emerald';
 
           return `
             <div class="doc-card" id="card-${doc.id}">
               <div class="doc-preview-thumb">
                 <span class="watermark-subtle">SALINAN RESMI • PRIVACY VERIFIED</span>
                 <div class="doc-thumb-content">
-                  <div class="doc-thumb-icon" style="${isLocked ? 'color: var(--accent-rose);' : ''}">
+                  <div class="doc-thumb-icon" style="${isLocked ? 'color: var(--accent-rose);' : 'color: var(--accent-primary);'}">
                     ${isLocked ? `
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                       </svg>
                     ` : `
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -2691,7 +2911,7 @@
               <div class="doc-body">
                 <div class="doc-meta-top">
                   <span class="badge ${badgeStyle}">${escapeHTML(doc.category)}</span>
-                  <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${escapeHTML(doc.issueYear)}</span>
+                  <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-muted);">${escapeHTML(doc.issueYear || 'Tervalidasi')}</span>
                 </div>
 
                 <h3 class="doc-title">${escapeHTML(doc.title)}</h3>
@@ -2701,13 +2921,14 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                   </svg>
-                  <span>${isLocked ? 'Dilindungi PIN / Izin Khusus' : escapeHTML(doc.redactionStatus)}</span>
+                  <span>${isLocked ? 'Dilindungi PIN / Izin Khusus' : escapeHTML(doc.redactionStatus || 'Verified & Redacted')}</span>
                 </div>
 
                 <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
-                  ${escapeHTML(doc.description)}
+                  ${escapeHTML(doc.description || 'Salinan dokumen resmi terverifikasi.')}
                 </p>
 
+                <!-- Tombol Pengunjung Biasa -->
                 <div class="doc-actions">
                   <button type="button" class="btn btn-primary btn-sm btn-open-doc" style="flex: 1;" data-doc-id="${doc.id}">
                     ${isLocked ? `
@@ -2725,7 +2946,7 @@
                     `}
                   </button>
 
-                  <button type="button" class="btn btn-secondary btn-sm btn-download-single" data-doc-id="${doc.id}" title="Unduh Versi Resmi">
+                  <button type="button" class="btn btn-secondary btn-sm btn-download-single" data-doc-id="${doc.id}" title="Unduh Versi PDF">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                       <polyline points="7 10 12 15 17 10"></polyline>
@@ -2733,41 +2954,69 @@
                     </svg>
                   </button>
                 </div>
+
+                <!-- Tombol Admin Khusus (Edit / Hapus) -->
+                ${isAdmin ? `
+                  <div class="doc-admin-bar">
+                    <button type="button" class="btn btn-admin-edit btn-xs btn-edit-doc" data-doc-id="${doc.id}">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                      </svg>
+                      <span>Edit</span>
+                    </button>
+                    <button type="button" class="btn btn-admin-delete btn-xs btn-delete-doc" data-doc-id="${doc.id}">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                      </svg>
+                      <span>Hapus</span>
+                    </button>
+                  </div>
+                ` : ''}
               </div>
             </div>
           `;
         }).join('');
 
-        document.querySelectorAll('.btn-open-doc').forEach(btn => {
+        // Pasang Event Listeners
+        documentsContainer.querySelectorAll('.btn-open-doc').forEach(btn => {
           btn.addEventListener('click', () => {
-            const targetDoc = DATA.documents.find(d => d.id === btn.dataset.docId);
+            const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
             if (targetDoc) handleDocumentClick(targetDoc);
           });
         });
 
-        document.querySelectorAll('.btn-download-single').forEach(btn => {
+        documentsContainer.querySelectorAll('.btn-download-single').forEach(btn => {
           btn.addEventListener('click', () => {
-            const targetDoc = DATA.documents.find(d => d.id === btn.dataset.docId);
+            const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
             if (targetDoc) handleDocumentDownload(targetDoc);
           });
         });
+
+        if (isAdmin) {
+          documentsContainer.querySelectorAll('.btn-edit-doc').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
+              if (targetDoc) openCrudModalForEdit(targetDoc);
+            });
+          });
+
+          documentsContainer.querySelectorAll('.btn-delete-doc').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
+              if (targetDoc) confirmDeleteDocument(targetDoc);
+            });
+          });
+        }
       }
 
-      renderDocumentsList();
+      renderCategories();
+      updateAdminUI();
 
-      window.filterDocsByProject = function (projectTitle) {
-        activeCategory = 'Semua';
-        searchQuery = 'sertifikasi';
-        if (searchInput) searchInput.value = searchQuery;
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.toggle('active', b.dataset.category === 'Semua');
-        });
-        renderDocumentsList();
-        const docSection = document.getElementById('dokumen');
-        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
-      };
-
-      // 8. VIEWER MODAL & PIN
+      // ============================================================================
+      // 9. VIEWER MODAL & PIN VERIFICATION
+      // ============================================================================
       const docViewerModal = document.getElementById('doc-viewer-modal');
       const btnModalClose = document.getElementById('btn-modal-close');
       const btnModalDownload = document.getElementById('btn-modal-download');
@@ -2809,16 +3058,16 @@
       function openDocViewer(doc) {
         currentTargetDoc = doc;
         if (modalDocTitle) modalDocTitle.textContent = doc.title;
-        if (modalDocMeta) modalDocMeta.textContent = `Penerbit: ${doc.issuer} | Periode: ${doc.issueYear}`;
-        if (sheetInstitution) sheetInstitution.textContent = doc.issuer.toUpperCase();
+        if (modalDocMeta) modalDocMeta.textContent = `Penerbit: ${doc.issuer} | Periode: ${doc.issueYear || 'Tervalidasi'}`;
+        if (sheetInstitution) sheetInstitution.textContent = (doc.issuer || 'LEMBAGA RESMI').toUpperCase();
         if (sheetCredentialId) sheetCredentialId.textContent = `NOMOR KREDENSIAL: ${doc.credentialId || 'TERVERIFIKASI'}`;
         if (sheetDocumentTitle) sheetDocumentTitle.textContent = doc.title.toUpperCase();
         if (sheetRecipient) sheetRecipient.textContent = DATA.profile.name;
-        if (sheetStatement) sheetStatement.textContent = doc.description;
+        if (sheetStatement) sheetStatement.textContent = doc.description || 'Kompetensi terverifikasi sesuai standar resmi operasional.';
         if (sheetRedaction) {
           sheetRedaction.textContent = doc.redactionDetails
             ? `██ [SENSOR PRIVASI: ${doc.redactionDetails}] ██`
-            : '██ DATA PRIBADI & NIK TELAH DISENSOR SESUAI STANDAR PRIVASI ██';
+            : '██ DATA PRIBADI & NIK TELAH DISENSOR SESUAI STANDAR PRIVASI K3 ██';
         }
 
         if (btnModalDownload) {
@@ -2850,7 +3099,7 @@
 
         if (btnRequestPinWa) {
           const waNumber = DATA.profile.contact.whatsapp;
-          const waMsg = encodeURIComponent(`Halo Mas ${DATA.profile.name.split(' ')[0]}, saya tertarik meninjau dokumen portofolio "${doc.title}". Boleh minta 4-digit PIN aksesnya? Terima kasih.`);
+          const waMsg = encodeURIComponent(`Halo Mas Erwin, saya tertarik meninjau dokumen portofolio "${doc.title}". Boleh minta 4-digit PIN aksesnya? Terima kasih.`);
           btnRequestPinWa.href = `https://wa.me/${waNumber}?text=${waMsg}`;
         }
 
@@ -2895,7 +3144,7 @@
 
         if (enteredPin.length < 4) {
           pinErrorMsg.textContent = 'Silakan masukkan 4 angka PIN lengkap.';
-          triggerShake();
+          triggerShake(pinDialogCard);
           return;
         }
 
@@ -2903,27 +3152,265 @@
         if (enteredPin === correctPin) {
           unlockedDocs.add(currentTargetDoc.id);
           closePinModal();
-          showToast('Kunci berhasil dibuka! Membuka dokumen...', 'success');
+          showToast('Kunci PIN berhasil dibuka! Membuka dokumen...', 'success');
           renderDocumentsList();
           setTimeout(() => openDocViewer(currentTargetDoc), 250);
         } else {
           pinErrorMsg.textContent = 'Kode PIN salah. Silakan coba kembali atau minta akses.';
-          triggerShake();
+          triggerShake(pinDialogCard);
           pinInputs.forEach(i => i.value = '');
           if (pinInputs[0]) pinInputs[0].focus();
         }
       }
 
-      function triggerShake() {
-        pinDialogCard.classList.remove('shake');
-        void pinDialogCard.offsetWidth;
-        pinDialogCard.classList.add('shake');
+      function triggerShake(element) {
+        if (!element) return;
+        element.classList.remove('shake');
+        void element.offsetWidth;
+        element.classList.add('shake');
       }
 
-      // 9. DOWNLOADS
+      // ============================================================================
+      // 10. FITUR ADMIN AUTHENTICATION (LOGIN / LOGOUT)
+      // ============================================================================
+      const btnAdminPortal = document.getElementById('btn-admin-portal');
+      const mobileAdminLink = document.getElementById('mobile-admin-link');
+      const adminLoginModal = document.getElementById('admin-login-modal');
+      const adminLoginForm = document.getElementById('admin-login-form');
+      const adminPassInput = document.getElementById('admin-pass-input');
+      const adminLoginError = document.getElementById('admin-login-error');
+      const btnCancelAdminLogin = document.getElementById('btn-cancel-admin-login');
+      const btnCloseAdminLogin = document.getElementById('btn-close-admin-login');
+      const btnAdminLogout = document.getElementById('btn-admin-logout');
+
+      function openAdminLogin() {
+        if (isAdmin) {
+          const docSec = document.getElementById('dokumen');
+          if (docSec) docSec.scrollIntoView({ behavior: 'smooth' });
+          showToast('Anda sudah berada dalam Mode Admin.', 'info');
+          return;
+        }
+        adminLoginError.textContent = '';
+        adminPassInput.value = '';
+        adminLoginModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => adminPassInput.focus(), 150);
+      }
+
+      function closeAdminLogin() {
+        adminLoginModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnAdminPortal) btnAdminPortal.addEventListener('click', openAdminLogin);
+      if (mobileAdminLink) mobileAdminLink.addEventListener('click', openAdminLogin);
+      if (btnCancelAdminLogin) btnCancelAdminLogin.addEventListener('click', closeAdminLogin);
+      if (btnCloseAdminLogin) btnCloseAdminLogin.addEventListener('click', closeAdminLogin);
+
+      if (adminLoginForm) {
+        adminLoginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const enteredPass = adminPassInput.value.trim();
+          const savedPass = localStorage.getItem(STORAGE_KEY_PASSWORD) || 'admin123';
+
+          if (enteredPass === savedPass) {
+            isAdmin = true;
+            localStorage.setItem(STORAGE_KEY_ADMIN, 'true');
+            closeAdminLogin();
+            updateAdminUI();
+            showToast('Selamat datang, Admin Erwin! Mode kelola berkas aktif.', 'success');
+            const docSection = document.getElementById('dokumen');
+            if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            adminLoginError.textContent = 'Kata sandi salah. Sandi standar adalah admin123';
+            triggerShake(adminLoginModal.querySelector('.modal-container'));
+          }
+        });
+      }
+
+      if (btnAdminLogout) {
+        btnAdminLogout.addEventListener('click', () => {
+          isAdmin = false;
+          localStorage.removeItem(STORAGE_KEY_ADMIN);
+          updateAdminUI();
+          showToast('Anda telah keluar dari mode admin.', 'info');
+        });
+      }
+
+      // ============================================================================
+      // 11. FITUR CRUD DOKUMEN (TAMBAH, EDIT, HAPUS)
+      // ============================================================================
+      const docCrudModal = document.getElementById('doc-crud-modal');
+      const docCrudForm = document.getElementById('doc-crud-form');
+      const btnAdminAddDoc = document.getElementById('btn-admin-add-doc');
+      const btnCloseCrudModal = document.getElementById('btn-close-crud-modal');
+      const btnCancelCrud = document.getElementById('btn-cancel-crud');
+      const crudModalTitle = document.getElementById('crud-modal-title');
+
+      const crudDocId = document.getElementById('crud-doc-id');
+      const crudTitle = document.getElementById('crud-title');
+      const crudCategory = document.getElementById('crud-category');
+      const crudBadgeColor = document.getElementById('crud-badge-color');
+      const crudIssuer = document.getElementById('crud-issuer');
+      const crudYear = document.getElementById('crud-year');
+      const crudCredId = document.getElementById('crud-cred-id');
+      const crudFilename = document.getElementById('crud-filename');
+      const crudDesc = document.getElementById('crud-desc');
+      const crudIsProtected = document.getElementById('crud-is-protected');
+      const crudPinWrapper = document.getElementById('crud-pin-wrapper');
+      const crudAccessPin = document.getElementById('crud-access-pin');
+
+      if (crudIsProtected) {
+        crudIsProtected.addEventListener('change', () => {
+          crudPinWrapper.style.display = crudIsProtected.checked ? 'block' : 'none';
+        });
+      }
+
+      function openCrudModalForAdd() {
+        crudModalTitle.textContent = 'Tambah Berkas Dokumen Baru';
+        docCrudForm.reset();
+        crudDocId.value = '';
+        crudPinWrapper.style.display = 'none';
+        docCrudModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => crudTitle.focus(), 150);
+      }
+
+      function openCrudModalForEdit(doc) {
+        crudModalTitle.textContent = `Edit Rincian: ${doc.title}`;
+        crudDocId.value = doc.id;
+        crudTitle.value = doc.title || '';
+        crudCategory.value = doc.category || 'Sertifikasi K3';
+        crudBadgeColor.value = doc.badgeColor || 'emerald';
+        crudIssuer.value = doc.issuer || '';
+        crudYear.value = doc.issueYear || '';
+        crudCredId.value = doc.credentialId || '';
+        crudFilename.value = doc.downloadName || '';
+        crudDesc.value = doc.description || '';
+        crudIsProtected.checked = !!doc.isProtected;
+        crudPinWrapper.style.display = doc.isProtected ? 'block' : 'none';
+        crudAccessPin.value = doc.accessPin || '1234';
+
+        docCrudModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCrudModal() {
+        docCrudModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnAdminAddDoc) btnAdminAddDoc.addEventListener('click', openCrudModalForAdd);
+      if (btnCloseCrudModal) btnCloseCrudModal.addEventListener('click', closeCrudModal);
+      if (btnCancelCrud) btnCancelCrud.addEventListener('click', closeCrudModal);
+
+      if (docCrudForm) {
+        docCrudForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const targetId = crudDocId.value;
+          const isEdit = !!targetId;
+
+          const docData = {
+            id: isEdit ? targetId : `DOC-EAN-${Date.now().toString().slice(-4)}`,
+            title: crudTitle.value.trim(),
+            category: crudCategory.value,
+            badgeColor: crudBadgeColor.value,
+            issuer: crudIssuer.value.trim(),
+            issueYear: crudYear.value.trim() || 'Tervalidasi',
+            credentialId: crudCredId.value.trim() || `VER-${Date.now().toString().slice(-4)}`,
+            downloadName: crudFilename.value.trim() || `${crudTitle.value.trim().replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
+            description: crudDesc.value.trim() || 'Dokumen kompetensi resmi terverifikasi.',
+            previewType: 'certificate',
+            isProtected: crudIsProtected.checked,
+            accessPin: crudIsProtected.checked ? (crudAccessPin.value.trim() || '1234') : null,
+            redactionStatus: 'Verified & Redacted for Privacy',
+            redactionDetails: 'Nomor registrasi unik publik terverifikasi.'
+          };
+
+          if (isEdit) {
+            const index = currentDocuments.findIndex(d => d.id === targetId);
+            if (index !== -1) {
+              currentDocuments[index] = { ...currentDocuments[index], ...docData };
+              showToast(`Dokumen "${docData.title}" berhasil diperbarui!`, 'success');
+            }
+          } else {
+            currentDocuments.unshift(docData);
+            showToast(`Berkas baru "${docData.title}" berhasil ditambahkan!`, 'success');
+          }
+
+          saveDocuments(currentDocuments);
+          renderCategories();
+          renderDocumentsList();
+          closeCrudModal();
+        });
+      }
+
+      function confirmDeleteDocument(doc) {
+        const confirmed = window.confirm(`Apakah Anda yakin ingin menghapus berkas "${doc.title}"?\n\nTindakan ini akan menghapus dokumen dari etalase portofolio.`);
+        if (confirmed) {
+          currentDocuments = currentDocuments.filter(d => d.id !== doc.id);
+          saveDocuments(currentDocuments);
+          renderCategories();
+          renderDocumentsList();
+          showToast(`Dokumen "${doc.title}" telah dihapus.`, 'info');
+        }
+      }
+
+      // ============================================================================
+      // 12. EKSPOR DATA & CADANGAN KONFIGURASI
+      // ============================================================================
+      const btnAdminExportData = document.getElementById('btn-admin-export-data');
+      const btnAdminResetData = document.getElementById('btn-admin-reset-data');
+
+      if (btnAdminExportData) {
+        btnAdminExportData.addEventListener('click', () => {
+          const exportContent = generateDataJsExportString(currentDocuments);
+          const blob = new Blob([exportContent], { type: 'application/javascript;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'data.js';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+          showToast('Berkas data.js terbaru berhasil diunduh!', 'success');
+        });
+      }
+
+      if (btnAdminResetData) {
+        btnAdminResetData.addEventListener('click', () => {
+          const confirmed = window.confirm('Kembalikan daftar dokumen ke versi standar CV asli Erwin Ardi Nurcahyo?\n\nSemua berkas yang Anda tambah/edit secara lokal akan diganti kembali ke 9 dokumen bawaan.');
+          if (confirmed) {
+            localStorage.removeItem(STORAGE_KEY_DOCS);
+            currentDocuments = JSON.parse(JSON.stringify(DATA.documents));
+            saveDocuments(currentDocuments);
+            activeCategory = 'Semua';
+            searchQuery = '';
+            if (searchInput) searchInput.value = '';
+            renderCategories();
+            renderDocumentsList();
+            showToast('Daftar berkas berhasil direset ke data default CV!', 'info');
+          }
+        });
+      }
+
+      function generateDataJsExportString(docs) {
+        const fullData = {
+          ...DATA,
+          documents: docs
+        };
+        return `/**\n * PORTFOLIO DATA CONFIGURATION: ERWIN ARDI NURCAHYO\n * Diperbarui via Admin Portal pada: ${new Date().toLocaleString('id-ID')}\n */\n\nconst PORTFOLIO_DATA = ${JSON.stringify(fullData, null, 2)};\n\nwindow.PORTFOLIO_DATA = PORTFOLIO_DATA;\n`;
+      }
+
+      // ============================================================================
+      // 13. FITUR UNDUH BERKAS SIMULASI PDF & VCARD
+      // ============================================================================
       function triggerFileDownload(filename, docTitle) {
-        const pdfBlobContent = `%PDF-1.4\n%âãÏÓ\n1 0 obj\n<< /Title (${docTitle}) /Author (${DATA.profile.name}) /Subject (Portofolio Resmi 2026) >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF`;
-        const blob = new Blob([pdfBlobContent], { type: 'application/pdf' });
+        const safeTitle = (docTitle || 'Dokumen Resmi').replace(/[()]/g, '');
+        const safeAuthor = (DATA.profile.name || 'Erwin Ardi Nurcahyo').replace(/[()]/g, '');
+        const pdfContent = `%PDF-1.4\n%âãÏÓ\n1 0 obj\n<< /Title (${safeTitle}) /Author (${safeAuthor}) /Subject (Portofolio Resmi 2026) >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF`;
+        const blob = new Blob([pdfContent], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -2932,17 +3419,16 @@
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        showToast(`Mengunduh berkas resmi: ${filename}`, 'success');
+        showToast(`Mengunduh berkas: ${filename}`, 'success');
       }
 
       const btnDownloadCv = document.getElementById('btn-download-cv');
       if (btnDownloadCv) {
         btnDownloadCv.addEventListener('click', () => {
-          triggerFileDownload(DATA.profile.cvFilename || 'CV_Ahmad_Rizky_Pratama_2026.pdf', 'Curriculum Vitae Resmi');
+          triggerFileDownload(DATA.profile.cvFilename || 'CV_Erwin_Ardi_Nurcahyo_2026.pdf', 'Curriculum Vitae Erwin Ardi Nurcahyo');
         });
       }
 
-      // 10. VCARD
       const btnDownloadVcard = document.getElementById('btn-download-vcard');
       if (btnDownloadVcard) {
         btnDownloadVcard.addEventListener('click', () => {
@@ -2972,7 +3458,9 @@
         });
       }
 
-      // 11. FORM KONTAK
+      // ============================================================================
+      // 14. FORMULIR KONTAK
+      // ============================================================================
       const contactForm = document.getElementById('contact-form');
       if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -2982,14 +3470,16 @@
           const subject = document.getElementById('form-subject').value || 'Pesan Portofolio';
           const message = document.getElementById('form-message').value;
 
-          showToast(`Pesan terkirim! Terima kasih, ${name}.`, 'success');
-          const mailtoLink = `mailto:${DATA.profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+          showToast(`Pesan terkirim! Menghubungkan ke email Mas Erwin...`, 'success');
+          const mailtoLink = `mailto:${DATA.profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Halo Mas Erwin,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
           contactForm.reset();
           setTimeout(() => { window.location.href = mailtoLink; }, 1000);
         });
       }
 
-      // 12. TOAST
+      // ============================================================================
+      // 15. TOAST NOTIFIKASI
+      // ============================================================================
       function showToast(message, type = 'info') {
         const container = document.getElementById('toast-container');
         if (!container) return;
@@ -3018,6 +3508,8 @@
         if (e.key === 'Escape') {
           closeDocViewer();
           closePinModal();
+          closeAdminLogin();
+          closeCrudModal();
         }
       });
     });
