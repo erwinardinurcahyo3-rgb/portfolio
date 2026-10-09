@@ -1,26 +1,26 @@
 # DOKUMEN REVISI (revisi.md)
 ================================================================================
 STATUS: SELESAI DITERAPKAN (ALL CHANGES EXECUTED & VERIFIED)
-KODE REVISI : REV-202610-001 (v2.0.0)
+KODE REVISI : REV-202610-002 (v2.1.0)
 TANGGAL     : 9 Oktober 2026
 ARSITEK     : ZettBOT by Zettbos
 ================================================================================
 
-Seluruh rencana implementasi revisi telah berhasil dieksekusi secara presisi dan disinkronkan ke zona bawah berkas `prd.md` (bagian Living Context v2.0.0):
+Seluruh rencana implementasi revisi Dasbor Full CMS dan Integrasi GitHub API telah berhasil dieksekusi secara presisi dan disinkronkan ke zona bawah berkas `prd.md` (bagian Living Context v2.1.0):
 
-1. **Pembaruan Profil Erwin Ardi Nurcahyo:**
-   - Profil, kontak, riwayat pendidikan S1 Sistem Informasi STMIK Indonesia Banjarmasin (IPK 3,44) & SMKN 1 Sungai Loban.
-   - Riwayat pekerjaan: PT Equipment Reliability Management Site BIB (Safety Officer), PT Aviko Sepinggan SSB (Admin Commercial SAP), BPS Banjarmasin (Pengarsipan & IT).
-   - Inisiatif proyek unggulan STAR (Digitalisasi K3 Tambang, SAP Logistics, Web Archiving).
-   - 9 Berkas dokumen resmi (BNSP, POC Fleet Management, PWP Analisis Kerja Aman, PKK Izin Kerja Khusus, PKK K3 Pertambangan, PWP Pertemuan Keselamatan, PWP IBPR, Ijazah S1 & SMK).
+1. **Dasbor CMS Terpadu (Content Management System):**
+   - **Tab Profil & Foto:** Pengguna dapat mengubah nama, headline, bio, kontak, serta mengunggah foto profil baru langsung dari galeri perangkat HP atau laptop (otomatis terkompresi dan dipratinjau).
+   - **Tab Pengalaman Kerja:** Menambah, mengedit, dan menghapus riwayat karier (PT BIB, PT SSB, BPS Banjarmasin, atau pengalaman baru).
+   - **Tab Proyek STAR:** Menambah, mengedit, dan menghapus proyek lapangan metode STAR.
+   - **Tab Berkas & Dokumen:** Menambah berkas baru dengan melampirkan salinan PDF atau foto sertifikat asli dari perangkat, mengedit informasi berkas, dan menghapus berkas.
 
-2. **Sistem Login & Manajemen Berkas (Admin Mode):**
-   - Tombol Portal Admin di Navbar & Mobile Drawer.
-   - Modal Login Admin dengan sandi akses (default: `admin123`).
-   - Admin Toolbar: `+ Tambah Berkas Baru`, `💾 Unduh data.js`, `Reset Data`, dan `Keluar Admin`.
-   - Tombol aksi `Edit` dan `Hapus` pada setiap kartu dokumen di mode admin.
-   - Modal formulir Tambah/Edit Berkas yang interaktif.
-   - Penyimpanan data persisten di browser `localStorage`.
-   - Fitur Ekspor konfigurasi `data.js` untuk pembaruan permanen ke repositori.
+2. **Integrasi GitHub REST API (1-Klik Tanpa Koding):**
+   - Disediakan form konfigurasi kredensial aman (GitHub Username, Nama Repositori, Branch, dan Personal Access Token).
+   - Tombol `[🚀 Simpan & Publikasikan ke GitHub Sekarang]` yang otomatis meng-commit data terbaru ke repositori GitHub via REST API.
+   - Pengguna tidak perlu membuka terminal, VSCode, atau membuka kodingan di GitHub lagi untuk memperbarui portofolio live.
+
+3. **Mekanisme Cadangan Offline & Unduhan:**
+   - Tombol `[💾 Unduh data.js]` untuk backup manual file konfigurasi.
+   - Tombol `[🔄 Reset ke Versi Asli CV]` untuk mengembalikan data kapan saja.
 
 Jika Anda ingin mengajukan perbaikan tambahan, silakan sampaikan langsung di jendela obrolan chat.

@@ -212,6 +212,15 @@
       background-color: var(--accent-emerald-light);
     }
 
+    .btn-success {
+      background-color: var(--accent-emerald);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #047857;
+    }
+
     .btn-danger {
       background-color: var(--accent-rose);
       color: #ffffff;
@@ -1011,7 +1020,7 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* ADMIN TOOLBAR & CRUD ACTION BAR */
+    /* FLOATING & TOP ADMIN CONTROL BAR */
     .admin-toolbar-card {
       background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(5, 150, 105, 0.08));
       border: 1.5px solid var(--accent-primary);
@@ -1086,7 +1095,7 @@
       color: #ffffff;
     }
 
-    /* MODAL OVERLAY */
+    /* MODAL OVERLAY & CMS DASHBOARD */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1124,11 +1133,12 @@
     }
 
     .modal-container-sm {
-      max-width: 500px;
+      max-width: 480px;
     }
 
-    .modal-container-md {
-      max-width: 640px;
+    .modal-container-xl {
+      max-width: 980px;
+      max-height: 92vh;
     }
 
     .modal-overlay.active .modal-container {
@@ -1141,6 +1151,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: var(--bg-secondary);
     }
 
     .modal-body {
@@ -1156,6 +1167,72 @@
       justify-content: flex-end;
       gap: 0.75rem;
       background: var(--bg-tertiary);
+    }
+
+    /* CMS TABS NAVIGATION */
+    .cms-tabs-nav {
+      display: flex;
+      border-bottom: 2px solid var(--border-color);
+      background: var(--bg-tertiary);
+      overflow-x: auto;
+      padding: 0 1rem;
+      gap: 0.5rem;
+    }
+
+    .cms-tab-btn {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: var(--transition-fast);
+    }
+
+    .cms-tab-btn:hover {
+      color: var(--accent-primary);
+    }
+
+    .cms-tab-btn.active {
+      color: var(--accent-primary);
+      border-bottom-color: var(--accent-primary);
+      background: var(--card-bg);
+    }
+
+    .cms-tab-pane {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .cms-tab-pane.active {
+      display: block;
+    }
+
+    /* CMS AVATAR PREVIEW */
+    .cms-avatar-uploader-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.5rem;
+    }
+
+    .cms-avatar-preview-img {
+      width: 90px;
+      height: 90px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      border: 3px solid var(--accent-primary);
+      background: var(--bg-primary);
     }
 
     /* DOCUMENT VIEWER SHEET */
@@ -1298,7 +1375,7 @@
       margin-bottom: 1rem;
     }
 
-    /* FORM STYLES (ADMIN CRUD & CONTACT) */
+    /* FORM STYLES */
     .form-group {
       margin-bottom: 1.25rem;
     }
@@ -1352,6 +1429,31 @@
       font-weight: 600;
       color: var(--text-primary);
       cursor: pointer;
+    }
+
+    /* LIST TABLE ITEMS FOR CMS */
+    .cms-list-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    .cms-list-table th,
+    .cms-list-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    .cms-list-table th {
+      background: var(--bg-tertiary);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .cms-list-table tr:hover {
+      background: var(--bg-tertiary);
     }
 
     /* CONTACT */
@@ -1572,8 +1674,8 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
       <a href="#beranda" class="nav-brand" id="brand-link">
-        <span class="brand-badge">EA</span>
-        <span class="brand-name">Erwin Ardi Nurcahyo</span>
+        <span class="brand-badge" id="navbar-brand-badge">EA</span>
+        <span class="brand-name" id="navbar-brand-name">Erwin Ardi Nurcahyo</span>
       </a>
 
       <!-- Menu Navigasi Desktop -->
@@ -1590,12 +1692,10 @@
       <div class="nav-actions">
         <button type="button" class="btn-icon" id="theme-toggle" aria-label="Ganti Tema (Dark / Light Mode)"
           title="Ganti Tema">
-          <!-- Moon Icon (Light to Dark) -->
           <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <!-- Sun Icon (Dark to Light) -->
           <svg id="icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -1740,7 +1840,6 @@
 
         <div class="about-grid">
           <div class="about-text" id="about-bio-container">
-            <!-- Bio dinamis -->
             <div class="philosophy-box" id="philosophy-box">
               <h4 class="philosophy-title">Prinsip & Nilai Kerja</h4>
               <p class="philosophy-text" id="philosophy-text">
@@ -1795,7 +1894,7 @@
           <p class="section-subtitle">Salinan digital sertifikasi BNSP, K3 Pertambangan, pelatihan operasional, dan ijazah resmi dengan viewer interaktif berfitur sensor privasi.</p>
         </div>
 
-        <!-- ADMIN CONTROL TOOLBAR (Muncul saat Login) -->
+        <!-- ADMIN FLOATING TOOLBAR (Muncul saat Login) -->
         <div class="admin-toolbar-card" id="admin-toolbar-card" style="display: none;">
           <div class="admin-status-info">
             <span class="admin-badge-indicator">
@@ -1805,34 +1904,27 @@
               Mode Pengelola Aktif
             </span>
             <span style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary);">
-              Halo Mas Erwin! Anda dapat mengedit, menambah, atau menghapus berkas di bawah ini.
+              Halo Mas Erwin! Anda dapat mengedit seluruh profil, foto, pengalaman, dan berkas di Dasbor CMS.
             </span>
           </div>
 
           <div class="admin-actions-group">
-            <button type="button" class="btn btn-primary btn-sm" id="btn-admin-add-doc">
+            <button type="button" class="btn btn-primary btn-sm" id="btn-open-cms-dash" title="Buka Dasbor Lengkap CMS">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
               </svg>
-              <span>+ Tambah Berkas Baru</span>
+              <span>🎛️ Buka Dasbor CMS</span>
             </button>
 
-            <button type="button" class="btn btn-secondary btn-sm" id="btn-admin-export-data" title="Unduh file konfigurasi data.js terbaru">
+            <button type="button" class="btn btn-success btn-sm" id="btn-top-github-sync" title="Publikasikan ke GitHub">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
+                <polyline points="16 16 12 12 8 16"></polyline>
+                <line x1="12" y1="12" x2="12" y2="21"></line>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                <polyline points="16 16 12 12 8 16"></polyline>
               </svg>
-              <span>💾 Unduh data.js</span>
-            </button>
-
-            <button type="button" class="btn btn-secondary btn-sm" id="btn-admin-reset-data" title="Kembalikan data ke versi default CV">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="1 4 1 10 7 10"></polyline>
-                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-              </svg>
-              <span>Reset Data</span>
+              <span>🚀 Publikasi ke GitHub</span>
             </button>
 
             <button type="button" class="btn btn-danger btn-sm" id="btn-admin-logout" title="Keluar dari sesi admin">
@@ -1983,8 +2075,8 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-brand">
-        <span class="brand-badge" style="width: 28px; height: 28px; font-size: 0.75rem;">EA</span>
-        <span>Erwin Ardi Nurcahyo • Safety & Operations</span>
+        <span class="brand-badge" id="footer-brand-badge" style="width: 28px; height: 28px; font-size: 0.75rem;">EA</span>
+        <span id="footer-brand-text">Erwin Ardi Nurcahyo • Safety & Operations</span>
       </div>
 
       <div class="footer-copyright">
@@ -2118,7 +2210,7 @@
 
       <div class="modal-body">
         <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-          Masukkan kata sandi pengelola untuk mengaktifkan mode tambah, edit, dan hapus berkas portofolio Anda.
+          Masukkan kata sandi pengelola untuk membuka Dasbor CMS dan mengedit seluruh foto, profil, riwayat kerja, serta berkas portofolio Anda.
         </p>
 
         <form id="admin-login-form">
@@ -2129,24 +2221,35 @@
           </div>
 
           <div style="margin-bottom: 1rem; background: var(--bg-tertiary); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-muted);">
-            🔑 Sandi Bawaan: <strong>admin123</strong> (dapat Anda ganti setelah masuk).
+            🔑 Sandi Bawaan: <strong>admin123</strong>
           </div>
 
           <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
             <button type="button" class="btn btn-secondary" id="btn-cancel-admin-login">Batal</button>
-            <button type="submit" class="btn btn-primary">Masuk Mode Admin</button>
+            <button type="submit" class="btn btn-primary">Buka Dasbor CMS</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- ==================== MODAL FORM CRUD DOKUMEN (TAMBAH / EDIT) ==================== -->
-  <div class="modal-overlay" id="doc-crud-modal" role="dialog" aria-modal="true" aria-labelledby="crud-modal-title">
-    <div class="modal-container modal-container-md">
+  <!-- ==================== MODAL DASBOR CMS TERPADU (FULL ADMIN PORTAL) ==================== -->
+  <div class="modal-overlay" id="admin-cms-modal" role="dialog" aria-modal="true" aria-labelledby="cms-modal-title">
+    <div class="modal-container modal-container-xl">
       <div class="modal-header">
-        <h3 style="font-size: 1.125rem; font-weight: 800;" id="crud-modal-title">Tambah Berkas Dokumen Baru</h3>
-        <button type="button" class="btn-icon" id="btn-close-crud-modal" aria-label="Tutup Form">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <div style="width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--accent-primary); color: #fff; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800;" id="cms-modal-title">Dasbor Pengelola Portofolio (CMS)</h3>
+            <p style="font-size: 0.8125rem; color: var(--text-muted);">Edit foto, profil, riwayat kerja, proyek, berkas, dan publikasi ke GitHub tanpa sentuh kodingan.</p>
+          </div>
+        </div>
+        <button type="button" class="btn-icon" id="btn-close-cms-modal" aria-label="Tutup CMS">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -2154,89 +2257,464 @@
         </button>
       </div>
 
-      <div class="modal-body">
-        <form id="doc-crud-form">
-          <input type="hidden" id="crud-doc-id" value="">
+      <!-- CMS Tabs Navigation -->
+      <div class="cms-tabs-nav">
+        <button type="button" class="cms-tab-btn active" data-tab="tab-profil">
+          <span>👤 Profil & Foto</span>
+        </button>
+        <button type="button" class="cms-tab-btn" data-tab="tab-pengalaman">
+          <span>💼 Pengalaman Kerja</span>
+        </button>
+        <button type="button" class="cms-tab-btn" data-tab="tab-proyek">
+          <span>🚀 Proyek STAR</span>
+        </button>
+        <button type="button" class="cms-tab-btn" data-tab="tab-dokumen">
+          <span>📄 Berkas & Sertifikat</span>
+        </button>
+        <button type="button" class="cms-tab-btn" data-tab="tab-github">
+          <span>🚀 Publikasi ke GitHub</span>
+        </button>
+      </div>
 
-          <div class="form-group">
-            <label for="crud-title" class="form-label">Judul Dokumen / Sertifikat *</label>
-            <input type="text" id="crud-title" class="form-input" placeholder="contoh: Sertifikat K3 Pertambangan" required>
-          </div>
+      <div class="modal-body" style="padding: 1.75rem;">
+        
+        <!-- ========== TAB 1: PROFIL & FOTO ========== -->
+        <div class="cms-tab-pane active" id="tab-profil">
+          <form id="cms-profile-form">
+            <!-- UPLOADER FOTO PROFIL -->
+            <div class="cms-avatar-uploader-box">
+              <img src="" alt="Pratinjau Foto Profil" class="cms-avatar-preview-img" id="cms-avatar-preview">
+              <div style="flex-grow: 1;">
+                <label class="form-label">Ganti Foto Profil</label>
+                <p style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                  Pilih foto dari galeri HP atau laptop Anda. Sistem akan otomatis menyesuaikan ukurannya.
+                </p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <input type="file" id="cms-avatar-file-input" accept="image/*" style="display: none;">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('cms-avatar-file-input').click();">
+                    📁 Pilih Foto dari Perangkat
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-sm" id="btn-cms-avatar-url-prompt">
+                    🌐 Gunakan Link URL Foto
+                  </button>
+                </div>
+              </div>
+            </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="crud-category" class="form-label">Kategori Dokumen *</label>
-              <select id="crud-category" class="form-select" required>
-                <option value="Sertifikasi K3">Sertifikasi K3</option>
-                <option value="Sertifikasi BNSP">Sertifikasi BNSP</option>
-                <option value="Sertifikasi Operasional">Sertifikasi Operasional</option>
-                <option value="Manajemen Risiko">Manajemen Risiko</option>
-                <option value="Lisensi Kerja">Lisensi Kerja</option>
-                <option value="Ijazah">Ijazah</option>
-                <option value="Penghargaan">Penghargaan</option>
-                <option value="Lainnya">Lainnya</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cms-name" class="form-label">Nama Lengkap & Gelar</label>
+                <input type="text" id="cms-name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="cms-title" class="form-label">Peran / Headline Utama</label>
+                <input type="text" id="cms-title" class="form-input" required>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="crud-badge-color" class="form-label">Warna Label Badge</label>
-              <select id="crud-badge-color" class="form-select">
-                <option value="emerald">Hijau (Emerald)</option>
-                <option value="blue">Biru (Blue)</option>
-                <option value="indigo">Ungu (Indigo)</option>
-                <option value="amber">Kuning (Amber)</option>
-                <option value="rose">Merah (Rose)</option>
-                <option value="teal">Toska (Teal)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="crud-issuer" class="form-label">Lembaga Penerbit *</label>
-              <input type="text" id="crud-issuer" class="form-input" placeholder="contoh: BNSP / PT BIB" required>
+              <label for="cms-tagline" class="form-label">Tagline Elevator Pitch</label>
+              <textarea id="cms-tagline" class="form-textarea" style="min-height: 70px;" required></textarea>
             </div>
 
             <div class="form-group">
-              <label for="crud-year" class="form-label">Tahun / Masa Berlaku</label>
-              <input type="text" id="crud-year" class="form-input" placeholder="contoh: 2025 - 2028 atau Tervalidasi">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="crud-cred-id" class="form-label">Nomor Kredensial / Registrasi</label>
-              <input type="text" id="crud-cred-id" class="form-input" placeholder="contoh: REG-K3-2025-01">
+              <label for="cms-status-text" class="form-label">Status Ketersediaan Kerja (Pill Status)</label>
+              <input type="text" id="cms-status-text" class="form-input" required>
             </div>
 
             <div class="form-group">
-              <label for="crud-filename" class="form-label">Nama File Unduhan</label>
-              <input type="text" id="crud-filename" class="form-input" placeholder="contoh: Sertifikat_K3_Erwin.pdf">
+              <label for="cms-bio-1" class="form-label">Paragraf Bio 1 (Latar Belakang & Pendidikan)</label>
+              <textarea id="cms-bio-1" class="form-textarea" style="min-height: 80px;" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cms-bio-2" class="form-label">Paragraf Bio 2 (Pengalaman & Fokus Saat Ini)</label>
+              <textarea id="cms-bio-2" class="form-textarea" style="min-height: 80px;" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cms-philosophy" class="form-label">Prinsip & Nilai Kerja</label>
+              <input type="text" id="cms-philosophy" class="form-input" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cms-phone" class="form-label">Nomor Telepon / WhatsApp</label>
+                <input type="text" id="cms-phone" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="cms-email" class="form-label">Email Resmi</label>
+                <input type="email" id="cms-email" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cms-location" class="form-label">Domisili / Lokasi</label>
+              <input type="text" id="cms-location" class="form-input" required>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+              <button type="submit" class="btn btn-primary">
+                💾 Simpan Perubahan Profil
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ========== TAB 2: PENGALAMAN KERJA ========== -->
+        <div class="cms-tab-pane" id="tab-pengalaman">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h4 style="font-size: 1rem; font-weight: 800;">Daftar Riwayat Karier & Lapangan</h4>
+            <button type="button" class="btn btn-primary btn-sm" id="btn-cms-add-exp">
+              + Tambah Pengalaman Baru
+            </button>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="cms-list-table">
+              <thead>
+                <tr>
+                  <th>Posisi / Peran</th>
+                  <th>Perusahaan</th>
+                  <th>Periode</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="cms-exp-tbody">
+                <!-- Diisi baris dinamis -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FORM EDIT/ADD PENGALAMAN -->
+          <div id="cms-exp-form-box" style="display: none; background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-top: 1rem;">
+            <h5 style="font-size: 1rem; font-weight: 800; margin-bottom: 1rem;" id="cms-exp-form-title">Tambah Pengalaman</h5>
+            <form id="cms-exp-form">
+              <input type="hidden" id="cms-exp-index" value="-1">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-exp-role" class="form-label">Peran / Jabatan *</label>
+                  <input type="text" id="cms-exp-role" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="cms-exp-company" class="form-label">Nama Perusahaan / Site *</label>
+                  <input type="text" id="cms-exp-company" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-exp-period" class="form-label">Periode Kerja *</label>
+                  <input type="text" id="cms-exp-period" class="form-input" placeholder="contoh: Dec 2025 – Sekarang" required>
+                </div>
+                <div class="form-group">
+                  <label for="cms-exp-location" class="form-label">Lokasi</label>
+                  <input type="text" id="cms-exp-location" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-exp-desc" class="form-label">Deskripsi Tanggung Jawab Utama</label>
+                <textarea id="cms-exp-desc" class="form-textarea" style="min-height: 70px;" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-exp-highlights" class="form-label">Poin-Poin Pencapaian / Highlights (Satu per baris)</label>
+                <textarea id="cms-exp-highlights" class="form-textarea" placeholder="Poin 1&#10;Poin 2&#10;Poin 3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-exp-tags" class="form-label">Tag Keahlian (Pisahkan dengan koma)</label>
+                <input type="text" id="cms-exp-tags" class="form-input" placeholder="K3 Tambang, ERP SAP, Audit">
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-cms-cancel-exp">Batal</button>
+                <button type="submit" class="btn btn-primary btn-sm">Simpan Pengalaman</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- ========== TAB 3: PROYEK STAR ========== -->
+        <div class="cms-tab-pane" id="tab-proyek">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h4 style="font-size: 1rem; font-weight: 800;">Daftar Proyek Unggulan (Metode STAR)</h4>
+            <button type="button" class="btn btn-primary btn-sm" id="btn-cms-add-proj">
+              + Tambah Proyek Baru
+            </button>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="cms-list-table">
+              <thead>
+                <tr>
+                  <th>Judul Proyek</th>
+                  <th>Peran</th>
+                  <th>Periode</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="cms-proj-tbody">
+                <!-- Diisi baris dinamis -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FORM EDIT/ADD PROYEK -->
+          <div id="cms-proj-form-box" style="display: none; background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-top: 1rem;">
+            <h5 style="font-size: 1rem; font-weight: 800; margin-bottom: 1rem;" id="cms-proj-form-title">Tambah Proyek</h5>
+            <form id="cms-proj-form">
+              <input type="hidden" id="cms-proj-index" value="-1">
+
+              <div class="form-group">
+                <label for="cms-proj-title" class="form-label">Judul Inisiatif / Proyek *</label>
+                <input type="text" id="cms-proj-title" class="form-input" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-proj-role" class="form-label">Peran Anda *</label>
+                  <input type="text" id="cms-proj-role" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="cms-proj-period" class="form-label">Periode</label>
+                  <input type="text" id="cms-proj-period" class="form-input" placeholder="contoh: 2025 – 2026">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-proj-summary" class="form-label">Ringkasan Singkat</label>
+                <textarea id="cms-proj-summary" class="form-textarea" style="min-height: 60px;" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-proj-situation" class="form-label">Tantangan (Situation & Task)</label>
+                <textarea id="cms-proj-situation" class="form-textarea" style="min-height: 60px;" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-proj-action" class="form-label">Tindakan Nyata (Action)</label>
+                <textarea id="cms-proj-action" class="form-textarea" style="min-height: 60px;" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-proj-result" class="form-label">Hasil Nyata Terukur (Result)</label>
+                <textarea id="cms-proj-result" class="form-textarea" style="min-height: 60px;" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-proj-tags" class="form-label">Tag Teknologi / Keahlian (Pisahkan dengan koma)</label>
+                <input type="text" id="cms-proj-tags" class="form-input" placeholder="K3 Tambang, Risk Mitigation">
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-cms-cancel-proj">Batal</button>
+                <button type="submit" class="btn btn-primary btn-sm">Simpan Proyek</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- ========== TAB 4: BERKAS & SERTIFIKAT ========== -->
+        <div class="cms-tab-pane" id="tab-dokumen">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h4 style="font-size: 1rem; font-weight: 800;">Daftar Berkas, Sertifikat & Ijazah</h4>
+            <button type="button" class="btn btn-primary btn-sm" id="btn-cms-add-doc">
+              + Tambah Berkas Baru
+            </button>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="cms-list-table">
+              <thead>
+                <tr>
+                  <th>Judul Dokumen</th>
+                  <th>Kategori</th>
+                  <th>Penerbit</th>
+                  <th>Proteksi PIN</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="cms-docs-tbody">
+                <!-- Diisi baris dinamis -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- FORM EDIT/ADD DOKUMEN DENGAN UPLOAD FILE -->
+          <div id="cms-doc-form-box" style="display: none; background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-top: 1rem;">
+            <h5 style="font-size: 1rem; font-weight: 800; margin-bottom: 1rem;" id="cms-doc-form-title">Tambah Berkas Dokumen</h5>
+            <form id="cms-doc-form">
+              <input type="hidden" id="cms-doc-id" value="">
+
+              <div class="form-group">
+                <label for="cms-doc-title" class="form-label">Judul Dokumen / Sertifikat *</label>
+                <input type="text" id="cms-doc-title" class="form-input" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-doc-category" class="form-label">Kategori Dokumen *</label>
+                  <select id="cms-doc-category" class="form-select" required>
+                    <option value="Sertifikasi K3">Sertifikasi K3</option>
+                    <option value="Sertifikasi BNSP">Sertifikasi BNSP</option>
+                    <option value="Sertifikasi Operasional">Sertifikasi Operasional</option>
+                    <option value="Manajemen Risiko">Manajemen Risiko</option>
+                    <option value="Lisensi Kerja">Lisensi Kerja</option>
+                    <option value="Ijazah">Ijazah</option>
+                    <option value="Penghargaan">Penghargaan</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="cms-doc-badge-color" class="form-label">Warna Label Badge</label>
+                  <select id="cms-doc-badge-color" class="form-select">
+                    <option value="emerald">Hijau (Emerald)</option>
+                    <option value="blue">Biru (Blue)</option>
+                    <option value="indigo">Ungu (Indigo)</option>
+                    <option value="amber">Kuning (Amber)</option>
+                    <option value="rose">Merah (Rose)</option>
+                    <option value="teal">Toska (Teal)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-doc-issuer" class="form-label">Lembaga Penerbit *</label>
+                  <input type="text" id="cms-doc-issuer" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="cms-doc-year" class="form-label">Tahun / Masa Berlaku</label>
+                  <input type="text" id="cms-doc-year" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cms-doc-cred-id" class="form-label">Nomor Registrasi / Kredensial</label>
+                  <input type="text" id="cms-doc-cred-id" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="cms-doc-filename" class="form-label">Nama Berkas Unduhan</label>
+                  <input type="text" id="cms-doc-filename" class="form-input">
+                </div>
+              </div>
+
+              <!-- UPLOAD FILE SERTIFIKAT DARI HP/LAPTOP -->
+              <div class="form-group" style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
+                <label class="form-label">Lampirkan Salinan Dokumen Asli (PDF atau Foto dari HP/Laptop)</label>
+                <input type="file" id="cms-doc-file-input" accept=".pdf,image/*" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('cms-doc-file-input').click();">
+                    📁 Pilih File dari Perangkat
+                  </button>
+                  <span id="cms-doc-file-label" style="font-size: 0.8125rem; color: var(--text-muted);">Belum ada berkas baru dipilih (menggunakan template standar)</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cms-doc-desc" class="form-label">Deskripsi / Ruang Lingkup Kompetensi</label>
+                <textarea id="cms-doc-desc" class="form-textarea" style="min-height: 70px;"></textarea>
+              </div>
+
+              <div class="form-group" style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                <label class="form-checkbox-label">
+                  <input type="checkbox" id="cms-doc-is-protected" style="width: 18px; height: 18px;">
+                  <span>Kunci dokumen ini dengan 4-digit PIN rahasia</span>
+                </label>
+
+                <div id="cms-doc-pin-wrapper" style="display: none; margin-top: 0.75rem;">
+                  <label for="cms-doc-pin" class="form-label">Kode PIN 4-Angka</label>
+                  <input type="text" id="cms-doc-pin" class="form-input" maxlength="4" placeholder="1234" style="max-width: 140px; font-weight: 700; letter-spacing: 0.2em; text-align: center;">
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-cms-cancel-doc">Batal</button>
+                <button type="submit" class="btn btn-primary btn-sm">Simpan Berkas</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- ========== TAB 5: PUBLIKASIKAN KE GITHUB ========== -->
+        <div class="cms-tab-pane" id="tab-github">
+          <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--accent-primary); margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--accent-light); color: var(--accent-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1.125rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.35rem;">
+                  1-Klik Simpan & Publikasikan ke GitHub Pages
+                </h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
+                  Dengan fitur ini, seluruh foto baru, profil, riwayat kerja, dan berkas yang Anda ubah akan otomatis disimpan ke GitHub repositori Anda via internet. Anda <strong>tidak perlu lagi membuka VSCode, terminal, atau kodingan di GitHub</strong>!
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="crud-desc" class="form-label">Deskripsi / Ruang Lingkup Kompetensi</label>
-            <textarea id="crud-desc" class="form-textarea" placeholder="Tuliskan keterangan mengenai sertifikasi atau dokumen ini..."></textarea>
-          </div>
-
-          <div class="form-group" style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <label class="form-checkbox-label">
-              <input type="checkbox" id="crud-is-protected" style="width: 18px; height: 18px;">
-              <span>Proteksi Dokumen Ini dengan 4-Digit PIN Rahasia</span>
-            </label>
-
-            <div id="crud-pin-wrapper" style="display: none; margin-top: 0.75rem;">
-              <label for="crud-access-pin" class="form-label">Kode PIN 4-Angka Pembuka</label>
-              <input type="text" id="crud-access-pin" class="form-input" maxlength="4" placeholder="1234" style="max-width: 140px; font-weight: 700; letter-spacing: 0.2em; text-align: center;">
+          <form id="cms-github-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cms-gh-user" class="form-label">Username GitHub *</label>
+                <input type="text" id="cms-gh-user" class="form-input" placeholder="contoh: erwinardinurcahyo" required>
+              </div>
+              <div class="form-group">
+                <label for="cms-gh-repo" class="form-label">Nama Repositori *</label>
+                <input type="text" id="cms-gh-repo" class="form-input" placeholder="contoh: Portofolio" required>
+              </div>
             </div>
-          </div>
 
-          <div class="modal-footer" style="padding-left: 0; padding-right: 0; background: transparent;">
-            <button type="button" class="btn btn-secondary" id="btn-cancel-crud">Batal</button>
-            <button type="submit" class="btn btn-primary" id="btn-save-crud">Simpan Berkas</button>
-          </div>
-        </form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cms-gh-branch" class="form-label">Branch Utama</label>
+                <input type="text" id="cms-gh-branch" class="form-input" value="main" required>
+              </div>
+              <div class="form-group">
+                <label for="cms-gh-token" class="form-label">GitHub Personal Access Token (PAT) *</label>
+                <input type="password" id="cms-gh-token" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required autocomplete="off">
+              </div>
+            </div>
+
+            <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-md); font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+              <strong>💡 Cara Membuat Token GitHub (Hanya 1 Menit & Gratis):</strong><br>
+              1. Buka akun GitHub Anda ➔ Klik foto profil di pojok kanan atas ➔ <em>Settings</em>.<br>
+              2. Gulir ke paling bawah ➔ Klik <em>Developer Settings</em> ➔ <em>Personal access tokens</em> ➔ <em>Tokens (classic)</em>.<br>
+              3. Klik <em>Generate new token (classic)</em> ➔ Centang izin <strong>repo</strong> ➔ Klik <em>Generate</em> ➔ Salin kodenya ke kotak di atas.
+            </div>
+
+            <div id="cms-gh-status-msg" style="margin-bottom: 1rem; font-size: 0.875rem; font-weight: 600; min-height: 20px;"></div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-success" id="btn-cms-publish-now" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 16 12 12 8 16"></polyline>
+                  <line x1="12" y1="12" x2="12" y2="21"></line>
+                  <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                  <polyline points="16 16 12 12 8 16"></polyline>
+                </svg>
+                <span>🚀 Simpan & Publikasikan ke GitHub Sekarang</span>
+              </button>
+
+              <button type="button" class="btn btn-secondary" id="btn-cms-download-datajs">
+                <span>💾 Unduh data.js</span>
+              </button>
+
+              <button type="button" class="btn btn-secondary" id="btn-cms-reset-all">
+                <span>🔄 Reset ke Versi Asli CV</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2244,10 +2722,10 @@
   <!-- ==================== TOAST CONTAINER ==================== -->
   <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-  <!-- ==================== APPLICATION DATA & LOGIC ENGINE ==================== -->
+  <!-- ==================== APPLICATION LOGIC & FULL CMS RUNTIME ==================== -->
   <script>
-    // 1. DATA MASTER ERWIN ARDI NURCAHYO
-    const INITIAL_PORTFOLIO_DATA = {
+    // 1. DATA MASTER ERWIN ARDI NURCAHYO (DEFAULT ASLI CV)
+    const MASTER_CV_DATA = {
       profile: {
         name: "Erwin Ardi Nurcahyo",
         title: "Safety Officer & Operations Specialist | S1 Sistem Informasi",
@@ -2385,9 +2863,7 @@
             result: "Waktu rekapitulasi data kepatuhan K3 terpangkas hingga 50%, mempercepat respons penanganan potensi bahaya kerja di site operasional BIB."
           },
           tags: ["K3 Tambang", "Safety Reporting", "Data Analysis", "Digital Audit", "Risk Mitigation"],
-          isFeatured: true,
-          demoUrl: "#",
-          repoUrl: "#"
+          isFeatured: true
         },
         {
           id: "PRJ-02",
@@ -2402,9 +2878,7 @@
             result: "Akurasi data stok inventaris mencapai 99.4% dan risiko kesalahan input data operasional berkurang drastis."
           },
           tags: ["SAP ERP", "Supply Chain", "Discrepancy Control", "Commercial Operations", "Excel"],
-          isFeatured: true,
-          demoUrl: "#",
-          repoUrl: "#"
+          isFeatured: true
         },
         {
           id: "PRJ-03",
@@ -2419,9 +2893,7 @@
             result: "Waktu temu balik dokumen sensus meningkat dari rata-rata 25 menit menjadi di bawah 1 menit."
           },
           tags: ["PHP", "MySQL", "Web App", "Database Archiving", "IT Support"],
-          isFeatured: false,
-          demoUrl: "#",
-          repoUrl: "#"
+          isFeatured: false
         }
       ],
       documents: [
@@ -2433,12 +2905,10 @@
           issueYear: "Tervalidasi Resmi",
           credentialId: "BNSP-JMO-EAN-2023",
           downloadName: "Sertifikat_BNSP_Junior_Microsoft_Office_Erwin.pdf",
-          previewType: "certificate",
           badgeColor: "blue",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Nomor registrasi kompetensi nasional BNSP terverifikasi.",
           description: "Sertifikasi kompetensi kerja standar nasional Indonesia untuk pengoperasian aplikasi perkantoran, pengolahan dokumen, dan komputasi spreadsheet profesional."
         },
         {
@@ -2449,12 +2919,10 @@
           issueYear: "Tervalidasi",
           credentialId: "POC-FMS-EAN-2024",
           downloadName: "Sertifikat_Production_Operations_Fleet_Management_Erwin.pdf",
-          previewType: "certificate",
           badgeColor: "indigo",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Kredensial resmi pelatihan kontrol operasional dan armada.",
           description: "Membuktikan penguasaan dalam pemantauan kontrol operasional produksi, manajemen armada alat berat/logistik, dan efisiensi rantai distribusi."
         },
         {
@@ -2465,12 +2933,10 @@
           issueYear: "Tervalidasi",
           credentialId: "PWP-AKA-EAN-2025",
           downloadName: "Sertifikat_PWP_Analisis_Kerja_Aman_Erwin.pdf",
-          previewType: "certificate",
           badgeColor: "emerald",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Sertifikasi keselamatan kerja dan Job Safety Analysis (JSA).",
           description: "Kompetensi dalam penyusunan Analisis Kerja Aman (Job Safety Analysis), identifikasi potensi bahaya langkah kerja, dan penerapan prosedur mitigasi kecelakaan."
         },
         {
@@ -2481,12 +2947,10 @@
           issueYear: "Tervalidasi",
           credentialId: "PKK-IKK-EAN-2025",
           downloadName: "Sertifikat_PKK_Izin_Kerja_Khusus_Erwin.pdf",
-          previewType: "license",
           badgeColor: "amber",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Otorisasi izin kerja risiko khusus terverifikasi.",
           description: "Sertifikasi kewenangan penerbitan dan pengawasan Izin Kerja Khusus (Permit to Work) untuk pekerjaan berisiko tinggi di area operasional."
         },
         {
@@ -2497,12 +2961,10 @@
           issueYear: "Tervalidasi",
           credentialId: "PKK-K3P-EAN-2025",
           downloadName: "Sertifikat_PKK_K3_Pertambangan_Erwin.pdf",
-          previewType: "certificate",
           badgeColor: "emerald",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Standar regulasi keselamatan pertambangan minerba terverifikasi.",
           description: "Kompetensi keselamatan dan kesehatan kerja khusus industri pertambangan, regulasi kepatuhan inspeksi lapangan, dan audit lingkungan kerja tambang."
         },
         {
@@ -2513,12 +2975,10 @@
           issueYear: "Tervalidasi",
           credentialId: "PWP-PK-EAN-2025",
           downloadName: "Sertifikat_PWP_Pertemuan_Keselamatan_Erwin.pdf",
-          previewType: "certificate",
           badgeColor: "emerald",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Kredensial kepemimpinan safety briefing terverifikasi.",
           description: "Kualifikasi dalam memimpin Safety Talk, Tool Box Meeting harian, dan briefing keselamatan kerja pra-operasional lintas tim lapangan."
         },
         {
@@ -2529,12 +2989,10 @@
           issueYear: "Tervalidasi",
           credentialId: "PWP-IBPR-EAN-2025",
           downloadName: "Sertifikat_PWP_IBPR_Erwin.pdf",
-          previewType: "confidential",
           badgeColor: "rose",
           isProtected: true,
           accessPin: "1234",
           redactionStatus: "Protected Document (PIN Required)",
-          redactionDetails: "Metodologi matriks risiko internal operasional dilindungi.",
           description: "Keahlian mendalam dalam penyusunan matriks IBPR (HIRADC), evaluasi tingkat keparahan risiko, serta perencanaan pengendalian hierarki eliminasi bahaya."
         },
         {
@@ -2545,12 +3003,10 @@
           issueYear: "2019 – 2023",
           credentialId: "IJZ-S1-SI-STMIK-2023",
           downloadName: "Ijazah_S1_Sistem_Informasi_Erwin_Ardi_Nurcahyo.pdf",
-          previewType: "diploma",
           badgeColor: "teal",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "IPK 3,44 (Predikat Sangat Memuaskan). NIK & tanggal lahir disensor.",
           description: "Gelar Sarjana Sistem Informasi dengan fokus pada Analisis Data, Rekayasa Basis Data, dan Manajemen Sistem Informasi Bisnis."
         },
         {
@@ -2561,12 +3017,10 @@
           issueYear: "2015 – 2018",
           credentialId: "IJZ-SMK-MM-2018",
           downloadName: "Ijazah_SMKN1_Multimedia_Erwin_Ardi_Nurcahyo.pdf",
-          previewType: "diploma",
           badgeColor: "teal",
           isProtected: false,
           accessPin: null,
           redactionStatus: "Verified & Redacted for Privacy",
-          redactionDetails: "Dokumen kelulusan resmi kompetensi keahlian Multimedia.",
           description: "Pendidikan kejuruan Multimedia dengan keahlian desain grafis, tipografi, pengolahan visual digital, dan dasar-dasar pemrograman."
         }
       ],
@@ -2581,43 +3035,52 @@
       ]
     };
 
-    window.PORTFOLIO_DATA = INITIAL_PORTFOLIO_DATA;
+    // ==================== ENGINE STATE MANAGEMENT ====================
+    const STORAGE_KEY_STATE = 'erwin_portfolio_master_v2';
+    const STORAGE_KEY_ADMIN = 'erwin_portfolio_is_admin';
+    const STORAGE_KEY_PASSWORD = 'erwin_portfolio_admin_password';
+    const STORAGE_KEY_GH = 'erwin_portfolio_gh_config';
 
-    // ==================== ENGINE RUNTIME ====================
-    document.addEventListener('DOMContentLoaded', () => {
-      const DATA = window.PORTFOLIO_DATA;
-      if (!DATA) return;
-
-      // 1. SISTEM DOKUMEN LOCALSTORAGE DENGAN PERSISTENSI CRUD
-      const STORAGE_KEY_DOCS = 'erwin_portfolio_docs_v1';
-      const STORAGE_KEY_ADMIN = 'erwin_portfolio_is_admin';
-      const STORAGE_KEY_PASSWORD = 'erwin_portfolio_admin_password';
-
-      function loadDocuments() {
-        const stored = localStorage.getItem(STORAGE_KEY_DOCS);
-        if (stored) {
-          try {
-            return JSON.parse(stored);
-          } catch (e) {
-            console.error('Error parsing stored documents:', e);
-          }
+    function loadAppState() {
+      const stored = localStorage.getItem(STORAGE_KEY_STATE);
+      if (stored) {
+        try {
+          return JSON.parse(stored);
+        } catch (e) {
+          console.error('Error parsing stored app state:', e);
         }
-        return JSON.parse(JSON.stringify(DATA.documents));
       }
+      return JSON.parse(JSON.stringify(MASTER_CV_DATA));
+    }
 
-      function saveDocuments(docs) {
-        localStorage.setItem(STORAGE_KEY_DOCS, JSON.stringify(docs));
-        currentDocuments = docs;
+    function saveAppState(state) {
+      localStorage.setItem(STORAGE_KEY_STATE, JSON.stringify(state));
+      CURRENT_STATE = state;
+    }
+
+    let CURRENT_STATE = loadAppState();
+    let isAdmin = localStorage.getItem(STORAGE_KEY_ADMIN) === 'true';
+    let activeCategory = 'Semua';
+    let searchQuery = '';
+    let unlockedDocs = new Set();
+    let currentTargetDoc = null;
+
+    // Load GitHub Config
+    function loadGhConfig() {
+      const stored = localStorage.getItem(STORAGE_KEY_GH);
+      if (stored) {
+        try { return JSON.parse(stored); } catch (e) {}
       }
+      return { user: '', repo: 'Portofolio', branch: 'main', token: '' };
+    }
 
-      let currentDocuments = loadDocuments();
-      let isAdmin = localStorage.getItem(STORAGE_KEY_ADMIN) === 'true';
-      let activeCategory = 'Semua';
-      let searchQuery = '';
-      let unlockedDocs = new Set();
-      let currentTargetDoc = null;
+    function saveGhConfig(cfg) {
+      localStorage.setItem(STORAGE_KEY_GH, JSON.stringify(cfg));
+    }
 
-      // 2. TEMA DARK / LIGHT MODE
+    // ==================== DOMContentLoaded ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. TEMA DARK / LIGHT
       const themeToggleBtn = document.getElementById('theme-toggle');
       const iconMoon = document.getElementById('icon-moon');
       const iconSun = document.getElementById('icon-sun');
@@ -2645,7 +3108,7 @@
         showToast(nextTheme === 'dark' ? 'Mode Gelap diaktifkan' : 'Mode Terang diaktifkan');
       });
 
-      // 3. NAVIGASI MOBILE
+      // 2. NAVIGASI MOBILE
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const mobileNav = document.getElementById('mobile-nav');
       if (hamburgerBtn && mobileNav) {
@@ -2657,147 +3120,181 @@
         });
       }
 
-      // 4. RENDER HERO & STATS
-      const heroNameEl = document.getElementById('hero-name');
-      const heroTitleEl = document.getElementById('hero-title');
-      const heroTaglineEl = document.getElementById('hero-tagline');
-      const heroStatusText = document.getElementById('hero-status-text');
-      const heroAvatar = document.getElementById('hero-avatar');
-      const statsContainer = document.getElementById('stats-container');
+      // 3. FUNGSI RENDER SELURUH BAGIAN WEBSITE (DYNAMIC RE-RENDER)
+      function renderAllWebsite() {
+        const P = CURRENT_STATE.profile;
 
-      if (heroNameEl) heroNameEl.innerHTML = `Halo, Saya <span class="highlight">${escapeHTML(DATA.profile.name)}</span>`;
-      if (heroTitleEl) heroTitleEl.textContent = DATA.profile.title;
-      if (heroTaglineEl) heroTaglineEl.textContent = DATA.profile.tagline;
-      if (heroStatusText && DATA.profile.status) heroStatusText.textContent = DATA.profile.status.text;
-      if (heroAvatar && DATA.profile.avatar) {
-        heroAvatar.src = DATA.profile.avatar;
-        heroAvatar.alt = DATA.profile.name;
-      }
+        // Navbar & Brand
+        const initials = P.name.split(' ').map(w => w[0]).filter(Boolean).slice(0, 2).join('').toUpperCase() || 'EA';
+        const brandBadge = document.getElementById('navbar-brand-badge');
+        const brandName = document.getElementById('navbar-brand-name');
+        const footerBadge = document.getElementById('footer-brand-badge');
+        const footerText = document.getElementById('footer-brand-text');
 
-      if (statsContainer && DATA.stats) {
-        statsContainer.innerHTML = DATA.stats.map(stat => `
-          <div class="stat-card">
-            <div class="stat-value">${escapeHTML(stat.value)}</div>
-            <div class="stat-label">${escapeHTML(stat.label)}</div>
-            <div class="stat-desc">${escapeHTML(stat.description)}</div>
-          </div>
-        `).join('');
-      }
+        if (brandBadge) brandBadge.textContent = initials;
+        if (brandName) brandName.textContent = P.name;
+        if (footerBadge) footerBadge.textContent = initials;
+        if (footerText) footerText.textContent = `${P.name} • Safety & Operations`;
 
-      // 5. RENDER ABOUT & SKILLS
-      const aboutBioContainer = document.getElementById('about-bio-container');
-      const philosophyText = document.getElementById('philosophy-text');
-      const skillsContainer = document.getElementById('skills-container');
+        // Hero
+        const heroName = document.getElementById('hero-name');
+        const heroTitle = document.getElementById('hero-title');
+        const heroTagline = document.getElementById('hero-tagline');
+        const heroStatusText = document.getElementById('hero-status-text');
+        const heroAvatar = document.getElementById('hero-avatar');
+        const heroContactBtn = document.getElementById('btn-hero-contact');
 
-      if (aboutBioContainer && DATA.profile.bio) {
-        const bioHtml = DATA.profile.bio.map(p => `<p>${escapeHTML(p)}</p>`).join('');
-        const philosophyBox = document.getElementById('philosophy-box');
-        aboutBioContainer.innerHTML = bioHtml;
-        if (philosophyBox) aboutBioContainer.appendChild(philosophyBox);
-      }
-      if (philosophyText && DATA.profile.workPhilosophy) {
-        philosophyText.textContent = `"${DATA.profile.workPhilosophy}"`;
-      }
+        if (heroName) heroName.innerHTML = `Halo, Saya <span class="highlight">${escapeHTML(P.name)}</span>`;
+        if (heroTitle) heroTitle.textContent = P.title;
+        if (heroTagline) heroTagline.textContent = P.tagline;
+        if (heroStatusText && P.status) heroStatusText.textContent = P.status.text;
+        if (heroAvatar && P.avatar) {
+          heroAvatar.src = P.avatar;
+          heroAvatar.alt = P.name;
+        }
+        if (heroContactBtn && P.contact) {
+          heroContactBtn.href = `https://wa.me/${P.contact.whatsapp}`;
+        }
 
-      if (skillsContainer && DATA.skills) {
-        skillsContainer.innerHTML = DATA.skills.map(cat => `
-          <div class="skill-category-card">
-            <h4 class="skill-cat-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-              <span>${escapeHTML(cat.category)}</span>
-            </h4>
-            <div class="skill-pills">
-              ${cat.items.map(item => `<span class="skill-pill">${escapeHTML(item)}</span>`).join('')}
+        // Stats
+        const statsContainer = document.getElementById('stats-container');
+        if (statsContainer && CURRENT_STATE.stats) {
+          statsContainer.innerHTML = CURRENT_STATE.stats.map(s => `
+            <div class="stat-card">
+              <div class="stat-value">${escapeHTML(s.value)}</div>
+              <div class="stat-label">${escapeHTML(s.label)}</div>
+              <div class="stat-desc">${escapeHTML(s.description)}</div>
             </div>
-          </div>
-        `).join('');
-      }
+          `).join('');
+        }
 
-      // 6. RENDER PENGALAMAN KERJA
-      const experienceTimeline = document.getElementById('experience-timeline');
-      if (experienceTimeline && DATA.experience) {
-        experienceTimeline.innerHTML = DATA.experience.map(exp => `
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">${escapeHTML(exp.role)}</h3>
-                  <div class="timeline-company">${escapeHTML(exp.company)} • ${escapeHTML(exp.location)}</div>
-                </div>
-                <span class="timeline-period">${escapeHTML(exp.period)}</span>
-              </div>
-              <p class="timeline-desc">${escapeHTML(exp.description)}</p>
-              <ul class="timeline-highlights">
-                ${exp.highlights.map(h => `<li>${escapeHTML(h)}</li>`).join('')}
-              </ul>
-              <div class="timeline-tags">
-                ${exp.technologies.map(t => `<span class="badge badge-emerald">${escapeHTML(t)}</span>`).join('')}
-              </div>
-            </div>
-          </div>
-        `).join('');
-      }
+        // About & Philosophy
+        const aboutBioContainer = document.getElementById('about-bio-container');
+        const philosophyText = document.getElementById('philosophy-text');
+        if (aboutBioContainer && P.bio) {
+          const bioHtml = P.bio.map(p => `<p>${escapeHTML(p)}</p>`).join('');
+          const philosophyBox = document.getElementById('philosophy-box');
+          aboutBioContainer.innerHTML = bioHtml;
+          if (philosophyBox) aboutBioContainer.appendChild(philosophyBox);
+        }
+        if (philosophyText && P.workPhilosophy) {
+          philosophyText.textContent = `"${P.workPhilosophy}"`;
+        }
 
-      // 7. RENDER PROYEK UNGGULAN
-      const projectsContainer = document.getElementById('projects-container');
-      if (projectsContainer && DATA.projects) {
-        projectsContainer.innerHTML = DATA.projects.map(prj => `
-          <div class="project-card">
-            <div>
-              <div class="project-badge-bar">
-                <span class="badge badge-emerald">${escapeHTML(prj.period)}</span>
-                <span class="badge badge-blue">${escapeHTML(prj.role)}</span>
-              </div>
-              <h3 class="project-title">${escapeHTML(prj.title)}</h3>
-              <p class="project-summary">${escapeHTML(prj.summary)}</p>
-
-              <div class="star-details">
-                <div class="star-row">
-                  <span class="star-label">Tantangan:</span>
-                  <span class="star-val">${escapeHTML(prj.starMethod.situation)}</span>
-                </div>
-                <div class="star-row">
-                  <span class="star-label">Tindakan:</span>
-                  <span class="star-val">${escapeHTML(prj.starMethod.action)}</span>
-                </div>
-                <div class="star-row">
-                  <span class="star-label">Hasil Nyata:</span>
-                  <span class="star-val" style="color: var(--accent-emerald); font-weight: 600;">${escapeHTML(prj.starMethod.result)}</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-footer">
-              <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-                ${prj.tags.slice(0, 3).map(tag => `<span class="skill-pill" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">${escapeHTML(tag)}</span>`).join('')}
-              </div>
-              <a href="#dokumen" class="btn btn-secondary btn-sm" onclick="filterDocsFromProject('${escapeHTML(prj.tags[0])}');">
-                <span>Bukti Dokumen</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
+        // Skills
+        const skillsContainer = document.getElementById('skills-container');
+        if (skillsContainer && CURRENT_STATE.skills) {
+          skillsContainer.innerHTML = CURRENT_STATE.skills.map(cat => `
+            <div class="skill-category-card">
+              <h4 class="skill-cat-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
-              </a>
+                <span>${escapeHTML(cat.category)}</span>
+              </h4>
+              <div class="skill-pills">
+                ${cat.items.map(item => `<span class="skill-pill">${escapeHTML(item)}</span>`).join('')}
+              </div>
             </div>
-          </div>
-        `).join('');
-      }
+          `).join('');
+        }
 
-      window.filterDocsFromProject = function(keyword) {
-        activeCategory = 'Semua';
-        searchQuery = (keyword || '').toLowerCase();
-        if (searchInput) searchInput.value = keyword || '';
+        // Experience Timeline
+        const experienceTimeline = document.getElementById('experience-timeline');
+        if (experienceTimeline && CURRENT_STATE.experience) {
+          experienceTimeline.innerHTML = CURRENT_STATE.experience.map(exp => `
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <div>
+                    <h3 class="timeline-role">${escapeHTML(exp.role)}</h3>
+                    <div class="timeline-company">${escapeHTML(exp.company)} • ${escapeHTML(exp.location || '')}</div>
+                  </div>
+                  <span class="timeline-period">${escapeHTML(exp.period)}</span>
+                </div>
+                <p class="timeline-desc">${escapeHTML(exp.description)}</p>
+                <ul class="timeline-highlights">
+                  ${(exp.highlights || []).map(h => `<li>${escapeHTML(h)}</li>`).join('')}
+                </ul>
+                <div class="timeline-tags">
+                  ${(exp.technologies || []).map(t => `<span class="badge badge-emerald">${escapeHTML(t)}</span>`).join('')}
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // Projects
+        const projectsContainer = document.getElementById('projects-container');
+        if (projectsContainer && CURRENT_STATE.projects) {
+          projectsContainer.innerHTML = CURRENT_STATE.projects.map(prj => `
+            <div class="project-card">
+              <div>
+                <div class="project-badge-bar">
+                  <span class="badge badge-emerald">${escapeHTML(prj.period || '')}</span>
+                  <span class="badge badge-blue">${escapeHTML(prj.role || '')}</span>
+                </div>
+                <h3 class="project-title">${escapeHTML(prj.title)}</h3>
+                <p class="project-summary">${escapeHTML(prj.summary)}</p>
+
+                <div class="star-details">
+                  <div class="star-row">
+                    <span class="star-label">Tantangan:</span>
+                    <span class="star-val">${escapeHTML(prj.starMethod ? prj.starMethod.situation : '')}</span>
+                  </div>
+                  <div class="star-row">
+                    <span class="star-label">Tindakan:</span>
+                    <span class="star-val">${escapeHTML(prj.starMethod ? prj.starMethod.action : '')}</span>
+                  </div>
+                  <div class="star-row">
+                    <span class="star-label">Hasil Nyata:</span>
+                    <span class="star-val" style="color: var(--accent-emerald); font-weight: 600;">${escapeHTML(prj.starMethod ? prj.starMethod.result : '')}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-footer">
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  ${(prj.tags || []).slice(0, 3).map(tag => `<span class="skill-pill" style="font-size: 0.75rem; padding: 0.2rem 0.5rem;">${escapeHTML(tag)}</span>`).join('')}
+                </div>
+                <a href="#dokumen" class="btn btn-secondary btn-sm" onclick="filterDocsFromProject('${escapeHTML((prj.tags || [])[0] || '')}');">
+                  <span>Bukti Dokumen</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // Contact Info
+        const contactPhone = document.getElementById('contact-phone');
+        const contactEmail = document.getElementById('contact-email');
+        const contactLocation = document.getElementById('contact-location');
+
+        if (contactPhone && P.contact) {
+          contactPhone.textContent = P.contact.phone;
+          contactPhone.href = `https://wa.me/${P.contact.whatsapp}`;
+        }
+        if (contactEmail && P.contact) {
+          contactEmail.textContent = P.contact.email;
+          contactEmail.href = `mailto:${P.contact.email}`;
+        }
+        if (contactLocation) {
+          contactLocation.textContent = P.location;
+        }
+
+        // Documents & Admin UI
         renderCategories();
         renderDocumentsList();
-        const docSection = document.getElementById('dokumen');
-        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
-      };
+        updateAdminUI();
+      }
 
-      // 8. RENDER KATEGORI FILTER & DAFTAR DOKUMEN
+      // 4. DOKUMEN & ADMIN CONTROLS
       const categoryFilters = document.getElementById('category-filters');
       const documentsContainer = document.getElementById('documents-container');
       const searchInput = document.getElementById('search-docs');
@@ -2811,12 +3308,11 @@
         if (adminBtnText) {
           adminBtnText.textContent = isAdmin ? 'Admin Aktif' : 'Portal Admin';
         }
-        renderDocumentsList();
       }
 
       function getUniqueCategories() {
         const catSet = new Set(['Semua']);
-        currentDocuments.forEach(d => {
+        (CURRENT_STATE.documents || []).forEach(d => {
           if (d.category) catSet.add(d.category);
         });
         return Array.from(catSet);
@@ -2850,8 +3346,9 @@
 
       function renderDocumentsList() {
         if (!documentsContainer) return;
+        const docs = CURRENT_STATE.documents || [];
 
-        const filtered = currentDocuments.filter(doc => {
+        const filtered = docs.filter(doc => {
           const matchCat = activeCategory === 'Semua' || doc.category === activeCategory;
           const matchSearch = searchQuery === '' ||
             (doc.title && doc.title.toLowerCase().includes(searchQuery)) ||
@@ -2870,8 +3367,8 @@
                 Coba sesuaikan kata kunci pencarian Anda atau gunakan tombol di bawah untuk menambah berkas baru.
               </p>
               ${isAdmin ? `
-                <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('btn-admin-add-doc').click();">
-                  + Tambah Berkas Baru
+                <button type="button" class="btn btn-primary btn-sm" onclick="openCmsModal('tab-dokumen'); document.getElementById('btn-cms-add-doc').click();">
+                  + Tambah Berkas Baru di CMS
                 </button>
               ` : ''}
             </div>
@@ -2958,14 +3455,14 @@
                 <!-- Tombol Admin Khusus (Edit / Hapus) -->
                 ${isAdmin ? `
                   <div class="doc-admin-bar">
-                    <button type="button" class="btn btn-admin-edit btn-xs btn-edit-doc" data-doc-id="${doc.id}">
+                    <button type="button" class="btn btn-admin-edit btn-xs btn-quick-edit-doc" data-doc-id="${doc.id}">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                       </svg>
-                      <span>Edit</span>
+                      <span>Edit di CMS</span>
                     </button>
-                    <button type="button" class="btn btn-admin-delete btn-xs btn-delete-doc" data-doc-id="${doc.id}">
+                    <button type="button" class="btn btn-admin-delete btn-xs btn-quick-delete-doc" data-doc-id="${doc.id}">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="3 6 5 6 21 6"></polyline>
                         <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -2979,44 +3476,52 @@
           `;
         }).join('');
 
-        // Pasang Event Listeners
+        // Event Listeners
         documentsContainer.querySelectorAll('.btn-open-doc').forEach(btn => {
           btn.addEventListener('click', () => {
-            const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
+            const targetDoc = (CURRENT_STATE.documents || []).find(d => d.id === btn.dataset.docId);
             if (targetDoc) handleDocumentClick(targetDoc);
           });
         });
 
         documentsContainer.querySelectorAll('.btn-download-single').forEach(btn => {
           btn.addEventListener('click', () => {
-            const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
+            const targetDoc = (CURRENT_STATE.documents || []).find(d => d.id === btn.dataset.docId);
             if (targetDoc) handleDocumentDownload(targetDoc);
           });
         });
 
         if (isAdmin) {
-          documentsContainer.querySelectorAll('.btn-edit-doc').forEach(btn => {
+          documentsContainer.querySelectorAll('.btn-quick-edit-doc').forEach(btn => {
             btn.addEventListener('click', () => {
-              const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
-              if (targetDoc) openCrudModalForEdit(targetDoc);
+              const targetDoc = (CURRENT_STATE.documents || []).find(d => d.id === btn.dataset.docId);
+              if (targetDoc) {
+                openCmsModal('tab-dokumen');
+                populateDocFormForEdit(targetDoc);
+              }
             });
           });
 
-          documentsContainer.querySelectorAll('.btn-delete-doc').forEach(btn => {
+          documentsContainer.querySelectorAll('.btn-quick-delete-doc').forEach(btn => {
             btn.addEventListener('click', () => {
-              const targetDoc = currentDocuments.find(d => d.id === btn.dataset.docId);
-              if (targetDoc) confirmDeleteDocument(targetDoc);
+              const targetDoc = (CURRENT_STATE.documents || []).find(d => d.id === btn.dataset.docId);
+              if (targetDoc) deleteDocItem(targetDoc.id);
             });
           });
         }
       }
 
-      renderCategories();
-      updateAdminUI();
+      window.filterDocsFromProject = function(keyword) {
+        activeCategory = 'Semua';
+        searchQuery = (keyword || '').toLowerCase();
+        if (searchInput) searchInput.value = keyword || '';
+        renderCategories();
+        renderDocumentsList();
+        const docSection = document.getElementById('dokumen');
+        if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+      };
 
-      // ============================================================================
-      // 9. VIEWER MODAL & PIN VERIFICATION
-      // ============================================================================
+      // 5. DOCUMENT VIEWER & PIN MODAL
       const docViewerModal = document.getElementById('doc-viewer-modal');
       const btnModalClose = document.getElementById('btn-modal-close');
       const btnModalDownload = document.getElementById('btn-modal-download');
@@ -3027,7 +3532,6 @@
       const sheetDocumentTitle = document.getElementById('sheet-document-title');
       const sheetRecipient = document.getElementById('sheet-recipient-name');
       const sheetStatement = document.getElementById('sheet-statement-desc');
-      const sheetRedaction = document.getElementById('sheet-redaction-preview');
 
       const pinModal = document.getElementById('pin-modal');
       const pinDialogCard = document.getElementById('pin-dialog-card');
@@ -3052,7 +3556,7 @@
           openPinModal(doc);
           return;
         }
-        triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title);
+        triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title, doc.customFileData);
       }
 
       function openDocViewer(doc) {
@@ -3062,17 +3566,12 @@
         if (sheetInstitution) sheetInstitution.textContent = (doc.issuer || 'LEMBAGA RESMI').toUpperCase();
         if (sheetCredentialId) sheetCredentialId.textContent = `NOMOR KREDENSIAL: ${doc.credentialId || 'TERVERIFIKASI'}`;
         if (sheetDocumentTitle) sheetDocumentTitle.textContent = doc.title.toUpperCase();
-        if (sheetRecipient) sheetRecipient.textContent = DATA.profile.name;
+        if (sheetRecipient) sheetRecipient.textContent = CURRENT_STATE.profile.name;
         if (sheetStatement) sheetStatement.textContent = doc.description || 'Kompetensi terverifikasi sesuai standar resmi operasional.';
-        if (sheetRedaction) {
-          sheetRedaction.textContent = doc.redactionDetails
-            ? `██ [SENSOR PRIVASI: ${doc.redactionDetails}] ██`
-            : '██ DATA PRIBADI & NIK TELAH DISENSOR SESUAI STANDAR PRIVASI K3 ██';
-        }
 
         if (btnModalDownload) {
           btnModalDownload.onclick = () => {
-            triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title);
+            triggerFileDownload(doc.downloadName || `${doc.id}.pdf`, doc.title, doc.customFileData);
           };
         }
 
@@ -3098,7 +3597,7 @@
         pinInputs.forEach(input => input.value = '');
 
         if (btnRequestPinWa) {
-          const waNumber = DATA.profile.contact.whatsapp;
+          const waNumber = CURRENT_STATE.profile.contact.whatsapp;
           const waMsg = encodeURIComponent(`Halo Mas Erwin, saya tertarik meninjau dokumen portofolio "${doc.title}". Boleh minta 4-digit PIN aksesnya? Terima kasih.`);
           btnRequestPinWa.href = `https://wa.me/${waNumber}?text=${waMsg}`;
         }
@@ -3171,7 +3670,7 @@
       }
 
       // ============================================================================
-      // 10. FITUR ADMIN AUTHENTICATION (LOGIN / LOGOUT)
+      // 6. AUTENTIKASI ADMIN & PEMBUKAAN DASBOR CMS
       // ============================================================================
       const btnAdminPortal = document.getElementById('btn-admin-portal');
       const mobileAdminLink = document.getElementById('mobile-admin-link');
@@ -3181,31 +3680,29 @@
       const adminLoginError = document.getElementById('admin-login-error');
       const btnCancelAdminLogin = document.getElementById('btn-cancel-admin-login');
       const btnCloseAdminLogin = document.getElementById('btn-close-admin-login');
+
+      const adminCmsModal = document.getElementById('admin-cms-modal');
+      const btnCloseCmsModal = document.getElementById('btn-close-cms-modal');
+      const btnOpenCmsDash = document.getElementById('btn-open-cms-dash');
+      const btnTopGithubSync = document.getElementById('btn-top-github-sync');
       const btnAdminLogout = document.getElementById('btn-admin-logout');
 
-      function openAdminLogin() {
+      function triggerAdminAction() {
         if (isAdmin) {
-          const docSec = document.getElementById('dokumen');
-          if (docSec) docSec.scrollIntoView({ behavior: 'smooth' });
-          showToast('Anda sudah berada dalam Mode Admin.', 'info');
-          return;
+          openCmsModal('tab-profil');
+        } else {
+          adminLoginError.textContent = '';
+          adminPassInput.value = '';
+          adminLoginModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => adminPassInput.focus(), 150);
         }
-        adminLoginError.textContent = '';
-        adminPassInput.value = '';
-        adminLoginModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => adminPassInput.focus(), 150);
       }
 
-      function closeAdminLogin() {
-        adminLoginModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      if (btnAdminPortal) btnAdminPortal.addEventListener('click', openAdminLogin);
-      if (mobileAdminLink) mobileAdminLink.addEventListener('click', openAdminLogin);
-      if (btnCancelAdminLogin) btnCancelAdminLogin.addEventListener('click', closeAdminLogin);
-      if (btnCloseAdminLogin) btnCloseAdminLogin.addEventListener('click', closeAdminLogin);
+      if (btnAdminPortal) btnAdminPortal.addEventListener('click', triggerAdminAction);
+      if (mobileAdminLink) mobileAdminLink.addEventListener('click', triggerAdminAction);
+      if (btnCancelAdminLogin) btnCancelAdminLogin.addEventListener('click', () => adminLoginModal.classList.remove('active'));
+      if (btnCloseAdminLogin) btnCloseAdminLogin.addEventListener('click', () => adminLoginModal.classList.remove('active'));
 
       if (adminLoginForm) {
         adminLoginForm.addEventListener('submit', (e) => {
@@ -3216,11 +3713,11 @@
           if (enteredPass === savedPass) {
             isAdmin = true;
             localStorage.setItem(STORAGE_KEY_ADMIN, 'true');
-            closeAdminLogin();
+            adminLoginModal.classList.remove('active');
             updateAdminUI();
-            showToast('Selamat datang, Admin Erwin! Mode kelola berkas aktif.', 'success');
-            const docSection = document.getElementById('dokumen');
-            if (docSection) docSection.scrollIntoView({ behavior: 'smooth' });
+            renderDocumentsList();
+            showToast('Selamat datang, Admin Erwin! Membuka Dasbor CMS...', 'success');
+            setTimeout(() => openCmsModal('tab-profil'), 200);
           } else {
             adminLoginError.textContent = 'Kata sandi salah. Sandi standar adalah admin123';
             triggerShake(adminLoginModal.querySelector('.modal-container'));
@@ -3233,139 +3730,629 @@
           isAdmin = false;
           localStorage.removeItem(STORAGE_KEY_ADMIN);
           updateAdminUI();
+          renderDocumentsList();
           showToast('Anda telah keluar dari mode admin.', 'info');
         });
       }
 
       // ============================================================================
-      // 11. FITUR CRUD DOKUMEN (TAMBAH, EDIT, HAPUS)
+      // 7. DASBOR CMS TERPADU (TAB ROUTING & FORM SYNC)
       // ============================================================================
-      const docCrudModal = document.getElementById('doc-crud-modal');
-      const docCrudForm = document.getElementById('doc-crud-form');
-      const btnAdminAddDoc = document.getElementById('btn-admin-add-doc');
-      const btnCloseCrudModal = document.getElementById('btn-close-crud-modal');
-      const btnCancelCrud = document.getElementById('btn-cancel-crud');
-      const crudModalTitle = document.getElementById('crud-modal-title');
-
-      const crudDocId = document.getElementById('crud-doc-id');
-      const crudTitle = document.getElementById('crud-title');
-      const crudCategory = document.getElementById('crud-category');
-      const crudBadgeColor = document.getElementById('crud-badge-color');
-      const crudIssuer = document.getElementById('crud-issuer');
-      const crudYear = document.getElementById('crud-year');
-      const crudCredId = document.getElementById('crud-cred-id');
-      const crudFilename = document.getElementById('crud-filename');
-      const crudDesc = document.getElementById('crud-desc');
-      const crudIsProtected = document.getElementById('crud-is-protected');
-      const crudPinWrapper = document.getElementById('crud-pin-wrapper');
-      const crudAccessPin = document.getElementById('crud-access-pin');
-
-      if (crudIsProtected) {
-        crudIsProtected.addEventListener('change', () => {
-          crudPinWrapper.style.display = crudIsProtected.checked ? 'block' : 'none';
-        });
-      }
-
-      function openCrudModalForAdd() {
-        crudModalTitle.textContent = 'Tambah Berkas Dokumen Baru';
-        docCrudForm.reset();
-        crudDocId.value = '';
-        crudPinWrapper.style.display = 'none';
-        docCrudModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => crudTitle.focus(), 150);
-      }
-
-      function openCrudModalForEdit(doc) {
-        crudModalTitle.textContent = `Edit Rincian: ${doc.title}`;
-        crudDocId.value = doc.id;
-        crudTitle.value = doc.title || '';
-        crudCategory.value = doc.category || 'Sertifikasi K3';
-        crudBadgeColor.value = doc.badgeColor || 'emerald';
-        crudIssuer.value = doc.issuer || '';
-        crudYear.value = doc.issueYear || '';
-        crudCredId.value = doc.credentialId || '';
-        crudFilename.value = doc.downloadName || '';
-        crudDesc.value = doc.description || '';
-        crudIsProtected.checked = !!doc.isProtected;
-        crudPinWrapper.style.display = doc.isProtected ? 'block' : 'none';
-        crudAccessPin.value = doc.accessPin || '1234';
-
-        docCrudModal.classList.add('active');
+      function openCmsModal(defaultTab = 'tab-profil') {
+        populateCmsForms();
+        switchCmsTab(defaultTab);
+        adminCmsModal.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
 
-      function closeCrudModal() {
-        docCrudModal.classList.remove('active');
+      function closeCmsModal() {
+        adminCmsModal.classList.remove('active');
         document.body.style.overflow = '';
       }
 
-      if (btnAdminAddDoc) btnAdminAddDoc.addEventListener('click', openCrudModalForAdd);
-      if (btnCloseCrudModal) btnCloseCrudModal.addEventListener('click', closeCrudModal);
-      if (btnCancelCrud) btnCancelCrud.addEventListener('click', closeCrudModal);
+      if (btnCloseCmsModal) btnCloseCmsModal.addEventListener('click', closeCmsModal);
+      if (btnOpenCmsDash) btnOpenCmsDash.addEventListener('click', () => openCmsModal('tab-profil'));
+      if (btnTopGithubSync) btnTopGithubSync.addEventListener('click', () => openCmsModal('tab-github'));
 
-      if (docCrudForm) {
-        docCrudForm.addEventListener('submit', (e) => {
+      // Tab switcher
+      const cmsTabBtns = document.querySelectorAll('.cms-tab-btn');
+      const cmsTabPanes = document.querySelectorAll('.cms-tab-pane');
+
+      function switchCmsTab(tabId) {
+        cmsTabBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.tab === tabId);
+        });
+        cmsTabPanes.forEach(pane => {
+          pane.classList.toggle('active', pane.id === tabId);
+        });
+      }
+
+      cmsTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => switchCmsTab(btn.dataset.tab));
+      });
+
+      // 8. POPULATE & SIMPAN TAB PROFIL & FOTO
+      const cmsAvatarPreview = document.getElementById('cms-avatar-preview');
+      const cmsAvatarFileInput = document.getElementById('cms-avatar-file-input');
+      const btnCmsAvatarUrlPrompt = document.getElementById('btn-cms-avatar-url-prompt');
+      let currentAvatarBase64 = '';
+
+      function populateCmsForms() {
+        const P = CURRENT_STATE.profile;
+
+        // Profil
+        document.getElementById('cms-name').value = P.name || '';
+        document.getElementById('cms-title').value = P.title || '';
+        document.getElementById('cms-tagline').value = P.tagline || '';
+        document.getElementById('cms-status-text').value = (P.status && P.status.text) || '';
+        document.getElementById('cms-bio-1').value = (P.bio && P.bio[0]) || '';
+        document.getElementById('cms-bio-2').value = (P.bio && P.bio[1]) || '';
+        document.getElementById('cms-philosophy').value = P.workPhilosophy || '';
+        document.getElementById('cms-phone').value = (P.contact && P.contact.phone) || '';
+        document.getElementById('cms-email').value = (P.contact && P.contact.email) || '';
+        document.getElementById('cms-location').value = P.location || '';
+
+        currentAvatarBase64 = P.avatar || '';
+        if (cmsAvatarPreview) cmsAvatarPreview.src = currentAvatarBase64;
+
+        // Render Lists di Tab
+        renderCmsExpList();
+        renderCmsProjList();
+        renderCmsDocsList();
+
+        // Populate GitHub config
+        const ghCfg = loadGhConfig();
+        document.getElementById('cms-gh-user').value = ghCfg.user || '';
+        document.getElementById('cms-gh-repo').value = ghCfg.repo || 'Portofolio';
+        document.getElementById('cms-gh-branch').value = ghCfg.branch || 'main';
+        document.getElementById('cms-gh-token').value = ghCfg.token || '';
+      }
+
+      // Handler Ganti Foto Profil via File Input
+      if (cmsAvatarFileInput) {
+        cmsAvatarFileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          // Baca dan kompres foto profil secara halus
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            const tempImg = new Image();
+            tempImg.onload = function() {
+              const canvas = document.createElement('canvas');
+              const maxDim = 800;
+              let width = tempImg.width;
+              let height = tempImg.height;
+
+              if (width > height && width > maxDim) {
+                height = Math.round((height * maxDim) / width);
+                width = maxDim;
+              } else if (height > maxDim) {
+                width = Math.round((width * maxDim) / height);
+                height = maxDim;
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(tempImg, 0, 0, width, height);
+
+              currentAvatarBase64 = canvas.toDataURL('image/jpeg', 0.88);
+              if (cmsAvatarPreview) cmsAvatarPreview.src = currentAvatarBase64;
+              showToast('Foto profil baru berhasil dimuat! Klik "Simpan Perubahan" untuk menerapkan.', 'info');
+            };
+            tempImg.src = evt.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (btnCmsAvatarUrlPrompt) {
+        btnCmsAvatarUrlPrompt.addEventListener('click', () => {
+          const url = window.prompt('Masukkan link URL foto profil online (contoh: https://images.unsplash.com/...):', currentAvatarBase64);
+          if (url && url.trim()) {
+            currentAvatarBase64 = url.trim();
+            if (cmsAvatarPreview) cmsAvatarPreview.src = currentAvatarBase64;
+          }
+        });
+      }
+
+      const cmsProfileForm = document.getElementById('cms-profile-form');
+      if (cmsProfileForm) {
+        cmsProfileForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          const targetId = crudDocId.value;
+
+          CURRENT_STATE.profile.name = document.getElementById('cms-name').value.trim();
+          CURRENT_STATE.profile.title = document.getElementById('cms-title').value.trim();
+          CURRENT_STATE.profile.tagline = document.getElementById('cms-tagline').value.trim();
+          CURRENT_STATE.profile.status = {
+            available: true,
+            text: document.getElementById('cms-status-text').value.trim()
+          };
+          CURRENT_STATE.profile.bio = [
+            document.getElementById('cms-bio-1').value.trim(),
+            document.getElementById('cms-bio-2').value.trim()
+          ];
+          CURRENT_STATE.profile.workPhilosophy = document.getElementById('cms-philosophy').value.trim();
+          CURRENT_STATE.profile.location = document.getElementById('cms-location').value.trim();
+          CURRENT_STATE.profile.avatar = currentAvatarBase64;
+
+          const phone = document.getElementById('cms-phone').value.trim();
+          const cleanWa = phone.replace(/[^0-9]/g, '');
+          CURRENT_STATE.profile.contact = {
+            phone: phone,
+            whatsapp: cleanWa.startsWith('0') ? '62' + cleanWa.slice(1) : cleanWa,
+            email: document.getElementById('cms-email').value.trim(),
+            linkedin: CURRENT_STATE.profile.contact.linkedin || '',
+            github: CURRENT_STATE.profile.contact.github || ''
+          };
+
+          saveAppState(CURRENT_STATE);
+          renderAllWebsite();
+          showToast('Profil dan foto berhasil diperbarui!', 'success');
+        });
+      }
+
+      // ============================================================================
+      // 9. TAB PENGALAMAN KERJA (CRUD CMS)
+      // ============================================================================
+      const cmsExpTbody = document.getElementById('cms-exp-tbody');
+      const cmsExpFormBox = document.getElementById('cms-exp-form-box');
+      const cmsExpForm = document.getElementById('cms-exp-form');
+      const btnCmsAddExp = document.getElementById('btn-cms-add-exp');
+      const btnCmsCancelExp = document.getElementById('btn-cms-cancel-exp');
+
+      function renderCmsExpList() {
+        if (!cmsExpTbody) return;
+        const exps = CURRENT_STATE.experience || [];
+
+        cmsExpTbody.innerHTML = exps.map((exp, idx) => `
+          <tr>
+            <td><strong>${escapeHTML(exp.role)}</strong></td>
+            <td>${escapeHTML(exp.company)}</td>
+            <td>${escapeHTML(exp.period)}</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-xs" onclick="window.editCmsExpItem(${idx})">Edit</button>
+              <button type="button" class="btn btn-danger btn-xs" onclick="window.deleteCmsExpItem(${idx})">Hapus</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.editCmsExpItem = function(idx) {
+        const exp = CURRENT_STATE.experience[idx];
+        if (!exp) return;
+
+        document.getElementById('cms-exp-form-title').textContent = `Edit Pengalaman: ${exp.role}`;
+        document.getElementById('cms-exp-index').value = idx;
+        document.getElementById('cms-exp-role').value = exp.role || '';
+        document.getElementById('cms-exp-company').value = exp.company || '';
+        document.getElementById('cms-exp-period').value = exp.period || '';
+        document.getElementById('cms-exp-location').value = exp.location || '';
+        document.getElementById('cms-exp-desc').value = exp.description || '';
+        document.getElementById('cms-exp-highlights').value = (exp.highlights || []).join('\n');
+        document.getElementById('cms-exp-tags').value = (exp.technologies || []).join(', ');
+
+        cmsExpFormBox.style.display = 'block';
+        cmsExpFormBox.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      window.deleteCmsExpItem = function(idx) {
+        const exp = CURRENT_STATE.experience[idx];
+        if (!exp) return;
+        if (confirm(`Hapus pengalaman "${exp.role} di ${exp.company}"?`)) {
+          CURRENT_STATE.experience.splice(idx, 1);
+          saveAppState(CURRENT_STATE);
+          renderCmsExpList();
+          renderAllWebsite();
+          showToast('Pengalaman berhasil dihapus.', 'info');
+        }
+      };
+
+      if (btnCmsAddExp) {
+        btnCmsAddExp.addEventListener('click', () => {
+          document.getElementById('cms-exp-form-title').textContent = 'Tambah Pengalaman Baru';
+          document.getElementById('cms-exp-index').value = '-1';
+          cmsExpForm.reset();
+          cmsExpFormBox.style.display = 'block';
+        });
+      }
+
+      if (btnCmsCancelExp) {
+        btnCmsCancelExp.addEventListener('click', () => {
+          cmsExpFormBox.style.display = 'none';
+        });
+      }
+
+      if (cmsExpForm) {
+        cmsExpForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const idx = parseInt(document.getElementById('cms-exp-index').value);
+
+          const expData = {
+            role: document.getElementById('cms-exp-role').value.trim(),
+            company: document.getElementById('cms-exp-company').value.trim(),
+            period: document.getElementById('cms-exp-period').value.trim(),
+            location: document.getElementById('cms-exp-location').value.trim(),
+            description: document.getElementById('cms-exp-desc').value.trim(),
+            highlights: document.getElementById('cms-exp-highlights').value.split('\n').map(h => h.trim()).filter(Boolean),
+            technologies: document.getElementById('cms-exp-tags').value.split(',').map(t => t.trim()).filter(Boolean)
+          };
+
+          if (idx >= 0) {
+            CURRENT_STATE.experience[idx] = expData;
+            showToast('Pengalaman berhasil diperbarui!', 'success');
+          } else {
+            CURRENT_STATE.experience.unshift(expData);
+            showToast('Pengalaman baru berhasil ditambahkan!', 'success');
+          }
+
+          saveAppState(CURRENT_STATE);
+          renderCmsExpList();
+          renderAllWebsite();
+          cmsExpFormBox.style.display = 'none';
+        });
+      }
+
+      // ============================================================================
+      // 10. TAB PROYEK STAR (CRUD CMS)
+      // ============================================================================
+      const cmsProjTbody = document.getElementById('cms-proj-tbody');
+      const cmsProjFormBox = document.getElementById('cms-proj-form-box');
+      const cmsProjForm = document.getElementById('cms-proj-form');
+      const btnCmsAddProj = document.getElementById('btn-cms-add-proj');
+      const btnCmsCancelProj = document.getElementById('btn-cms-cancel-proj');
+
+      function renderCmsProjList() {
+        if (!cmsProjTbody) return;
+        const projs = CURRENT_STATE.projects || [];
+
+        cmsProjTbody.innerHTML = projs.map((prj, idx) => `
+          <tr>
+            <td><strong>${escapeHTML(prj.title)}</strong></td>
+            <td>${escapeHTML(prj.role)}</td>
+            <td>${escapeHTML(prj.period || '')}</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-xs" onclick="window.editCmsProjItem(${idx})">Edit</button>
+              <button type="button" class="btn btn-danger btn-xs" onclick="window.deleteCmsProjItem(${idx})">Hapus</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.editCmsProjItem = function(idx) {
+        const prj = CURRENT_STATE.projects[idx];
+        if (!prj) return;
+
+        document.getElementById('cms-proj-form-title').textContent = `Edit Proyek: ${prj.title}`;
+        document.getElementById('cms-proj-index').value = idx;
+        document.getElementById('cms-proj-title').value = prj.title || '';
+        document.getElementById('cms-proj-role').value = prj.role || '';
+        document.getElementById('cms-proj-period').value = prj.period || '';
+        document.getElementById('cms-proj-summary').value = prj.summary || '';
+
+        const star = prj.starMethod || {};
+        document.getElementById('cms-proj-situation').value = star.situation || '';
+        document.getElementById('cms-proj-action').value = star.action || '';
+        document.getElementById('cms-proj-result').value = star.result || '';
+        document.getElementById('cms-proj-tags').value = (prj.tags || []).join(', ');
+
+        cmsProjFormBox.style.display = 'block';
+        cmsProjFormBox.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      window.deleteCmsProjItem = function(idx) {
+        const prj = CURRENT_STATE.projects[idx];
+        if (!prj) return;
+        if (confirm(`Hapus proyek "${prj.title}"?`)) {
+          CURRENT_STATE.projects.splice(idx, 1);
+          saveAppState(CURRENT_STATE);
+          renderCmsProjList();
+          renderAllWebsite();
+          showToast('Proyek berhasil dihapus.', 'info');
+        }
+      };
+
+      if (btnCmsAddProj) {
+        btnCmsAddProj.addEventListener('click', () => {
+          document.getElementById('cms-proj-form-title').textContent = 'Tambah Proyek Baru';
+          document.getElementById('cms-proj-index').value = '-1';
+          cmsProjForm.reset();
+          cmsProjFormBox.style.display = 'block';
+        });
+      }
+
+      if (btnCmsCancelProj) {
+        btnCmsCancelProj.addEventListener('click', () => {
+          cmsProjFormBox.style.display = 'none';
+        });
+      }
+
+      if (cmsProjForm) {
+        cmsProjForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const idx = parseInt(document.getElementById('cms-proj-index').value);
+
+          const projData = {
+            id: idx >= 0 ? CURRENT_STATE.projects[idx].id : `PRJ-EAN-${Date.now().toString().slice(-4)}`,
+            title: document.getElementById('cms-proj-title').value.trim(),
+            role: document.getElementById('cms-proj-role').value.trim(),
+            period: document.getElementById('cms-proj-period').value.trim(),
+            summary: document.getElementById('cms-proj-summary').value.trim(),
+            starMethod: {
+              situation: document.getElementById('cms-proj-situation').value.trim(),
+              task: document.getElementById('cms-proj-situation').value.trim(),
+              action: document.getElementById('cms-proj-action').value.trim(),
+              result: document.getElementById('cms-proj-result').value.trim()
+            },
+            tags: document.getElementById('cms-proj-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+            isFeatured: true
+          };
+
+          if (idx >= 0) {
+            CURRENT_STATE.projects[idx] = projData;
+            showToast('Proyek berhasil diperbarui!', 'success');
+          } else {
+            CURRENT_STATE.projects.unshift(projData);
+            showToast('Proyek baru berhasil ditambahkan!', 'success');
+          }
+
+          saveAppState(CURRENT_STATE);
+          renderCmsProjList();
+          renderAllWebsite();
+          cmsProjFormBox.style.display = 'none';
+        });
+      }
+
+      // ============================================================================
+      // 11. TAB BERKAS & DOKUMEN (CRUD CMS + UPLOAD FILE ASLI)
+      // ============================================================================
+      const cmsDocsTbody = document.getElementById('cms-docs-tbody');
+      const cmsDocFormBox = document.getElementById('cms-doc-form-box');
+      const cmsDocForm = document.getElementById('cms-doc-form');
+      const btnCmsAddDoc = document.getElementById('btn-cms-add-doc');
+      const btnCmsCancelDoc = document.getElementById('btn-cms-cancel-doc');
+      const cmsDocFileInput = document.getElementById('cms-doc-file-input');
+      const cmsDocFileLabel = document.getElementById('cms-doc-file-label');
+      let currentDocUploadedDataUrl = '';
+
+      function renderCmsDocsList() {
+        if (!cmsDocsTbody) return;
+        const docs = CURRENT_STATE.documents || [];
+
+        cmsDocsTbody.innerHTML = docs.map(doc => `
+          <tr>
+            <td><strong>${escapeHTML(doc.title)}</strong></td>
+            <td><span class="badge badge-emerald">${escapeHTML(doc.category)}</span></td>
+            <td>${escapeHTML(doc.issuer)}</td>
+            <td>${doc.isProtected ? '🔒 PIN: ' + escapeHTML(doc.accessPin || '1234') : 'Bebas'}</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-xs" onclick="window.editCmsDocItem('${doc.id}')">Edit</button>
+              <button type="button" class="btn btn-danger btn-xs" onclick="window.deleteDocItem('${doc.id}')">Hapus</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      // Handler Upload File Dokumen (PDF/Gambar)
+      if (cmsDocFileInput) {
+        cmsDocFileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          cmsDocFileLabel.textContent = `Berkas terpilih: ${file.name} (${Math.round(file.size / 1024)} KB)`;
+          document.getElementById('cms-doc-filename').value = file.name;
+
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            currentDocUploadedDataUrl = evt.target.result;
+            showToast(`Berkas "${file.name}" berhasil dilampirkan.`, 'info');
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      const cmsDocIsProtected = document.getElementById('cms-doc-is-protected');
+      const cmsDocPinWrapper = document.getElementById('cms-doc-pin-wrapper');
+      if (cmsDocIsProtected) {
+        cmsDocIsProtected.addEventListener('change', () => {
+          cmsDocPinWrapper.style.display = cmsDocIsProtected.checked ? 'block' : 'none';
+        });
+      }
+
+      function populateDocFormForEdit(doc) {
+        document.getElementById('cms-doc-form-title').textContent = `Edit Berkas: ${doc.title}`;
+        document.getElementById('cms-doc-id').value = doc.id;
+        document.getElementById('cms-doc-title').value = doc.title || '';
+        document.getElementById('cms-doc-category').value = doc.category || 'Sertifikasi K3';
+        document.getElementById('cms-doc-badge-color').value = doc.badgeColor || 'emerald';
+        document.getElementById('cms-doc-issuer').value = doc.issuer || '';
+        document.getElementById('cms-doc-year').value = doc.issueYear || '';
+        document.getElementById('cms-doc-cred-id').value = doc.credentialId || '';
+        document.getElementById('cms-doc-filename').value = doc.downloadName || '';
+        document.getElementById('cms-doc-desc').value = doc.description || '';
+
+        cmsDocIsProtected.checked = !!doc.isProtected;
+        cmsDocPinWrapper.style.display = doc.isProtected ? 'block' : 'none';
+        document.getElementById('cms-doc-pin').value = doc.accessPin || '1234';
+
+        currentDocUploadedDataUrl = doc.customFileData || '';
+        cmsDocFileLabel.textContent = doc.customFileData ? 'Telah memiliki file lampiran tersimpan.' : 'Belum ada berkas lampiran khusus.';
+
+        cmsDocFormBox.style.display = 'block';
+        cmsDocFormBox.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      window.editCmsDocItem = function(docId) {
+        const doc = (CURRENT_STATE.documents || []).find(d => d.id === docId);
+        if (doc) populateDocFormForEdit(doc);
+      };
+
+      window.deleteDocItem = function(docId) {
+        const doc = (CURRENT_STATE.documents || []).find(d => d.id === docId);
+        if (!doc) return;
+        if (confirm(`Apakah Anda yakin ingin menghapus berkas "${doc.title}"?`)) {
+          CURRENT_STATE.documents = (CURRENT_STATE.documents || []).filter(d => d.id !== docId);
+          saveAppState(CURRENT_STATE);
+          renderCmsDocsList();
+          renderAllWebsite();
+          showToast(`Berkas "${doc.title}" telah dihapus.`, 'info');
+        }
+      };
+
+      if (btnCmsAddDoc) {
+        btnCmsAddDoc.addEventListener('click', () => {
+          document.getElementById('cms-doc-form-title').textContent = 'Tambah Berkas Baru';
+          document.getElementById('cms-doc-id').value = '';
+          cmsDocForm.reset();
+          cmsDocPinWrapper.style.display = 'none';
+          currentDocUploadedDataUrl = '';
+          cmsDocFileLabel.textContent = 'Belum ada berkas baru dipilih.';
+          cmsDocFormBox.style.display = 'block';
+        });
+      }
+
+      if (btnCmsCancelDoc) {
+        btnCmsCancelDoc.addEventListener('click', () => {
+          cmsDocFormBox.style.display = 'none';
+        });
+      }
+
+      if (cmsDocForm) {
+        cmsDocForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const targetId = document.getElementById('cms-doc-id').value;
           const isEdit = !!targetId;
 
           const docData = {
             id: isEdit ? targetId : `DOC-EAN-${Date.now().toString().slice(-4)}`,
-            title: crudTitle.value.trim(),
-            category: crudCategory.value,
-            badgeColor: crudBadgeColor.value,
-            issuer: crudIssuer.value.trim(),
-            issueYear: crudYear.value.trim() || 'Tervalidasi',
-            credentialId: crudCredId.value.trim() || `VER-${Date.now().toString().slice(-4)}`,
-            downloadName: crudFilename.value.trim() || `${crudTitle.value.trim().replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
-            description: crudDesc.value.trim() || 'Dokumen kompetensi resmi terverifikasi.',
-            previewType: 'certificate',
-            isProtected: crudIsProtected.checked,
-            accessPin: crudIsProtected.checked ? (crudAccessPin.value.trim() || '1234') : null,
+            title: document.getElementById('cms-doc-title').value.trim(),
+            category: document.getElementById('cms-doc-category').value,
+            badgeColor: document.getElementById('cms-doc-badge-color').value,
+            issuer: document.getElementById('cms-doc-issuer').value.trim(),
+            issueYear: document.getElementById('cms-doc-year').value.trim() || 'Tervalidasi',
+            credentialId: document.getElementById('cms-doc-cred-id').value.trim() || `VER-${Date.now().toString().slice(-4)}`,
+            downloadName: document.getElementById('cms-doc-filename').value.trim() || `${document.getElementById('cms-doc-title').value.trim().replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
+            description: document.getElementById('cms-doc-desc').value.trim() || 'Dokumen kompetensi resmi terverifikasi.',
+            isProtected: cmsDocIsProtected.checked,
+            accessPin: cmsDocIsProtected.checked ? (document.getElementById('cms-doc-pin').value.trim() || '1234') : null,
             redactionStatus: 'Verified & Redacted for Privacy',
-            redactionDetails: 'Nomor registrasi unik publik terverifikasi.'
+            customFileData: currentDocUploadedDataUrl
           };
 
           if (isEdit) {
-            const index = currentDocuments.findIndex(d => d.id === targetId);
+            const index = (CURRENT_STATE.documents || []).findIndex(d => d.id === targetId);
             if (index !== -1) {
-              currentDocuments[index] = { ...currentDocuments[index], ...docData };
-              showToast(`Dokumen "${docData.title}" berhasil diperbarui!`, 'success');
+              CURRENT_STATE.documents[index] = { ...CURRENT_STATE.documents[index], ...docData };
+              showToast(`Berkas "${docData.title}" berhasil diperbarui!`, 'success');
             }
           } else {
-            currentDocuments.unshift(docData);
+            CURRENT_STATE.documents.unshift(docData);
             showToast(`Berkas baru "${docData.title}" berhasil ditambahkan!`, 'success');
           }
 
-          saveDocuments(currentDocuments);
-          renderCategories();
-          renderDocumentsList();
-          closeCrudModal();
+          saveAppState(CURRENT_STATE);
+          renderCmsDocsList();
+          renderAllWebsite();
+          cmsDocFormBox.style.display = 'none';
         });
       }
 
-      function confirmDeleteDocument(doc) {
-        const confirmed = window.confirm(`Apakah Anda yakin ingin menghapus berkas "${doc.title}"?\n\nTindakan ini akan menghapus dokumen dari etalase portofolio.`);
-        if (confirmed) {
-          currentDocuments = currentDocuments.filter(d => d.id !== doc.id);
-          saveDocuments(currentDocuments);
-          renderCategories();
-          renderDocumentsList();
-          showToast(`Dokumen "${doc.title}" telah dihapus.`, 'info');
-        }
+      // ============================================================================
+      // 12. TAB PUBLIKASIKAN KE GITHUB (GITHUB REST API 1-CLICK COMMIT)
+      // ============================================================================
+      const cmsGithubForm = document.getElementById('cms-github-form');
+      const cmsGhStatusMsg = document.getElementById('cms-gh-status-msg');
+      const btnCmsPublishNow = document.getElementById('btn-cms-publish-now');
+      const btnCmsDownloadDatajs = document.getElementById('btn-cms-download-datajs');
+      const btnCmsResetAll = document.getElementById('btn-cms-reset-all');
+
+      function utf8ToBase64(str) {
+        return window.btoa(unescape(encodeURIComponent(str)));
       }
 
-      // ============================================================================
-      // 12. EKSPOR DATA & CADANGAN KONFIGURASI
-      // ============================================================================
-      const btnAdminExportData = document.getElementById('btn-admin-export-data');
-      const btnAdminResetData = document.getElementById('btn-admin-reset-data');
+      if (cmsGithubForm) {
+        cmsGithubForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
 
-      if (btnAdminExportData) {
-        btnAdminExportData.addEventListener('click', () => {
-          const exportContent = generateDataJsExportString(currentDocuments);
-          const blob = new Blob([exportContent], { type: 'application/javascript;charset=utf-8' });
+          const user = document.getElementById('cms-gh-user').value.trim();
+          const repo = document.getElementById('cms-gh-repo').value.trim();
+          const branch = document.getElementById('cms-gh-branch').value.trim() || 'main';
+          const token = document.getElementById('cms-gh-token').value.trim();
+
+          if (!user || !repo || !token) {
+            cmsGhStatusMsg.innerHTML = '<span style="color: var(--accent-rose);">Mohon lengkapi Username, Nama Repo, dan Token GitHub!</span>';
+            return;
+          }
+
+          // Simpan kredensial aman di browser pengguna
+          saveGhConfig({ user, repo, branch, token });
+
+          btnCmsPublishNow.disabled = true;
+          cmsGhStatusMsg.innerHTML = '<span style="color: var(--accent-primary);">⏳ Menghubungkan ke GitHub REST API...</span>';
+
+          try {
+            // 1. Generate konten data.js terbaru
+            const fileString = `/**\n * PORTFOLIO DATA CONFIGURATION: ERWIN ARDI NURCAHYO\n * Diperbarui via Admin Portal CMS pada: ${new Date().toLocaleString('id-ID')}\n */\n\nconst PORTFOLIO_DATA = ${JSON.stringify(CURRENT_STATE, null, 2)};\n\nwindow.PORTFOLIO_DATA = PORTFOLIO_DATA;\n`;
+            const base64Content = utf8ToBase64(fileString);
+
+            // 2. Cek SHA berkas js/data.js di GitHub
+            cmsGhStatusMsg.innerHTML = '<span style="color: var(--accent-primary);">⏳ Memeriksa berkas js/data.js di repositori...</span>';
+            let sha = null;
+            const getUrl = `https://api.github.com/repos/${user}/${repo}/contents/js/data.js?ref=${branch}`;
+
+            const getRes = await fetch(getUrl, {
+              headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json'
+              }
+            });
+
+            if (getRes.ok) {
+              const getData = await getRes.json();
+              sha = getData.sha;
+            }
+
+            // 3. Commit file data.js ke GitHub
+            cmsGhStatusMsg.innerHTML = '<span style="color: var(--accent-primary);">⏳ Mengunggah data & memperbarui GitHub Pages...</span>';
+            const putUrl = `https://api.github.com/repos/${user}/${repo}/contents/js/data.js`;
+            const putPayload = {
+              message: `Update portfolio content via Admin CMS (Erwin Ardi Nurcahyo)`,
+              content: base64Content,
+              branch: branch
+            };
+            if (sha) putPayload.sha = sha;
+
+            const putRes = await fetch(putUrl, {
+              method: 'PUT',
+              headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github.v3+json'
+              },
+              body: JSON.stringify(putPayload)
+            });
+
+            if (!putRes.ok) {
+              const errData = await putRes.json();
+              throw new Error(errData.message || 'Gagal menyimpan ke GitHub.');
+            }
+
+            cmsGhStatusMsg.innerHTML = '<span style="color: var(--accent-emerald);">🎉 BERHASIL! Seluruh perubahan foto, profil, dan berkas telah dipublikasikan ke GitHub. Dalam 30–60 detik, GitHub Pages akan otomatis menampilkan portofolio terbaru!</span>';
+            showToast('Publikasi ke GitHub sukses! Website live diperbarui.', 'success');
+          } catch (err) {
+            console.error('GitHub API Error:', err);
+            cmsGhStatusMsg.innerHTML = `<span style="color: var(--accent-rose);">❌ Gagal Publikasi: ${escapeHTML(err.message)}. Pastikan Token valid dan memiliki izin 'repo'.</span>`;
+          } finally {
+            btnCmsPublishNow.disabled = false;
+          }
+        });
+      }
+
+      if (btnCmsDownloadDatajs) {
+        btnCmsDownloadDatajs.addEventListener('click', () => {
+          const fileString = `/**\n * PORTFOLIO DATA CONFIGURATION: ERWIN ARDI NURCAHYO\n * Diperbarui via Admin Portal CMS pada: ${new Date().toLocaleString('id-ID')}\n */\n\nconst PORTFOLIO_DATA = ${JSON.stringify(CURRENT_STATE, null, 2)};\n\nwindow.PORTFOLIO_DATA = PORTFOLIO_DATA;\n`;
+          const blob = new Blob([fileString], { type: 'application/javascript;charset=utf-8' });
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
@@ -3374,41 +4361,40 @@
           a.click();
           document.body.removeChild(a);
           URL.revokeObjectURL(url);
-          showToast('Berkas data.js terbaru berhasil diunduh!', 'success');
+          showToast('File data.js berhasil diunduh.', 'success');
         });
       }
 
-      if (btnAdminResetData) {
-        btnAdminResetData.addEventListener('click', () => {
-          const confirmed = window.confirm('Kembalikan daftar dokumen ke versi standar CV asli Erwin Ardi Nurcahyo?\n\nSemua berkas yang Anda tambah/edit secara lokal akan diganti kembali ke 9 dokumen bawaan.');
-          if (confirmed) {
-            localStorage.removeItem(STORAGE_KEY_DOCS);
-            currentDocuments = JSON.parse(JSON.stringify(DATA.documents));
-            saveDocuments(currentDocuments);
-            activeCategory = 'Semua';
-            searchQuery = '';
-            if (searchInput) searchInput.value = '';
-            renderCategories();
-            renderDocumentsList();
-            showToast('Daftar berkas berhasil direset ke data default CV!', 'info');
+      if (btnCmsResetAll) {
+        btnCmsResetAll.addEventListener('click', () => {
+          if (confirm('Kembalikan SELURUH profil, foto, pengalaman, dan dokumen ke versi bawaan CV asli Erwin Ardi Nurcahyo?')) {
+            localStorage.removeItem(STORAGE_KEY_STATE);
+            CURRENT_STATE = JSON.parse(JSON.stringify(MASTER_CV_DATA));
+            saveAppState(CURRENT_STATE);
+            populateCmsForms();
+            renderAllWebsite();
+            showToast('Seluruh data berhasil direset ke versi default CV asli!', 'info');
           }
         });
       }
 
-      function generateDataJsExportString(docs) {
-        const fullData = {
-          ...DATA,
-          documents: docs
-        };
-        return `/**\n * PORTFOLIO DATA CONFIGURATION: ERWIN ARDI NURCAHYO\n * Diperbarui via Admin Portal pada: ${new Date().toLocaleString('id-ID')}\n */\n\nconst PORTFOLIO_DATA = ${JSON.stringify(fullData, null, 2)};\n\nwindow.PORTFOLIO_DATA = PORTFOLIO_DATA;\n`;
-      }
+      // ============================================================================
+      // 13. FILE DOWNLOAD & VCARD ENGINE
+      // ============================================================================
+      function triggerFileDownload(filename, docTitle, customDataUrl) {
+        if (customDataUrl) {
+          const a = document.createElement('a');
+          a.href = customDataUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          showToast(`Mengunduh berkas lampiran: ${filename}`, 'success');
+          return;
+        }
 
-      // ============================================================================
-      // 13. FITUR UNDUH BERKAS SIMULASI PDF & VCARD
-      // ============================================================================
-      function triggerFileDownload(filename, docTitle) {
         const safeTitle = (docTitle || 'Dokumen Resmi').replace(/[()]/g, '');
-        const safeAuthor = (DATA.profile.name || 'Erwin Ardi Nurcahyo').replace(/[()]/g, '');
+        const safeAuthor = (CURRENT_STATE.profile.name || 'Erwin Ardi Nurcahyo').replace(/[()]/g, '');
         const pdfContent = `%PDF-1.4\n%âãÏÓ\n1 0 obj\n<< /Title (${safeTitle}) /Author (${safeAuthor}) /Subject (Portofolio Resmi 2026) >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF`;
         const blob = new Blob([pdfContent], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
@@ -3425,14 +4411,14 @@
       const btnDownloadCv = document.getElementById('btn-download-cv');
       if (btnDownloadCv) {
         btnDownloadCv.addEventListener('click', () => {
-          triggerFileDownload(DATA.profile.cvFilename || 'CV_Erwin_Ardi_Nurcahyo_2026.pdf', 'Curriculum Vitae Erwin Ardi Nurcahyo');
+          triggerFileDownload(CURRENT_STATE.profile.cvFilename || 'CV_Erwin_Ardi_Nurcahyo_2026.pdf', 'Curriculum Vitae Erwin Ardi Nurcahyo');
         });
       }
 
       const btnDownloadVcard = document.getElementById('btn-download-vcard');
       if (btnDownloadVcard) {
         btnDownloadVcard.addEventListener('click', () => {
-          const p = DATA.profile;
+          const p = CURRENT_STATE.profile;
           const vcardData = [
             'BEGIN:VCARD',
             'VERSION:3.0',
@@ -3459,7 +4445,7 @@
       }
 
       // ============================================================================
-      // 14. FORMULIR KONTAK
+      // 14. FORM KONTAK LANGSUNG
       // ============================================================================
       const contactForm = document.getElementById('contact-form');
       if (contactForm) {
@@ -3471,7 +4457,7 @@
           const message = document.getElementById('form-message').value;
 
           showToast(`Pesan terkirim! Menghubungkan ke email Mas Erwin...`, 'success');
-          const mailtoLink = `mailto:${DATA.profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Halo Mas Erwin,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+          const mailtoLink = `mailto:${CURRENT_STATE.profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Halo Mas Erwin,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
           contactForm.reset();
           setTimeout(() => { window.location.href = mailtoLink; }, 1000);
         });
@@ -3508,10 +4494,13 @@
         if (e.key === 'Escape') {
           closeDocViewer();
           closePinModal();
-          closeAdminLogin();
-          closeCrudModal();
+          adminLoginModal.classList.remove('active');
+          closeCmsModal();
         }
       });
+
+      // RENDER AWAL
+      renderAllWebsite();
     });
   </script>
 </body>

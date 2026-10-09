@@ -8,7 +8,7 @@ ZONA ATAS: SPESIFIKASI KEBUTUHAN PRODUK (BLUEPRINT AWAL)
 ## 1. Nama Projek & Problem Statement
 - **Nama Projek:** Portofolio Profesional & Document Showcase - Erwin Ardi Nurcahyo.
 - **Problem Statement:** 
-  Profesional di bidang Safety & Operations (K3 Pertambangan & ERP SAP) membutuhkan platform portofolio digital mandiri yang menyajikan riwayat karier, inisiatif lapangan (metode STAR), serta bukti dokumen autentik (sertifikat BNSP, K3 Pertambangan, pelatihan operasional, dan ijazah S1 Sistem Informasi) secara elegan melalui *embedded viewer*, opsi unduh berkas resmi, sensor data pribadi (redaction), proteksi PIN pada dokumen sensitif (IBPR), serta kemudahan bagi pemilik untuk mengelola (tambah, edit, dan hapus) berkas portofolio secara mandiri kapan saja.
+  Profesional di bidang Safety & Operations (K3 Pertambangan & ERP SAP) membutuhkan platform portofolio digital mandiri yang menyajikan riwayat karier, inisiatif lapangan (metode STAR), serta bukti dokumen autentik (sertifikat BNSP, K3 Pertambangan, pelatihan operasional, dan ijazah S1 Sistem Informasi) secara elegan melalui *embedded viewer*, opsi unduh berkas resmi, sensor data pribadi (redaction), proteksi PIN pada dokumen sensitif (IBPR), serta sistem Dasbor Pengelola (CMS) terpadu di mana pemilik dapat mengedit seluruh konten profil, foto dari HP/laptop, pengalaman kerja, proyek, dan mengunggah berkas baru serta mempublikasikannya langsung ke GitHub Pages via API tanpa perlu menyentuh kodingan lagi.
 
 ## 2. Peran Pengguna (User Roles)
 1. **Pengunjung Umum & Recruiter (HRD Tambang / Manajemen / Klien):**
@@ -22,17 +22,18 @@ ZONA ATAS: SPESIFIKASI KEBUTUHAN PRODUK (BLUEPRINT AWAL)
    - Menghubungi pemilik melalui pesan email, WhatsApp direct chat, atau menyimpan kontak vCard digital.
 2. **Pemilik Portofolio (Erwin Ardi Nurcahyo / Administrator):**
    - Masuk melalui Portal Admin menggunakan kata sandi akses khusus.
-   - Menambahkan sertifikat atau berkas baru lengkap dengan judul, kategori, penerbit, nomor kredensial, dan status proteksi PIN.
-   - Mengedit rincian dokumen yang telah ada langsung dari kartu dokumen.
-   - Menghapus dokumen yang tidak lagi diperlukan dari etalase.
-   - Mengekspor/mengunduh data terbaru (`data.js`) untuk diperbarui ke hosting/GitHub Pages secara permanen.
-   - Mereset data kembali ke versi default CV kapan saja.
+   - Mengakses Dasbor CMS Terpadu (Tab Profil & Foto, Pengalaman Kerja, Proyek STAR, Berkas & Dokumen, dan Publikasi GitHub).
+   - Mengganti foto profil dengan memilih foto langsung dari galeri HP atau laptop.
+   - Menambah, mengedit, dan menghapus riwayat pengalaman kerja serta inisiatif proyek STAR.
+   - Menambah berkas baru dengan melampirkan file dokumen/foto sertifikat asli dari perangkat.
+   - Mempublikasikan seluruh perubahan langsung ke repositori GitHub via 1-Klik GitHub REST API tanpa menyentuh kode.
+   - Mengunduh cadangan konfigurasi `data.js` atau mereset data ke versi default CV kapan saja.
 
 ## 3. Arsitektur & Lingkungan Kerja
-- **Arsitektur:** Web Statis Modern Mandiri (Single Page Application dengan All-in-One Engine & Modular Sync).
+- **Arsitektur:** Web Statis Modern Mandiri (Single Page Application dengan All-in-One Engine & In-Browser CMS).
   - *Frontend:* HTML5 Semantik, Vanilla CSS (Sistem Desain Anti-AI berkelas, responsive fluid, micro-interactions, dark/light theme), Vanilla JavaScript ES6+.
-  - *Data Layer:* Dual-Layer Storage (Master dataset `js/data.js` & Persistent Browser `localStorage` untuk Admin CRUD).
-  - *Asset Storage:* Folder terstruktur `docs/` untuk CV resmi dan sertifikat PDF.
+  - *Data Layer:* Dual-Layer Storage (Master dataset `js/data.js`, Persistent Browser `localStorage` untuk CMS State, & GitHub REST API commit).
+  - *Asset Storage:* Folder terstruktur `docs/` untuk CV resmi dan sertifikat PDF, serta Base64 / Cloud Storage sync untuk foto & lampiran kustom.
 - **Hosting & Kompatibilitas:** 
   - Siap di-deploy instan dan 100% gratis ke GitHub Pages, Vercel, Netlify, atau Cloudflare Pages tanpa membutuhkan backend berbayar.
   - Mendukung pembukaan offline langsung dari file lokal (`index.html`).
@@ -55,32 +56,23 @@ graph TD
     
     B --> K[Tombol Portal Admin]
     K --> L[Modal Login Sandi Admin]
-    L -->|Sandi Benar| M[Mode Admin Aktif]
-    M --> N[Tambah Berkas Baru]
-    M --> O[Edit Berkas Eksisting]
-    M --> P[Hapus Berkas]
-    M --> Q[Ekspor / Unduh data.js]
-    M --> R[Keluar / Logout]
+    L -->|Sandi Benar| M[Dasbor CMS Pengelola Terbuka]
+    M --> N[Tab 1: Edit Profil & Ganti Foto dari HP/Laptop]
+    M --> O[Tab 2: Kelola Pengalaman Kerja]
+    M --> P[Tab 3: Kelola Proyek STAR]
+    M --> Q[Tab 4: Kelola Berkas & Upload Lampiran Dokumen]
+    M --> R[Tab 5: 1-Klik Publikasi ke GitHub via REST API]
 ```
 
-## 5. Struktur Data Konfigurasi (`data.js`)
-Struktur data dirancang terpusat, bersih, dan mudah diedit:
-1. **Profil Pengguna:** Nama lengkap, gelar/headline, bio, filosofi kerja, avatar, kontak (WhatsApp, email, domisili).
-2. **Keahlian (Skills):** K3 Pertambangan, ERP SAP & Analisis Data, IT Web & Digitalisasi, Desain Visual & Soft Skills.
-3. **Pengalaman Kerja:** PT ERM Site Borneo Indobara (BIB), PT Aviko Sepinggan Site PT SSB, BPS Banjarmasin.
-4. **Proyek Unggulan (STAR):** Dashboard Pelaporan K3 Real-Time, Integrasi Rantai Pasok SAP, Aplikasi Pengarsipan Web BPS.
-5. **Dokumen Pendukung:**
-   - 7 Sertifikat Resmi CV (BNSP, POC Fleet Management, PWP Analisis Kerja Aman, PKK Izin Kerja Khusus, PKK K3 Pertambangan, PWP Safety Meeting, PWP IBPR).
-   - Ijazah S1 Sistem Informasi (STMIK Indonesia Banjarmasin - IPK 3,44) & SMKN 1 Sungai Loban (Multimedia).
-
-## 6. Kriteria Pengujian (Quality Checklist)
+## 5. Kriteria Pengujian (Quality Checklist)
 - [x] Profil resmi Erwin Ardi Nurcahyo (S1 Sistem Informasi & Safety Officer) tampil akurat di seluruh bagian.
 - [x] Tampilan responsif sempurna di perangkat Mobile (HP) dan Desktop (PC/Laptop).
 - [x] Portal Admin login berfungsi dengan kata sandi (default: `admin123`).
-- [x] Form Tambah Dokumen Baru berfungsi dan langsung tampil di etalase.
-- [x] Tombol Edit Dokumen mampu mengubah rincian berkas secara real-time.
-- [x] Tombol Hapus Dokumen bekerja dengan konfirmasi aman.
-- [x] Perubahan dokumen tersimpan secara persisten di LocalStorage (tidak hilang saat reload).
+- [x] Dasbor CMS multi-tab terbuka dan dapat mengedit seluruh data secara visual.
+- [x] Uploader foto profil mampu membaca dan mengompres foto dari galeri perangkat serta memperbarui avatar secara instan.
+- [x] Pengalaman kerja dan proyek STAR dapat ditambah, diedit, dan dihapus langsung dari CMS.
+- [x] Berkas dokumen dapat dilampirkan dengan file baru dari perangkat dan diubah/dihapus secara fleksibel.
+- [x] Fitur "Publikasikan ke GitHub" terintegrasi dengan GitHub REST API untuk commit otomatis ke repositori.
 - [x] Tombol "Unduh data.js" menghasilkan file konfigurasi utuh yang siap pakai.
 - [x] Embedded viewer dan modal PIN bekerja mulus dengan proteksi sensor privasi.
 - [x] Sakelar mode gelap/terang (Dark/Light mode) bekerja mulus.
@@ -88,15 +80,18 @@ Struktur data dirancang terpusat, bersih, dan mudah diedit:
 ================================================================================
 ZONA BAWAH: MASTER CONTEXT & LOGIKA SISTEM TERKINI (LIVING CONTEXT)
 ================================================================================
-- **Status Arsitektur Aktif:** Standalone All-in-One Web Application (HTML5 + Embedded Design System + In-Memory & LocalStorage CRUD Engine) dengan sinkronisasi modular ke `js/data.js`.
+- **Status Arsitektur Aktif:** Standalone All-in-One Web Application (HTML5 + Embedded Design System + Full In-Browser CMS Engine + GitHub REST API Sync Connector).
 - **Pemilik Portofolio:** Erwin Ardi Nurcahyo (Safety Officer & Operations Specialist).
-- **Format Data Aktif:** Structured Data di `js/data.js` & `localStorage['erwin_portfolio_docs_v1']`.
-- **Logika Keamanan Aktif:** Admin Authentication, PIN Document Locker (DOC-EAN-007 IBPR), Privacy Redaction Preview Watermarking.
+- **Format Data Aktif:** Structured Data di `js/data.js` & `localStorage['erwin_portfolio_master_v2']`.
+- **Logika Keamanan Aktif:** Admin Authentication, PIN Document Locker (DOC-EAN-007 IBPR), Privacy Redaction Preview Watermarking, Safe Client-Side GitHub Token Storage.
 - **Log Pembaruan Resmi:**
   - `v1.0.0` (Inisialisasi): Spesifikasi portofolio awal ZettBOT.
   - `v1.2.0` (Hotfix GitHub Pages): Penyatuan all-in-one CSS & JS ke dalam index.html untuk mengeliminasi 404.
   - `v2.0.0` (Rilis Portofolio Erwin Ardi Nurcahyo & Fitur Admin CRUD):
     * Revisi menyeluruh seluruh data, teks, riwayat kerja, dan dokumen sesuai referensi CV resmi Erwin Ardi Nurcahyo.
     * Penambahan sistem Portal Admin dengan modal login sandi.
-    * Penambahan toolbar admin dan fitur CRUD (Tambah, Edit, Hapus Berkas) dengan penyimpanan persisten di LocalStorage.
-    * Penambahan fitur Ekspor Data (`data.js`) dan Reset Data ke versi asli CV.
+  - `v2.1.0` (Full In-Browser CMS & GitHub Auto-Sync Engine):
+    * Transformasi Portal Admin menjadi Dasbor CMS Multi-Tab lengkap (Profil & Foto, Pengalaman Kerja, Proyek STAR, Berkas & Dokumen, dan Publikasi GitHub).
+    * Penambahan Uploader Foto Profil langsung dari galeri HP/laptop dengan kompresi visual otomatis.
+    * Penambahan Lampiran Berkas Dokumen (PDF/Gambar) langsung dari perangkat.
+    * Integrasi 1-Klik Simpan & Publikasikan ke GitHub via GitHub REST API sehingga pengguna tidak perlu membuka kodingan di GitHub lagi.
