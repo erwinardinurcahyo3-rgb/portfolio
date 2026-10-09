@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Rizky Pratama, S.Kom. | Portofolio Profesional & Document Showcase</title>
+  <meta name="description" content="Portofolio resmi Ahmad Rizky Pratama, Senior Software Engineer & Cloud Solutions Architect. Jelajahi pengalaman, proyek STAR, dan dokumen sertifikasi resmi dengan embedded viewer terintegrasi.">
+  <meta name="keywords" content="Portofolio, Software Engineer, Cloud Architect, Sertifikasi IT, Google Cloud, BNSP, Full-Stack Developer">
+  <meta name="author" content="Ahmad Rizky Pratama">
+  
+  <!-- Open Graph / Meta Sosial -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ahmad Rizky Pratama, S.Kom. - Portofolio Profesional">
+  <meta property="og:description" content="Jelajahi riwayat proyek unggulan (metode STAR) dan etalase dokumen resmi (sertifikat, ijazah, lisensi) dengan viewer interaktif terintegrasi.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== BILAH NAVIGASI (NAVBAR) ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#beranda" class="nav-brand" id="brand-link">
+        <span class="brand-badge">AR</span>
+        <span class="brand-name">Ahmad Rizky</span>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+        <li><a href="#tentang" class="nav-link">Tentang Saya</a></li>
+        <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
+        <li><a href="#proyek" class="nav-link">Proyek</a></li>
+        <li><a href="#dokumen" class="nav-link">Dokumen Resmi</a></li>
+        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <!-- Aksi Navigasi & Sakelar Tema -->
+      <div class="nav-actions">
+        <button type="button" class="btn-icon" id="theme-toggle" aria-label="Ganti Tema (Dark / Light Mode)" title="Ganti Tema">
+          <!-- Moon Icon (Light to Dark) -->
+          <svg id="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (Dark to Light) -->
+          <svg id="icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="#kontak" class="btn btn-primary btn-sm" id="cta-nav-contact">
+          <span>Hubungi Saya</span>
+        </a>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button type="button" class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Buka Menu" title="Menu Navigasi">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#beranda" class="mobile-nav-link">Beranda</a>
+    <a href="#tentang" class="mobile-nav-link">Tentang Saya</a>
+    <a href="#pengalaman" class="mobile-nav-link">Pengalaman Kerja</a>
+    <a href="#proyek" class="mobile-nav-link">Proyek Unggulan (STAR)</a>
+    <a href="#dokumen" class="mobile-nav-link">Dokumen & Sertifikat</a>
+    <a href="#kontak" class="mobile-nav-link">Kontak & Kartu Digital</a>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION (BERANDA) ==================== -->
+    <section class="hero" id="beranda">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="status-pill" id="hero-status">
+              <span class="status-dot"></span>
+              <span id="hero-status-text">Terbuka untuk Peluang Kerja & Konsultasi</span>
+            </div>
+
+            <h1 class="hero-title" id="hero-name">
+              Halo, Saya <span class="highlight">Ahmad Rizky</span>
+            </h1>
+
+            <p class="hero-headline" id="hero-title">
+              Senior Software Engineer & Cloud Solutions Architect
+            </p>
+
+            <p class="hero-description" id="hero-tagline">
+              Membangun sistem perangkat lunak berkinerja tinggi, aman, dan berorientasi pada solusi bisnis nyata dengan arsitektur modern berstandar enterprise.
+            </p>
+
+            <div class="hero-cta">
+              <button type="button" class="btn btn-primary" id="btn-download-cv">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh CV Resmi (PDF)</span>
+              </button>
+
+              <a href="#dokumen" class="btn btn-secondary" id="btn-explore-docs">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <span>Lihat Sertifikat & Ijazah</span>
+              </a>
+
+              <a href="#kontak" class="btn btn-outline-emerald" id="btn-hero-contact">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>Hubungi Saya Langsung</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Avatar Card -->
+          <div class="hero-avatar-card">
+            <div class="avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ahmad Rizky Pratama" class="avatar-img" id="hero-avatar">
+              <div class="floating-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Verified Cloud Architect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics Cards (Grid Responsif 4 Kolom) -->
+        <div class="stats-grid" id="stats-container">
+          <!-- Di-render dinamis oleh app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TENTANG SAYA SECTION ==================== -->
+    <section class="about" id="tentang">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Profil Profesional</span>
+          <h2 class="section-title">Latar Belakang & Nilai Kerja</h2>
+          <p class="section-subtitle">Ringkasan perjalanan karier rekayasa perangkat lunak dan prinsip fundamental yang memandu setiap proyek yang saya bangun.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" id="about-bio-container">
+            <!-- Diisi teks biografi dinamis dari data.js -->
+            <div class="philosophy-box" id="philosophy-box">
+              <h4 class="philosophy-title">Prinsip & Nilai Kerja</h4>
+              <p class="philosophy-text" id="philosophy-text">"Kode yang baik bukan sekadar berjalan tanpa galat, melainkan mampu memecahkan masalah bisnis secara elegan, mudah dipelihara di masa depan, dan aman bagi pengguna."</p>
+            </div>
+          </div>
+
+          <div class="skills-column" id="skills-container">
+            <!-- Diisi pengelompokan skill dinamis dari data.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PENGALAMAN KERJA ==================== -->
+    <section class="experience" id="pengalaman" style="background-color: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Jejak Langkah Karier</span>
+          <h2 class="section-title">Riwayat Pengalaman Kerja</h2>
+          <p class="section-subtitle">Rekam jejak kontribusi teknis pada perusahaan teknologi terkemuka dan institusi finansial.</p>
+        </div>
+
+        <div class="timeline" id="experience-timeline">
+          <!-- Diisi linimasa pengalaman dinamis dari data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROYEK UNGGULAN (METODE STAR) ==================== -->
+    <section class="projects" id="proyek">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portofolio Terpilih</span>
+          <h2 class="section-title">Proyek Unggulan (Metode STAR)</h2>
+          <p class="section-subtitle">Setiap proyek dianalisis secara komprehensif berdasarkan peran, situasi tantangan, tindakan solusi, serta hasil terukur.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+          <!-- Diisi kartu proyek STAR dinamis dari data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DOKUMEN PENDUKUNG (ETALASE & VIEWER) ==================== -->
+    <section class="documents" id="dokumen" style="background-color: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Validasi & Kredibilitas</span>
+          <h2 class="section-title">Dokumen Pendukung Resmi</h2>
+          <p class="section-subtitle">Etalase sertifikasi keahlian, ijazah pendidikan, lisensi profesi, dan portofolio klien terbatas yang dilengkapi penampil dokumen terintegrasi (embedded viewer) serta penyensoran data pribadi.</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="doc-controls">
+          <div class="filter-pills" id="category-filters">
+            <!-- Diisi tombol filter kategori dari data.js -->
+          </div>
+
+          <div class="search-wrapper">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input" id="search-docs" placeholder="Cari sertifikat, lisensi, penerbit..." autocomplete="off">
+          </div>
+        </div>
+
+        <!-- Documents Cards Grid -->
+        <div class="documents-grid" id="documents-container">
+          <!-- Diisi kartu dokumen dari data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== KONTAK & KARTU DIGITAL ==================== -->
+    <section class="contact" id="kontak">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Koneksi & Kolaborasi</span>
+          <h2 class="section-title">Hubungi Saya</h2>
+          <p class="section-subtitle">Mari diskusikan peluang kerja sama, rekrutmen profesional, atau konsultasi arsitektur sistem.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Kontak & Kartu Digital -->
+          <div class="contact-info">
+            <div class="contact-card-box">
+              <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1.25rem;">Saluran Komunikasi Resmi</h3>
+
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item-label">Alamat Email Profesional</div>
+                  <a href="mailto:ahmad.rizky.tech@gmail.com" class="contact-item-val" id="contact-email">ahmad.rizky.tech@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon" style="color: var(--accent-emerald);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item-label">WhatsApp Langsung</div>
+                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-wa">+62 812-3456-7890 (Chat Aktif)</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon" style="color: var(--accent-indigo);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item-label">LinkedIn Profil</div>
+                  <a href="https://linkedin.com/in/ahmad-rizky-dev" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-linkedin">linkedin.com/in/ahmad-rizky-dev</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-item-label">GitHub Repository</div>
+                  <a href="https://github.com/ahmadrizky-id" target="_blank" rel="noopener noreferrer" class="contact-item-val" id="contact-github">github.com/ahmadrizky-id</a>
+                </div>
+              </div>
+
+              <!-- Tombol Cepat Unduh vCard -->
+              <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-download-vcard" style="width: 100%;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                  </svg>
+                  <span>Simpan Kontak ke HP (Unduh vCard)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulir Kirim Pesan -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem;">Kirim Pesan Instan</h3>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Pesan Anda akan langsung diteruskan ke email profesional saya.</p>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Nama Lengkap / Instansi *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Contoh: HRD PT Teknologi Prima" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Alamat Email Anda *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="nama@perusahaan.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Perihal Diskusi</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Contoh: Tawaran Pekerjaan / Konsultasi Sistem">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Pesan Lengkap *</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tuliskan detail tawaran atau kebutuhan proyek Anda di sini..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-message" style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span>Kirim Pesan Sekarang</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="nav-brand" style="justify-content: center;">
+        <span class="brand-badge">AR</span>
+        <span>Ahmad Rizky Pratama, S.Kom.</span>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="#beranda" class="footer-link">Beranda</a></li>
+        <li><a href="#tentang" class="footer-link">Tentang Saya</a></li>
+        <li><a href="#pengalaman" class="footer-link">Pengalaman</a></li>
+        <li><a href="#proyek" class="footer-link">Proyek</a></li>
+        <li><a href="#dokumen" class="footer-link">Dokumen Pendukung</a></li>
+        <li><a href="#kontak" class="footer-link">Kontak</a></li>
+      </ul>
+
+      <p class="footer-copyright">
+        &copy; 2026 Ahmad Rizky Pratama. Hak Cipta Dilindungi. Seluruh dokumen resmi terlindungi enkripsi dan sensor privasi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== EMBEDDED DOCUMENT VIEWER MODAL ==================== -->
+  <div class="modal-overlay" id="doc-viewer-modal" role="dialog" aria-modal="true" aria-labelledby="modal-doc-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="modal-doc-title">Pratinjau Dokumen Resmi</h3>
+          <p id="modal-doc-meta">Penerbit: - | Tahun: -</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button type="button" class="btn-icon" id="btn-modal-close" aria-label="Tutup Pratinjau" title="Tutup">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body" id="modal-doc-body">
+        <!-- Sheet Pratinjau Dokumen Resolusi Tinggi yang Dirender Dinamis -->
+        <div class="viewer-document-sheet" id="viewer-sheet">
+          <div class="sheet-watermark" id="sheet-watermark-text">
+            SALINAN RESMI PORTOFOLIO<br>PRIVASI TERVERIFIKASI & TERLINDUNGI
+          </div>
+
+          <div class="sheet-header">
+            <div>
+              <div class="sheet-institution" id="sheet-institution-name">LEMBAGA SERTIFIKASI</div>
+              <div style="font-size: 0.8rem; color: #64748b;" id="sheet-credential-id">KREDENSIAL ID: -</div>
+            </div>
+            <div class="sheet-seal">
+              OFFICIAL<br>VERIFIED
+            </div>
+          </div>
+
+          <div class="sheet-body">
+            <div class="sheet-main-title" id="sheet-document-title">SERTIFIKAT KELAYAKAN PROFESIONAL</div>
+            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">Diberikan dengan bangga kepada:</div>
+            <div class="sheet-recipient" id="sheet-recipient-name">Ahmad Rizky Pratama, S.Kom.</div>
+
+            <div class="sheet-statement" id="sheet-statement-desc">
+              Telah berhasil menyelesaikan kualifikasi kompetensi profesional berstandar industri dengan pengakuan penuh.
+            </div>
+
+            <!-- Tanda Sensor Privasi (Redaction Strip) -->
+            <div style="margin: 1.25rem 0; padding: 0.75rem; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px;">
+              <span style="font-size: 0.75rem; color: #64748b; display: block; margin-bottom: 0.35rem;">Informasi Perlindungan Privasi (UU Perlindungan Data Pribadi):</span>
+              <span class="redaction-bar" id="sheet-redaction-preview">██████ INFORMASI PRIBADI DISENSOR DEMI KEAMANAN ██████</span>
+            </div>
+          </div>
+
+          <div class="sheet-footer">
+            <div class="sheet-qr">
+              <div>STATUS AUTENTIKASI: VALID (2026)</div>
+              <div>HASH: SHA256-AUTHENTICATED-DOCUMENT</div>
+            </div>
+            <div class="sheet-signature">
+              <div style="font-style: italic; font-family: cursive; font-size: 1.25rem; color: #1e40af;">Official Registrar</div>
+              <div style="border-top: 1px solid #0f172a; margin-top: 4px; padding-top: 4px;">Tanda Tangan Elektronik Sah</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span class="badge badge-emerald" id="modal-badge-redacted">Data Pribadi Disensor</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted);" id="modal-file-format">Format: Dokumen Resmi Terverifikasi</span>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-sm" id="btn-modal-download">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span id="btn-modal-download-text">Unduh Dokumen Resmi (PDF)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PIN PROTECTION DIALOG ==================== -->
+  <div class="modal-overlay" id="pin-modal" role="dialog" aria-modal="true" aria-labelledby="pin-modal-title">
+    <div class="modal-container pin-dialog" id="pin-dialog-card">
+      <div class="pin-icon-wrapper">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+
+      <h3 class="pin-title" id="pin-modal-title">Dokumen Rahasia Terproteksi</h3>
+      <p class="pin-desc" id="pin-modal-desc">
+        Dokumen ini dilindungi perjanjian kerahasiaan klien (NDA). Silakan masukkan 4-digit PIN akses untuk membuka pratinjau.
+      </p>
+
+      <div class="pin-demo-hint">
+        💡 <strong>Kunci Akses Demo:</strong> Masukkan PIN <code>1234</code>
+      </div>
+
+      <!-- PIN Input Digits -->
+      <div class="pin-input-group" id="pin-input-group">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="0" inputmode="numeric" autocomplete="off" autofocus>
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="1" inputmode="numeric" autocomplete="off">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="2" inputmode="numeric" autocomplete="off">
+        <input type="password" maxlength="1" class="pin-digit-input" data-index="3" inputmode="numeric" autocomplete="off">
+      </div>
+
+      <div class="pin-error-msg" id="pin-error-msg"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem;">
+        <button type="button" class="btn btn-primary" id="btn-verify-pin" style="width: 100%;">
+          <span>Buka Dokumen</span>
+        </button>
+
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-request-pin-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>Belum Punya PIN? Minta Akses via WhatsApp</span>
+        </a>
+
+        <button type="button" class="btn btn-sm" id="btn-cancel-pin" style="background: transparent; color: var(--text-muted); border: none;">
+          Batalkan & Kembali
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
